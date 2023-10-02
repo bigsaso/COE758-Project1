@@ -1,0 +1,7 @@
+MODULE CacheControllerSchematic
+	SUBMODULE TagCompareDirectMapping
+		INSTANCE XLXI_1
+	SUBMODULE CPU_gen
+		INSTANCE XLXI_5
+	SUBMODULE CacheControllerFSM
+		INSTANCE XLXI_6

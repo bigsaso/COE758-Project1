@@ -24,6 +24,11 @@
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="CPU_gen.spl"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CPU_gen.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheController.spl"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheControllerFSM.spl"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CacheControllerFSM.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="TagCompareDirectMapping.spl"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="TagCompareDirectMapping.sym" xil_pn:origination="imported"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
