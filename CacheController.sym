@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="CacheController">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2023-10-2T16:49:44</timestamp>
+    <pin polarity="Input" x="0" y="-480" name="WR_RD" />
+    <pin polarity="Input" x="0" y="-336" name="CS" />
+    <pin polarity="Input" x="0" y="-192" name="Clk" />
+    <pin polarity="Input" x="0" y="-48" name="ADD(16:0)" />
+    <pin polarity="Output" x="464" y="-480" name="WEN_SDRAM" />
+    <pin polarity="Output" x="464" y="-416" name="MSTRB" />
+    <pin polarity="Output" x="464" y="-352" name="RDY" />
+    <pin polarity="Output" x="464" y="-288" name="WEN_CACHE" />
+    <pin polarity="Output" x="464" y="-224" name="CACHE_DOUT_EN" />
+    <pin polarity="Output" x="464" y="-160" name="CACHE_DIN_EN" />
+    <pin polarity="Output" x="464" y="-96" name="SDRAM_ADD(16:0)" />
+    <pin polarity="Output" x="464" y="-32" name="CACHE_ADD(8:0)" />
+    <graph>
+        <rect width="336" x="64" y="-512" height="512" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="232" y="-520" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin WR_RD" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-336" type="pin CS" />
+        <line x2="0" y1="-336" y2="-336" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-192" type="pin Clk" />
+        <line x2="0" y1="-192" y2="-192" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-48" type="pin ADD(16:0)" />
+        <rect width="64" x="0" y="-60" height="24" />
+        <line x2="0" y1="-48" y2="-48" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-480" type="pin WEN_SDRAM" />
+        <line x2="464" y1="-480" y2="-480" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-416" type="pin MSTRB" />
+        <line x2="464" y1="-416" y2="-416" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-352" type="pin RDY" />
+        <line x2="464" y1="-352" y2="-352" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-288" type="pin WEN_CACHE" />
+        <line x2="464" y1="-288" y2="-288" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-224" type="pin CACHE_DOUT_EN" />
+        <line x2="464" y1="-224" y2="-224" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-160" type="pin CACHE_DIN_EN" />
+        <line x2="464" y1="-160" y2="-160" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-96" type="pin SDRAM_ADD(16:0)" />
+        <rect width="64" x="400" y="-108" height="24" />
+        <line x2="464" y1="-96" y2="-96" x1="400" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="392" y="-32" type="pin CACHE_ADD(8:0)" />
+        <rect width="64" x="400" y="-44" height="24" />
+        <line x2="464" y1="-32" y2="-32" x1="400" />
+    </graph>
+</symbol>

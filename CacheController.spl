@@ -1,0 +1,15 @@
+[Inputs]
+WR_RD
+CS
+Clk
+=ADD[16:0]=
+[Outputs]
+WEN_SDRAM
+MSTRB
+RDY
+WEN_CACHE
+CACHE_DOUT_EN
+CACHE_DIN_EN
+=SDRAM_ADD[16:0]=
+=CACHE_ADD[8:0]=
+[BiDir]

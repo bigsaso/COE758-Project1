@@ -19,6 +19,9 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -45,8 +48,25 @@ entity CacheController is
 end CacheController;
 
 architecture Behavioral of CacheController is
+	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
 	signal yfsm : state_type;
+	-- CPU signals
+	signal CPU_DOUT, CPU_DIN : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal CPU_ADD : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	signal CPU_TAG : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal CPU_INDEX : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	signal CPU_OFFSET : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	signal CPU_WR_RD, CPU_CS, CPU_RDY : STD_LOGIC;
+	signal TAG_INDEX : STD_LOGIC_VECTOR(10 DOWNTO 0);
+	-- Cache SRAM signals
+	signal DIRTY_BIT : STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
+	signal VALID_BIT : STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
+	signal CACHE_ADD, CACHE_DIN, CACHE_DOUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal CACHE_WEN : STD_LOGIC;
+	-- SDRAM controller signals
+	signal SDRAM_DIN : STD_LOGIC;
+	
 
 begin
 	process(clk)

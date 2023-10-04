@@ -21,8 +21,33 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Project1.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="CPU_gen.spl"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CPU_gen.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheController.spl"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CacheControllerFSM.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheControllerFSM.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="CacheControllerFSM.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CacheControllerFSM.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="CacheControllerFSM.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SDRAMController.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SDRAMController.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="SDRAMController.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TagCompareDirectMapping.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="TagCompareDirectMapping.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TagCompareDirectMapping.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="TagCompareDirectMapping.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TagCompareDirectMapping.xst"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="trial.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:name="TRAN_SubProjectAbstractToPreProxy">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>

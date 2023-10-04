@@ -1,0 +1,24 @@
+V3 9
+FL /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd 2023/10/04.10:59:22 O.87xd
+EN work/CacheControllerFSM 1696431587 \
+      FL /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 \
+      PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/CacheControllerFSM/Behavioral 1696431588 \
+      FL /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd \
+      EN work/CacheControllerFSM 1696431587
+FL /home/student2/slogozzo/COE758/Project1/SDRAMController.vhd 2023/10/04.11:40:31 O.87xd
+EN work/SDRAMController 1696434036 \
+      FL /home/student2/slogozzo/COE758/Project1/SDRAMController.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877
+AR work/SDRAMController/Behavioral 1696434037 \
+      FL /home/student2/slogozzo/COE758/Project1/SDRAMController.vhd \
+      EN work/SDRAMController 1696434036
+FL /home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd 2023/10/04.10:42:38 O.87xd
+EN work/TagCompareDirectMapping 1696430563 \
+      FL /home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 \
+      PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/TagCompareDirectMapping/Behavioral 1696430564 \
+      FL /home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd \
+      EN work/TagCompareDirectMapping 1696430563

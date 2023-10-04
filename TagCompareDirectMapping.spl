@@ -1,0 +1,6 @@
+[Inputs]
+clk
+=CPU_ADD[15:0]=
+[Outputs]
+HIT_MISS
+[BiDir]

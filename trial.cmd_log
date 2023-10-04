@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan3e -w -refsym trial /home/student2/slogozzo/COE758/Project1/trial.sch /home/student2/slogozzo/COE758/Project1/trial.sym 
