@@ -1,0 +1,6 @@
+EN tagcomparedirectmapping NULL /home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd sub00/vhpl00 1696430563
+EN cachecontrollerfsm NULL /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd sub00/vhpl01 1696431587
+EN sdramcontroller NULL /home/student2/slogozzo/COE758/Project1/SDRAMController.vhd sub00/vhpl04 1696434036
+AR tagcomparedirectmapping behavioral /home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd sub00/vhpl02 1696430564
+AR sdramcontroller behavioral /home/student2/slogozzo/COE758/Project1/SDRAMController.vhd sub00/vhpl05 1696434037
+AR cachecontrollerfsm behavioral /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd sub00/vhpl03 1696431588

@@ -1,0 +1,5 @@
+set -tmpdir "/home/student2/slogozzo/COE758/Project1/xst/projnav.tmp"
+set -xsthdpdir "/home/student2/slogozzo/COE758/Project1/xst"
+elaborate
+-ifn TagCompareDirectMapping.prj
+-ifmt mixed
