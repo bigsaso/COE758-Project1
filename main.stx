@@ -1,0 +1,77 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/student2/slogozzo/COE758/Project1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/student2/slogozzo/COE758/Project1/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd" in Library work.
+Architecture behavioral of Entity tagcomparedirectmapping is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/ipcore_dir/sram.vhd" in Library work.
+Architecture sram_a of Entity sram is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/CPU_gen.vhd" in Library work.
+Entity <CPU_gen> compiled.
+Entity <CPU_gen> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" in Library work.
+Entity <CacheController> compiled.
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 83. Undefined symbol 'cpu_address'.
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 83. cpu_address: Undefined symbol (last report in this block)
+ERROR:HDLParsers:851 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 82. Formal CPU_ADD of TagCompareDirectMapping with no default value must be associated with an actual value.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 101. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 108. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 110. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 119. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 126. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 133. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 133. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 135. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 135. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 137. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 142. = can not have such operands in this context.
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 155. Undefined symbol 'cpu_rdy'.
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 158. cpu_rdy: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 161. Undefined symbol 'cache_address'.
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 161. Undefined symbol 'index_and_offset'.
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 161. index_and_offset: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 162. Undefined symbol 'cache_wen'.
+ERROR:HDLParsers:3313 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 163. Undefined symbol 'cache_din_wen'.  Should it be: cache_din_en?
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 169. cache_address: Undefined symbol (last report in this block)
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 170. cache_wen: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3313 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 171. Undefined symbol 'cache_dout_wen'.  Should it be: cache_dout_en?
+ERROR:HDLParsers:3312 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 175. Undefined symbol 'sdram_address'.
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 175. AND can not have such operands in this context.
+ERROR:HDLParsers:3313 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 176. Undefined symbol 'sdram_wen'.  Should it be: sram_wen?
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 177. cache_din_wen: Undefined symbol (last report in this block)
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 182. sdram_address: Undefined symbol (last report in this block)
+ERROR:HDLParsers:808 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 182. AND can not have such operands in this context.
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 183. sdram_wen: Undefined symbol (last report in this block)
+ERROR:HDLParsers:1209 - "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" Line 184. cache_dout_wen: Undefined symbol (last report in this block)
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> 
+
+
+Total memory usage is 596708 kilobytes
+
+Number of errors   :   32 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
