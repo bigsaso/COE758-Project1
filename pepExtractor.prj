@@ -1,1 +1,4 @@
-work	"CacheControllerFSM.vhd"
+work	"CacheController.vhd"
+work	"TagCompareDirectMapping.vhd"
+work	"ipcore_dir/icon.vhd"
+work	"ipcore_dir/sram.vhd"

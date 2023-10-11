@@ -25,21 +25,32 @@
     <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="CPU_gen.spl"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CPU_gen.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="CPU_gen.vhi"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheController.spl"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="CacheController.vhi"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CacheControllerFSM.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="CacheControllerFSM.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="CacheControllerFSM.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CacheControllerFSM.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="CacheControllerFSM.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="CacheControllerFSM.xst"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="CacheControllerSchematic.vhi"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="CacheControllerSchematic_drc.vhf"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SDRAMController.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="SDRAMController.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SDRAMController.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SDRAMController.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="SDRAMController.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TagCompareDirectMapping.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="TagCompareDirectMapping.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TagCompareDirectMapping.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="TagCompareDirectMapping.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="TagCompareDirectMapping.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="TagCompareDirectMapping.xst"/>
-    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="trial.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="main.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="main.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="main.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 

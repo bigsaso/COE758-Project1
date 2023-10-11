@@ -1,2 +1,3 @@
 vhdtdtfi -lib work CacheController.vhd -prj Project1 -o CacheController.spl -module CacheController -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan3e CacheController.spl /home/student2/slogozzo/COE758/Project1/CacheController.sym 
+vhdtdtfi -prj Project1 -o /home/student2/slogozzo/COE758/Project1/CacheController.vhi -module CacheController -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ipcore_dir/icon.vhd -lib work TagCompareDirectMapping.vhd -lib work ipcore_dir/sram.vhd -lib work CacheController.vhd 

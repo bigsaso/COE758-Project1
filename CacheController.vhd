@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    11:21:43 09/29/2023 
+-- Create Date:    13:25:54 10/02/2023 
 -- Design Name: 
--- Module Name:    CacheController - Behavioral 
+-- Module Name:    CacheControllerFSM - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -33,62 +33,90 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity CacheController is
-    Port ( ADD : in  STD_LOGIC_VECTOR (16 downto 0);
+    Port ( clk : in  STD_LOGIC;
            WR_RD : in  STD_LOGIC;
            CS : in  STD_LOGIC;
-           Clk : in  STD_LOGIC;
-           SDRAM_ADD : out  STD_LOGIC_VECTOR (16 downto 0);
+           CPU_ADD : in  STD_LOGIC_VECTOR (15 downto 0);
+			  SDRAM_ADD : out STD_LOGIC_VECTOR(15 DOWNTO 0);
+			  CACHE_ADD : out STD_LOGIC_VECTOR(7 DOWNTO 0);
+           WEN_CACHE : out  STD_LOGIC;
+           CACHE_DIN_EN : out  STD_LOGIC;
+           CACHE_DOUT_EN : out  STD_LOGIC;
            WEN_SDRAM : out  STD_LOGIC;
            MSTRB : out  STD_LOGIC;
-           RDY : out  STD_LOGIC;
-           CACHE_ADD : out  STD_LOGIC_VECTOR (8 downto 0);
-           WEN_CACHE : out  STD_LOGIC;
-           CACHE_DOUT_EN : out  STD_LOGIC;
-           CACHE_DIN_EN : out  STD_LOGIC);
+           RDY : out  STD_LOGIC);
 end CacheController;
 
 architecture Behavioral of CacheController is
+	-- Tag compare component
+	COMPONENT TagCompareDirectMapping
+	PORT(
+		CPU_ADD : IN std_logic_vector(15 downto 0);
+		clk : IN std_logic;          
+		HIT_MISS : OUT std_logic
+		);
+	END COMPONENT;
+	-- Tag compare signals
+	signal hit_miss_signal: STD_LOGIC;
 	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
 	signal yfsm : state_type;
-	-- CPU signals
-	signal CPU_DOUT, CPU_DIN : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal CPU_ADD : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	signal CPU_TAG : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal CPU_INDEX : STD_LOGIC_VECTOR(2 DOWNTO 0);
-	signal CPU_OFFSET : STD_LOGIC_VECTOR(4 DOWNTO 0);
-	signal CPU_WR_RD, CPU_CS, CPU_RDY : STD_LOGIC;
-	signal TAG_INDEX : STD_LOGIC_VECTOR(10 DOWNTO 0);
-	-- Cache SRAM signals
-	signal DIRTY_BIT : STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
-	signal VALID_BIT : STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
-	signal CACHE_ADD, CACHE_DIN, CACHE_DOUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal CACHE_WEN : STD_LOGIC;
-	-- SDRAM controller signals
-	signal SDRAM_DIN : STD_LOGIC;
+	-- SRAM component
+	COMPONENT sram
+	  PORT (
+		 clka : IN STD_LOGIC;
+		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+		 addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	  );
+	END COMPONENT;
+	-- SRAM signals
+	signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal dirty_bit : STD_LOGIC:=sram_add(7);
+   signal valid_bit : STD_LOGIC:=sram_add(6);
 	
-
+	-- Various signals
+	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0) := CPU_ADD(7 DOWNTO 0);
+	signal dirty_bit: STD_LOGIC := CPU_ADD(15);
+	signal valid_bit: STD_LOGIC := CPU_ADD(14);
+	
 begin
+	sys_tag_compare: TagCompareDirectMapping PORT MAP(
+		CPU_ADD => cpu_address,
+		clk => clk,
+		HIT_MISS => hit_miss_signal
+	);
+	local_sram : sram
+	  PORT MAP (
+		 clka => clk,
+		 wea => sram_wen,
+		 addra => sram_add,
+		 dina => sram_din,
+		 douta => sram_dout
+	  );
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then
-			case ysfm is
+			case yfsm is
 				-- Processing s0 - Idle
 				when s0 =>
-					if(CS = '1') then
+					if(cpu_cs = '1') then
 						yfsm <= s1;
 					else
 						yfsm <= s0;
 					end if;
 				-- Processing s1 - Operating
 				when s1 =>
-					if(Hit/Miss='0' AND WR_RD='1') then
+					if(hit_miss_signal='1' AND WR_RD='1') then
 						yfsm <= s2;
-					elsif(Hit/Miss='0' AND WR_RD='0') then
+					elsif(hit_miss_signal='1' AND WR_RD='0') then
 						yfsm <= s3;
-					elsif(Hit/Miss='1' AND ADD(15)='0') then
+					elsif(hit_miss_signal='0' AND dirty_bit='0') then
 						yfsm <= s4;
-					elsif(Hit/Miss='1' AND ADD(15)='1') then
+					elsif(hit_miss_signal='0' AND dirty_bit='1') then
 						yfsm <= s5;
 					end if;
 				-- Processing s2 - Cache hit and write
@@ -135,30 +163,32 @@ begin
 				RDY <= '0';
 			-- Generating outputs for s2
 			when s2 =>
+				CACHE_ADD <= index_and_offset;
 				WEN_CACHE <= '1';
 				CACHE_DIN_EN <= '0';
-				ADD(15) <= '1'; --dirty bit
-				ADD(14) <= '1'; --valid bit
+				dirty_bit <= '1'; --dirty bit
+				valid_bit <= '1'; --valid bit
 				RDY <= '1';
 			-- Generating outputs for s3
 			when s3 =>
+				CACHE_ADD <= index_and_offset;
 				WEN_CACHE <= '0';
 				CACHE_DOUT_EN <= '1';
 				RDY <= '1';
 			-- Generating outputs for s4
 			when s4 =>
+				SDRAM_ADD <= (CPU_ADD AND "1111111111100000");
 				WEN_SDRAM <= '0';
 				CACHE_DIN_EN <= '1';
 				WEN_CACHE <= '1';
-				ADD(14) <= '1'; --valid bit
+				valid_bit <= '1'; --valid bit
 			-- Generating outputs for s5
 			when s5 =>
+				SDRAM_ADD <= (CPU_ADD AND "1111111111100000");
 				WEN_SDRAM <= '1';
 				CACHE_DOUT_EN <= '0';
 		end case;
 	end process;
-					
-
 
 end Behavioral;
 

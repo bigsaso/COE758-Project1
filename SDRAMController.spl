@@ -1,0 +1,9 @@
+[Inputs]
+WR_RD
+MSTRB
+Clk
+=ADD[15:0]=
+=DIN[7:0]=
+[Outputs]
+=DOUT[7:0]=
+[BiDir]
