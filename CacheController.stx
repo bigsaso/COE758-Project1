@@ -4,15 +4,15 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to /home/student2/slogozzo/COE758/Project1/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to /home/student2/slogozzo/COE758/Project1/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
@@ -20,21 +20,20 @@ WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Onl
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/ipcore_dir/sdram.vhd" in Library work.
-Architecture sdram_a of Entity sdram is up to date.
-Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/SDRAMController.vhd" in Library work.
-Architecture behavioral of Entity sdramcontroller is up to date.
-Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/ipcore_dir/icon.vhd" in Library work.
-Architecture icon_a of Entity icon is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd" in Library work.
+Architecture behavioral of Entity tagcomparedirectmapping is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/CacheController.vhd" in Library work.
+Entity <cachecontroller> compiled.
+Entity <cachecontroller> (Architecture <behavioral>) compiled.
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 2.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> 
 
 
-Total memory usage is 596024 kilobytes
+Total memory usage is 596008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

@@ -61,22 +61,6 @@ architecture Behavioral of CacheController is
 	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
 	signal yfsm : state_type;
-	-- SRAM component
-	COMPONENT sram
-	  PORT (
-		 clka : IN STD_LOGIC;
-		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-		 addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-	  );
-	END COMPONENT;
-	-- SRAM signals
-	signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal dirty_bit : STD_LOGIC:=sram_add(7);
-   signal valid_bit : STD_LOGIC:=sram_add(6);
 	
 	-- Various signals
 	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0) := CPU_ADD(7 DOWNTO 0);
@@ -85,25 +69,17 @@ architecture Behavioral of CacheController is
 	
 begin
 	sys_tag_compare: TagCompareDirectMapping PORT MAP(
-		CPU_ADD => cpu_address,
+		CPU_ADD => CPU_ADD,
 		clk => clk,
 		HIT_MISS => hit_miss_signal
 	);
-	local_sram : sram
-	  PORT MAP (
-		 clka => clk,
-		 wea => sram_wen,
-		 addra => sram_add,
-		 dina => sram_din,
-		 douta => sram_dout
-	  );
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then
 			case yfsm is
 				-- Processing s0 - Idle
 				when s0 =>
-					if(cpu_cs = '1') then
+					if(CS = '1') then
 						yfsm <= s1;
 					else
 						yfsm <= s0;
@@ -121,34 +97,39 @@ begin
 					end if;
 				-- Processing s2 - Cache hit and write
 				when s2 =>
-					if(RDY='1') then
-						yfsm <= s0;
-					else
-						yfsm <= s2;
-					end if;
+--					if(RDY='1') then
+					yfsm <= s0;
+--					else
+--						yfsm <= s2;
+--					end if;
 				-- Processing s3 - Cache hit and read
 				when s3 =>
-					if(RDY='1') then
-						yfsm <= s0;
-					else
-						yfsm <= s3;
-					end if;
+--					if(RDY='1') then
+					yfsm <= s0;
+--					else
+--						yfsm <= s3;
+--					end if;
 				-- Processing s4 - Cache miss and dirty bit=0
 				when s4 =>
-					if(MSTRB='1' AND WR_RD='0') then
+--					if(MSTRB='1' AND WR_RD='0') then
+--						yfsm <= s3;
+--					elsif(MSTRB='1' AND WR_RD='1') then
+--						yfsm <= s2;
+--					elsif(MSTRB='0') then
+--						yfsm <= s4;
+--					end if;
+					if(WR_RD='0') then
 						yfsm <= s3;
-					elsif(MSTRB='1' AND WR_RD='1') then
+					elsif(WR_RD='1') then
 						yfsm <= s2;
-					elsif(MSTRB='0') then
-						yfsm <= s4;
 					end if;
 				-- Processing s5 - Cache miss and dirty bit=1
 				when s5 =>
-				if(MSTRB='1') then
+--				if(MSTRB='1') then
 					yfsm <= s4;
-				else
-					yfsm <= s5;
-				end if;
+--				else
+--					yfsm <= s5;
+--				end if;
 			end case;
 		end if;
 	end process;
