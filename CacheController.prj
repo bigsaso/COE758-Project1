@@ -1,0 +1,2 @@
+vhdl work "TagCompareDirectMapping.vhd"
+vhdl work "CacheController.vhd"

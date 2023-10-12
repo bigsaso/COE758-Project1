@@ -40,9 +40,9 @@ entity SDRAMController is
 end SDRAMController;
 
 architecture Behavioral of SDRAMController is
---	-- Array of 2048 blocks of Cache Memory
---	type rammemory is array (7 downto 0,31 DOWNTO 0) of STD_LOGIC_VECTOR(7 downto 0);
---	signal ram_signal: rammemory;
+	-- Array of 2048 blocks of Cache Memory
+	type rammemory is array (7 downto 0,31 DOWNTO 0) of STD_LOGIC_VECTOR(7 downto 0);
+	signal ram_signal: rammemory;
 	-- Counter signal - need to read 32 words one at a time
 	signal counter : integer := 0;
 	-- SDRAM component and signals

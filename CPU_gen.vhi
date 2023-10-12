@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file CPU_gen.vhd -- 11:45:47 10/11/2023
+-- VHDL Instantiation Created from source file CPU_gen.vhd -- 13:34:58 10/11/2023
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
