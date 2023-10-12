@@ -1,0 +1,5 @@
+sch2vhdl -intstyle ise -family spartan3e -tionly -w /home/student2/slogozzo/COE758/Project1/CacheControllerSchematic.sch CacheControllerSchematic.vhi 
+sch2hdl -sympath /home/student2/slogozzo/COE758/Project1/ipcore_dir -intstyle ise -family spartan3e -flat -suppress -vhdl CacheControllerSchematic.vhf -w /home/student2/slogozzo/COE758/Project1/CacheControllerSchematic.sch 
+sch2vhdl -intstyle ise -family spartan3e -tionly -w /home/student2/slogozzo/COE758/Project1/CacheControllerSchematic.sch CacheControllerSchematic.vhi 
+sch2hdl -sympath /home/student2/slogozzo/COE758/Project1/ipcore_dir -intstyle ise -family spartan3e -flat -suppress -vhdl CacheControllerSchematic_drc.vhf -w /home/student2/slogozzo/COE758/Project1/CacheControllerSchematic.sch 
+sch2hdl -sympath /home/student2/slogozzo/COE758/Project1/ipcore_dir -intstyle ise -family spartan3e -flat -suppress -vhdl CacheControllerSchematic.vhf -w /home/student2/slogozzo/COE758/Project1/CacheControllerSchematic.sch 

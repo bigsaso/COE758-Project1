@@ -1,0 +1,7 @@
+vhdl work "/home/student2/slogozzo/COE758/Project1/ipcore_dir/icon.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/TagCompareDirectMapping.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/ipcore_dir/sram.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/ipcore_dir/ila.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/CPU_gen.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/CacheController.vhd"
+vhdl work "/home/student2/slogozzo/COE758/Project1/main.vhd"

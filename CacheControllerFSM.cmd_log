@@ -8,3 +8,15 @@ vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.sp
 spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
 vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -lib work CacheControllerFSM.vhd -prj Project1 -o CacheControllerFSM.spl -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w CacheControllerFSM.spl /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.sym 
+vhdtdtfi -prj Project1 -o /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhi -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ipcore_dir/icon.vhd -lib work TagCompareDirectMapping.vhd -lib work ipcore_dir/sram.vhd -lib work ipcore_dir/ila.vhd -lib work CPU_gen.vhd -lib work CacheControllerFSM.vhd 
+vhdtdtfi -prj Project1 -o /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhi -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ipcore_dir/icon.vhd -lib work TagCompareDirectMapping.vhd -lib work ipcore_dir/sram.vhd -lib work ipcore_dir/ila.vhd -lib work CPU_gen.vhd -lib work CacheControllerFSM.vhd 
