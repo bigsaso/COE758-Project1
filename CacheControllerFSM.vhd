@@ -21,7 +21,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -39,11 +38,11 @@ entity CacheControllerFSM is
            CPU_ADD : in  STD_LOGIC_VECTOR (15 downto 0);
 			  SDRAM_ADD : out STD_LOGIC_VECTOR(15 DOWNTO 0);
 			  CACHE_ADD : out STD_LOGIC_VECTOR(7 DOWNTO 0);
-           WEN_CACHE : out  STD_LOGIC;
-           CACHE_DIN_EN : out  STD_LOGIC;
-           CACHE_DOUT_EN : out  STD_LOGIC;
+           CACHE_WEN : out  STD_LOGIC;
+           CACHE_DIN_WEN : out  STD_LOGIC;
+           CACHE_DOUT_WEN : out  STD_LOGIC;
            WEN_SDRAM : out  STD_LOGIC;
-           MSTRB : out  STD_LOGIC;
+           MEMSTRB : out  STD_LOGIC;
            RDY : out  STD_LOGIC);
 end CacheControllerFSM;
 
@@ -62,6 +61,7 @@ architecture Behavioral of CacheControllerFSM is
 		END COMPONENT;
 	-- CPU signals
 	signal cpu_reset: STD_LOGIC;
+	signal cpu_rdy: STD_LOGIC;
 	signal cpu_address: std_logic_vector(15 downto 0);
 	signal cpu_wr_rd: STD_LOGIC;
 	signal cpu_cs: STD_LOGIC;
@@ -90,12 +90,12 @@ architecture Behavioral of CacheControllerFSM is
 	  PORT (
 		 CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
 		 CLK : IN STD_LOGIC;
-		 DATA : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+		 DATA : IN STD_LOGIC_VECTOR(84 DOWNTO 0);
 		 TRIG0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0));
 	end component;
 	--ICON and ILA signals
 	signal control0: STD_LOGIC_VECTOR(35 DOWNTO 0);
-	signal ila_data: STD_LOGIC_VECTOR(63 DOWNTO 0);
+	signal ila_data: STD_LOGIC_VECTOR(84 DOWNTO 0);
 	signal ila_trig0: STD_LOGIC_VECTOR(7 DOWNTO 0);
 	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
@@ -116,6 +116,9 @@ architecture Behavioral of CacheControllerFSM is
 	signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal dirty_bit : STD_LOGIC:=sram_add(7);
    signal valid_bit : STD_LOGIC:=sram_add(6);
+	-- SDRAM signals
+	signal sdram_din, sdram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal sdram_wen: STD_LOGIC;
 	
 begin
 	sys_cpu: CPU_gen PORT MAP(
@@ -215,7 +218,7 @@ begin
 				cpu_rdy <= '0';
 			-- Generating outputs for s2
 			when s2 =>
-				cache_address <= index_and_offset;
+				cache_add <= index_and_offset;
 				cache_wen <= '1';
 				cache_din_wen <= '0';
 				dirty_bit <= '1'; --dirty bit
@@ -223,20 +226,20 @@ begin
 				cpu_rdy <= '1';
 			-- Generating outputs for s3
 			when s3 =>
-				cache_address <= index_and_offset;
+				cache_add <= index_and_offset;
 				cache_wen <= '0';
 				cache_dout_wen <= '1';
 				cpu_rdy <= '1';
 			-- Generating outputs for s4
 			when s4 =>
-				sdram_address <= (cpu_address AND "1111111111100000");
+				sdram_add <= (cpu_add AND "1111111111100000");
 				sdram_wen <= '0';
 				cache_din_wen <= '1';
 				cache_wen <= '1';
 				valid_bit <= '1'; --valid bit
 			-- Generating outputs for s5
 			when s5 =>
-				sdram_address <= (cpu_address AND "1111111111100000");
+				sdram_add <= (cpu_add AND "1111111111100000");
 				sdram_wen <= '1';
 				cache_dout_wen <= '0';
 		end case;

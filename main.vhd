@@ -214,7 +214,7 @@ begin
 	ila_data(18) <= cpu_cs;
 	ila_data(19) <= sram_dirty_bit;
 	ila_data(20) <= sram_valid_bit;
-	ila_data(28 DOWNTO 21) <= sram_address;
+	ila_data(28 DOWNTO 21) <= sram_add;
 	ila_data(36 DOWNTO 29) <= sram_din;
 	ila_data(44 DOWNTO 37) <= sram_dout;
 	ila_data(60 DOWNTO 45) <= sdram_address;
