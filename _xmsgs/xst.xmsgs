@@ -5,16 +5,19 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLParsers" num="3312" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/SDRAMController.vhd</arg>&quot; Line <arg fmt="%d" index="2">77</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">ram_signal</arg>&apos;.
+<msg type="error" file="HDLParsers" num="1411" delta="new" >&quot;<arg fmt="%s" index="1">D:/COE758/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; Line <arg fmt="%d" index="2">127</arg>. Parameter <arg fmt="%s" index="3">rdy</arg> of mode <arg fmt="%s" index="4">out</arg> can not be associated with a formal <arg fmt="%s" index="5">port</arg> of mode <arg fmt="%s" index="6">in</arg>.
 </msg>
 
-<msg type="error" file="HDLParsers" num="1209" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/SDRAMController.vhd</arg>&quot; Line <arg fmt="%d" index="2">77</arg>. <arg fmt="%s" index="3">ram_signal</arg>: Undefined symbol (last report in this block)
+<msg type="error" file="HDLParsers" num="1401" delta="new" >&quot;<arg fmt="%s" index="1">D:/COE758/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; Line <arg fmt="%d" index="2">195</arg>. Object <arg fmt="%s" index="3">memstrb</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
 </msg>
 
-<msg type="error" file="HDLParsers" num="3312" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/SDRAMController.vhd</arg>&quot; Line <arg fmt="%d" index="2">83</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">ram_signal</arg>&apos;.
+<msg type="error" file="HDLParsers" num="1401" delta="new" >&quot;<arg fmt="%s" index="1">D:/COE758/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; Line <arg fmt="%d" index="2">197</arg>. Object <arg fmt="%s" index="3">memstrb</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
 </msg>
 
-<msg type="error" file="HDLParsers" num="1209" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/SDRAMController.vhd</arg>&quot; Line <arg fmt="%d" index="2">83</arg>. <arg fmt="%s" index="3">ram_signal</arg>: Undefined symbol (last report in this block)
+<msg type="error" file="HDLParsers" num="1401" delta="new" >&quot;<arg fmt="%s" index="1">D:/COE758/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; Line <arg fmt="%d" index="2">193</arg>. Object <arg fmt="%s" index="3">memstrb</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1401" delta="new" >&quot;<arg fmt="%s" index="1">D:/COE758/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; Line <arg fmt="%d" index="2">202</arg>. Object <arg fmt="%s" index="3">memstrb</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
 </msg>
 
 </messages>
