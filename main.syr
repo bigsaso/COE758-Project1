@@ -1,0 +1,561 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd" in Library work.
+Architecture sdram_a of Entity sdram is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" in Library work.
+Architecture behavioral of Entity tagcomparedirectmapping is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd" in Library work.
+Architecture sram_a of Entity sram is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd" in Library work.
+Architecture behavioral of Entity cpu_gen is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" in Library work.
+Architecture behavioral of Entity cachecontrollerfsm is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd" in Library work.
+Architecture behavioral of Entity sdramcontroller is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd" in Library work.
+Architecture icon_a of Entity icon is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/ila.vhd" in Library work.
+Architecture ila_a of Entity ila is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/vio.vhd" in Library work.
+Architecture vio_a of Entity vio is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <main> in library <work> (architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 56: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 102: Default value is ignored for signal <sram_dirty_bit>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 103: Default value is ignored for signal <sram_valid_bit>.
+
+Analyzing hierarchy for entity <CPU_gen> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <CacheControllerFSM> in library <work> (architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 70: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 71: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 72: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 73: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 118: Default value is ignored for signal <dirty_bit>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 119: Default value is ignored for signal <valid_bit>.
+
+Analyzing hierarchy for entity <SDRAMController> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <TagCompareDirectMapping> in library <work> (architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 47: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 48: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 49: Default value is ignored for signal <cpu_offset>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <main> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 56: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 102: Default value is ignored for signal <sram_dirty_bit>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 103: Default value is ignored for signal <sram_valid_bit>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 171: Instantiating black box module <sram>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 187: Instantiating black box module <icon>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 190: Instantiating black box module <ila>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 196: Instantiating black box module <vio>.
+Entity <main> analyzed. Unit <main> generated.
+
+Analyzing Entity <CPU_gen> in library <work> (Architecture <behavioral>).
+Entity <CPU_gen> analyzed. Unit <CPU_gen> generated.
+
+Analyzing Entity <CacheControllerFSM> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 70: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 71: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 72: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 73: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 118: Default value is ignored for signal <dirty_bit>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 119: Default value is ignored for signal <valid_bit>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 148: Instantiating black box module <sram>.
+WARNING:Xst:819 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 225: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <index_and_offset>, <CPU_ADD>
+INFO:Xst:2679 - Register <dirty_bit> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <valid_bit> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <MEMSTRB> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
+Entity <CacheControllerFSM> analyzed. Unit <CacheControllerFSM> generated.
+
+Analyzing Entity <TagCompareDirectMapping> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 47: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 48: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 49: Default value is ignored for signal <cpu_offset>.
+Entity <TagCompareDirectMapping> analyzed. Unit <TagCompareDirectMapping> generated.
+
+Analyzing Entity <SDRAMController> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd" line 63: Instantiating black box module <sdram>.
+Entity <SDRAMController> analyzed. Unit <SDRAMController> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <CPU_gen>.
+    Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd".
+    Found finite state machine <FSM_0> for signal <st1>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8x25-bit ROM for signal <patOut>.
+WARNING:Xst:737 - Found 1-bit latch for signal <updPat>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <cs>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit up counter for signal <patCtrl>.
+    Found 1-bit register for signal <rReg1>.
+    Found 1-bit register for signal <rReg2>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <CPU_gen> synthesized.
+
+
+Synthesizing Unit <TagCompareDirectMapping>.
+    Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd".
+WARNING:Xst:1305 - Output <HIT_MISS> is never assigned. Tied to value 0.
+WARNING:Xst:647 - Input <CPU_ADD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <trial> is used but never assigned. This sourceless signal will be automatically connected to value 10000000.
+WARNING:Xst:1780 - Signal <memtag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <is_cache_hit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <cpu_tag> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_address> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <TagCompareDirectMapping> synthesized.
+
+
+Synthesizing Unit <CacheControllerFSM>.
+    Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd".
+WARNING:Xst:1305 - Output <DEBUG<15:3>> is never assigned. Tied to value 0000000000000.
+WARNING:Xst:646 - Signal <valid_bit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sram_wen<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <sram_dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sram_din> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <sram_add> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <index_and_offset> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:1780 - Signal <cpu_tag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_1> for signal <yfsm>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | s0                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <RDY>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_DOUT_WEN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 8-bit latch for signal <CACHE_ADD>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_WEN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 16-bit latch for signal <SDRAM_ADD>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <WEN_SDRAM>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_DIN_WEN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <DEBUG<2:0>>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   3 D-type flip-flop(s).
+Unit <CacheControllerFSM> synthesized.
+
+
+Synthesizing Unit <SDRAMController>.
+    Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd".
+WARNING:Xst:647 - Input <ADD<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <sdram_wen<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <sdram_dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sdram_din> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <sdram_add> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+WARNING:Xst:653 - Signal <counter> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+    Found 8-bit register for signal <DOUT>.
+    Found 8-bit 32-to-1 multiplexer for signal <DOUT$mux0000> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0001> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0002> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0003> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0004> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0005> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0006> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0007> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0008> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0009> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0010> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0011> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0012> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0013> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0014> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0015> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0016> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0017> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0018> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0019> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0020> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0021> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0022> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0023> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0024> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0025> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0026> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0027> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0028> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0029> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0030> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0031> created at line 85.
+    Found 8-bit 8-to-1 multiplexer for signal <DOUT$mux0032> created at line 85.
+    Found 256-bit register for signal <ram_signal<0>>.
+    Found 256-bit register for signal <ram_signal<1>>.
+    Found 256-bit register for signal <ram_signal<2>>.
+    Found 256-bit register for signal <ram_signal<3>>.
+    Found 256-bit register for signal <ram_signal<4>>.
+    Found 256-bit register for signal <ram_signal<5>>.
+    Found 256-bit register for signal <ram_signal<6>>.
+    Found 256-bit register for signal <ram_signal<7>>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<0>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<1>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<2>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<3>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<4>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<5>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<6>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <ram_signal<7>>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 2056 D-type flip-flop(s).
+	inferred 264 Multiplexer(s).
+Unit <SDRAMController> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd".
+WARNING:Xst:646 - Signal <vio_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sram_wen<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <sram_valid_bit> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <sram_dirty_bit> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <sram_add> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <sdram_wr_rd> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <sdram_wen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sdram_mstrb> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <memstrb> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <index_and_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <ila_trig0> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <ila_data<98:88>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000.
+WARNING:Xst:646 - Signal <debug<15:3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_tag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <cpu_reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cache_wen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cache_address> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <sdram_din>.
+    Found 8-bit register for signal <sram_din>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 8x25-bit ROM                                          : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 264
+ 1-bit register                                        : 5
+ 8-bit register                                        : 259
+# Latches                                              : 9
+ 1-bit latch                                           : 7
+ 16-bit latch                                          : 1
+ 8-bit latch                                           : 1
+# Multiplexers                                         : 33
+ 8-bit 32-to-1 multiplexer                             : 1
+ 8-bit 8-to-1 multiplexer                              : 32
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <sys_cache_controller/yfsm/FSM> on signal <yfsm[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ s0    | 000001
+ s1    | 000010
+ s2    | 000100
+ s3    | 001000
+ s4    | 100000
+ s5    | 010000
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <sys_cpu/st1/FSM> on signal <st1[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000001
+ 001   | 000010
+ 010   | 000100
+ 011   | 001000
+ 100   | 010000
+ 101   | 100000
+-------------------
+Reading core <ipcore_dir/sram.ngc>.
+Reading core <ipcore_dir/icon.ngc>.
+Reading core <ipcore_dir/ila.ngc>.
+Reading core <ipcore_dir/vio.ngc>.
+Reading core <ipcore_dir/sdram.ngc>.
+Loading core <sram> for timing and area information for instance <local_sram>.
+Loading core <icon> for timing and area information for instance <sys_icon>.
+Loading core <ila> for timing and area information for instance <sys_ila>.
+Loading core <vio> for timing and area information for instance <sys_vio>.
+Loading core <sdram> for timing and area information for instance <sdram_memory>.
+Loading core <sram> for timing and area information for instance <local_sram>.
+WARNING:Xst:1290 - Hierarchical block <sys_tag_compare> is unconnected in block <sys_cache_controller>.
+   It will be removed from the design.
+INFO:Xst:2261 - The FF/Latch <ram_signal<4>_7_4> in Unit <sys_sdram_controller> is equivalent to the following 1023 FFs/Latches, which will be removed : <ram_signal<4>_7_5> <ram_signal<4>_7_6> <ram_signal<4>_7_7> <ram_signal<4>_5_4> <ram_signal<4>_5_5> <ram_signal<4>_5_6> <ram_signal<4>_5_7> <ram_signal<4>_6_4> <ram_signal<4>_6_5> <ram_signal<4>_6_6> <ram_signal<4>_6_7> <ram_signal<4>_8_4> <ram_signal<4>_8_5> <ram_signal<4>_8_6> <ram_signal<4>_8_7> <ram_signal<4>_9_4> <ram_signal<4>_9_5> <ram_signal<4>_9_6> <ram_signal<4>_9_7> <ram_signal<1>_2_4> <ram_signal<1>_2_5> <ram_signal<1>_2_6> <ram_signal<1>_2_7> <ram_signal<1>_0_4> <ram_signal<1>_0_5> <ram_signal<1>_0_6> <ram_signal<1>_0_7> <ram_signal<1>_1_4> <ram_signal<1>_1_5> <ram_signal<1>_1_6> <ram_signal<1>_1_7> <ram_signal<6>_0_4> <ram_signal<6>_0_5> <ram_signal<6>_0_6> <ram_signal<6>_0_7> <ram_signal<1>_3_4> <ram_signal<1>_3_5> <ram_signal<1>_3_6> <ram_signal<1>_3_7> <ram_signal<6>_2_4> <ram_signal<6>_2_5> <ram_signal<6>_2_6> <ram_signal<6>_2_7>
+   <ram_signal<6>_1_4> <ram_signal<6>_1_5> <ram_signal<6>_1_6> <ram_signal<6>_1_7> <ram_signal<1>_4_4> <ram_signal<1>_4_5> <ram_signal<1>_4_6> <ram_signal<1>_4_7> <ram_signal<1>_5_4> <ram_signal<1>_5_5> <ram_signal<1>_5_6> <ram_signal<1>_5_7> <ram_signal<6>_3_4> <ram_signal<6>_3_5> <ram_signal<6>_3_6> <ram_signal<6>_3_7> <ram_signal<1>_6_4> <ram_signal<1>_6_5> <ram_signal<1>_6_6> <ram_signal<1>_6_7> <ram_signal<6>_4_4> <ram_signal<6>_4_5> <ram_signal<6>_4_6> <ram_signal<6>_4_7> <ram_signal<1>_7_4> <ram_signal<1>_7_5> <ram_signal<1>_7_6> <ram_signal<1>_7_7> <ram_signal<6>_5_4> <ram_signal<6>_5_5> <ram_signal<6>_5_6> <ram_signal<6>_5_7> <ram_signal<1>_9_4> <ram_signal<1>_9_5> <ram_signal<1>_9_6> <ram_signal<1>_9_7> <ram_signal<1>_8_4> <ram_signal<1>_8_5> <ram_signal<1>_8_6> <ram_signal<1>_8_7> <ram_signal<6>_6_4> <ram_signal<6>_6_5> <ram_signal<6>_6_6> <ram_signal<6>_6_7> <ram_signal<6>_7_4> <ram_signal<6>_7_5> <ram_signal<6>_7_6> <ram_signal<6>_7_7> <ram_signal<6>_8_4> <ram_signal<6>_8_5> <ram_signal<6>_8_6>
+   <ram_signal<6>_8_7> <ram_signal<6>_9_4> <ram_signal<6>_9_5> <ram_signal<6>_9_6> <ram_signal<6>_9_7> <ram_signal<3>_0_4> <ram_signal<3>_0_5> <ram_signal<3>_0_6> <ram_signal<3>_0_7> <ram_signal<3>_1_4> <ram_signal<3>_1_5> <ram_signal<3>_1_6> <ram_signal<3>_1_7> <ram_signal<3>_4_4> <ram_signal<3>_4_5> <ram_signal<3>_4_6> <ram_signal<3>_4_7> <ram_signal<3>_2_4> <ram_signal<3>_2_5> <ram_signal<3>_2_6> <ram_signal<3>_2_7> <ram_signal<3>_3_4> <ram_signal<3>_3_5> <ram_signal<3>_3_6> <ram_signal<3>_3_7> <ram_signal<3>_5_4> <ram_signal<3>_5_5> <ram_signal<3>_5_6> <ram_signal<3>_5_7> <ram_signal<3>_6_4> <ram_signal<3>_6_5> <ram_signal<3>_6_6> <ram_signal<3>_6_7> <ram_signal<3>_7_4> <ram_signal<3>_7_5> <ram_signal<3>_7_6> <ram_signal<3>_7_7> <ram_signal<3>_8_4> <ram_signal<3>_8_5> <ram_signal<3>_8_6> <ram_signal<3>_8_7> <ram_signal<3>_9_4> <ram_signal<3>_9_5> <ram_signal<3>_9_6> <ram_signal<3>_9_7> <ram_signal<0>_10_4> <ram_signal<0>_10_5> <ram_signal<0>_10_6> <ram_signal<0>_10_7> <ram_signal<1>_10_4>
+   <ram_signal<1>_10_5> <ram_signal<1>_10_6> <ram_signal<1>_10_7> <ram_signal<0>_11_4> <ram_signal<0>_11_5> <ram_signal<0>_11_6> <ram_signal<0>_11_7> <ram_signal<0>_12_4> <ram_signal<0>_12_5> <ram_signal<0>_12_6> <ram_signal<0>_12_7> <ram_signal<0>_13_4> <ram_signal<0>_13_5> <ram_signal<0>_13_6> <ram_signal<0>_13_7> <ram_signal<0>_0_4> <ram_signal<0>_0_5> <ram_signal<0>_0_6> <ram_signal<0>_0_7> <ram_signal<1>_11_4> <ram_signal<1>_11_5> <ram_signal<1>_11_6> <ram_signal<1>_11_7> <ram_signal<0>_14_4> <ram_signal<0>_14_5> <ram_signal<0>_14_6> <ram_signal<0>_14_7> <ram_signal<0>_1_4> <ram_signal<0>_1_5> <ram_signal<0>_1_6> <ram_signal<0>_1_7> <ram_signal<1>_12_4> <ram_signal<1>_12_5> <ram_signal<1>_12_6> <ram_signal<1>_12_7> <ram_signal<2>_10_4> <ram_signal<2>_10_5> <ram_signal<2>_10_6> <ram_signal<2>_10_7> <ram_signal<0>_20_4> <ram_signal<0>_20_5> <ram_signal<0>_20_6> <ram_signal<0>_20_7> <ram_signal<0>_15_4> <ram_signal<0>_15_5> <ram_signal<0>_15_6> <ram_signal<0>_15_7> <ram_signal<0>_2_4> <ram_signal<0>_2_5>
+   <ram_signal<0>_2_6> <ram_signal<0>_2_7> <ram_signal<1>_13_4> <ram_signal<1>_13_5> <ram_signal<1>_13_6> <ram_signal<1>_13_7> <ram_signal<0>_21_4> <ram_signal<0>_21_5> <ram_signal<0>_21_6> <ram_signal<0>_21_7> <ram_signal<0>_16_4> <ram_signal<0>_16_5> <ram_signal<0>_16_6> <ram_signal<0>_16_7> <ram_signal<5>_0_4> <ram_signal<5>_0_5> <ram_signal<5>_0_6> <ram_signal<5>_0_7> <ram_signal<2>_11_4> <ram_signal<2>_11_5> <ram_signal<2>_11_6> <ram_signal<2>_11_7> <ram_signal<0>_22_4> <ram_signal<0>_22_5> <ram_signal<0>_22_6> <ram_signal<0>_22_7> <ram_signal<0>_3_4> <ram_signal<0>_3_5> <ram_signal<0>_3_6> <ram_signal<0>_3_7> <ram_signal<1>_14_4> <ram_signal<1>_14_5> <ram_signal<1>_14_6> <ram_signal<1>_14_7> <ram_signal<0>_17_4> <ram_signal<0>_17_5> <ram_signal<0>_17_6> <ram_signal<0>_17_7> <ram_signal<5>_1_4> <ram_signal<5>_1_5> <ram_signal<5>_1_6> <ram_signal<5>_1_7> <ram_signal<2>_12_4> <ram_signal<2>_12_5> <ram_signal<2>_12_6> <ram_signal<2>_12_7> <ram_signal<0>_4_4> <ram_signal<0>_4_5> <ram_signal<0>_4_6>
+   <ram_signal<0>_4_7> <ram_signal<1>_20_4> <ram_signal<1>_20_5> <ram_signal<1>_20_6> <ram_signal<1>_20_7> <ram_signal<1>_15_4> <ram_signal<1>_15_5> <ram_signal<1>_15_6> <ram_signal<1>_15_7> <ram_signal<0>_18_4> <ram_signal<0>_18_5> <ram_signal<0>_18_6> <ram_signal<0>_18_7> <ram_signal<3>_10_4> <ram_signal<3>_10_5> <ram_signal<3>_10_6> <ram_signal<3>_10_7> <ram_signal<0>_23_4> <ram_signal<0>_23_5> <ram_signal<0>_23_6> <ram_signal<0>_23_7> <ram_signal<5>_2_4> <ram_signal<5>_2_5> <ram_signal<5>_2_6> <ram_signal<5>_2_7> <ram_signal<2>_13_4> <ram_signal<2>_13_5> <ram_signal<2>_13_6> <ram_signal<2>_13_7> <ram_signal<0>_5_4> <ram_signal<0>_5_5> <ram_signal<0>_5_6> <ram_signal<0>_5_7> <ram_signal<1>_21_4> <ram_signal<1>_21_5> <ram_signal<1>_21_6> <ram_signal<1>_21_7> <ram_signal<1>_16_4> <ram_signal<1>_16_5> <ram_signal<1>_16_6> <ram_signal<1>_16_7> <ram_signal<3>_11_4> <ram_signal<3>_11_5> <ram_signal<3>_11_6> <ram_signal<3>_11_7> <ram_signal<5>_3_4> <ram_signal<5>_3_5> <ram_signal<5>_3_6> <ram_signal<5>_3_7>
+   <ram_signal<0>_24_4> <ram_signal<0>_24_5> <ram_signal<0>_24_6> <ram_signal<0>_24_7> <ram_signal<0>_19_4> <ram_signal<0>_19_5> <ram_signal<0>_19_6> <ram_signal<0>_19_7> <ram_signal<2>_14_4> <ram_signal<2>_14_5> <ram_signal<2>_14_6> <ram_signal<2>_14_7> <ram_signal<0>_6_4> <ram_signal<0>_6_5> <ram_signal<0>_6_6> <ram_signal<0>_6_7> <ram_signal<1>_22_4> <ram_signal<1>_22_5> <ram_signal<1>_22_6> <ram_signal<1>_22_7> <ram_signal<1>_17_4> <ram_signal<1>_17_5> <ram_signal<1>_17_6> <ram_signal<1>_17_7> <ram_signal<3>_12_4> <ram_signal<3>_12_5> <ram_signal<3>_12_6> <ram_signal<3>_12_7> <ram_signal<0>_30_4> <ram_signal<0>_30_5> <ram_signal<0>_30_6> <ram_signal<0>_30_7> <ram_signal<2>_20_4> <ram_signal<2>_20_5> <ram_signal<2>_20_6> <ram_signal<2>_20_7> <ram_signal<0>_25_4> <ram_signal<0>_25_5> <ram_signal<0>_25_6> <ram_signal<0>_25_7> <ram_signal<5>_4_4> <ram_signal<5>_4_5> <ram_signal<5>_4_6> <ram_signal<5>_4_7> <ram_signal<2>_15_4> <ram_signal<2>_15_5> <ram_signal<2>_15_6> <ram_signal<2>_15_7> <ram_signal<4>_10_4>
+   <ram_signal<4>_10_5> <ram_signal<4>_10_6> <ram_signal<4>_10_7> <ram_signal<0>_7_4> <ram_signal<0>_7_5> <ram_signal<0>_7_6> <ram_signal<0>_7_7> <ram_signal<1>_23_4> <ram_signal<1>_23_5> <ram_signal<1>_23_6> <ram_signal<1>_23_7> <ram_signal<1>_18_4> <ram_signal<1>_18_5> <ram_signal<1>_18_6> <ram_signal<1>_18_7> <ram_signal<3>_13_4> <ram_signal<3>_13_5> <ram_signal<3>_13_6> <ram_signal<3>_13_7> <ram_signal<0>_26_4> <ram_signal<0>_26_5> <ram_signal<0>_26_6> <ram_signal<0>_26_7> <ram_signal<5>_5_4> <ram_signal<5>_5_5> <ram_signal<5>_5_6> <ram_signal<5>_5_7> <ram_signal<0>_31_4> <ram_signal<0>_31_5> <ram_signal<0>_31_6> <ram_signal<0>_31_7> <ram_signal<2>_21_4> <ram_signal<2>_21_5> <ram_signal<2>_21_6> <ram_signal<2>_21_7> <ram_signal<2>_16_4> <ram_signal<2>_16_5> <ram_signal<2>_16_6> <ram_signal<2>_16_7> <ram_signal<4>_11_4> <ram_signal<4>_11_5> <ram_signal<4>_11_6> <ram_signal<4>_11_7> <ram_signal<0>_8_4> <ram_signal<0>_8_5> <ram_signal<0>_8_6> <ram_signal<0>_8_7> <ram_signal<1>_24_4> <ram_signal<1>_24_5>
+   <ram_signal<1>_24_6> <ram_signal<1>_24_7> <ram_signal<1>_19_4> <ram_signal<1>_19_5> <ram_signal<1>_19_6> <ram_signal<1>_19_7> <ram_signal<0>_27_4> <ram_signal<0>_27_5> <ram_signal<0>_27_6> <ram_signal<0>_27_7> <ram_signal<3>_14_4> <ram_signal<3>_14_5> <ram_signal<3>_14_6> <ram_signal<3>_14_7> <ram_signal<5>_6_4> <ram_signal<5>_6_5> <ram_signal<5>_6_6> <ram_signal<5>_6_7> <ram_signal<2>_22_4> <ram_signal<2>_22_5> <ram_signal<2>_22_6> <ram_signal<2>_22_7> <ram_signal<2>_17_4> <ram_signal<2>_17_5> <ram_signal<2>_17_6> <ram_signal<2>_17_7> <ram_signal<4>_12_4> <ram_signal<4>_12_5> <ram_signal<4>_12_6> <ram_signal<4>_12_7> <ram_signal<0>_9_4> <ram_signal<0>_9_5> <ram_signal<0>_9_6> <ram_signal<0>_9_7> <ram_signal<1>_30_4> <ram_signal<1>_30_5> <ram_signal<1>_30_6> <ram_signal<1>_30_7> <ram_signal<1>_25_4> <ram_signal<1>_25_5> <ram_signal<1>_25_6> <ram_signal<1>_25_7> <ram_signal<5>_10_4> <ram_signal<5>_10_5> <ram_signal<5>_10_6> <ram_signal<5>_10_7> <ram_signal<3>_20_4> <ram_signal<3>_20_5> <ram_signal<3>_20_6>
+   <ram_signal<3>_20_7> <ram_signal<3>_15_4> <ram_signal<3>_15_5> <ram_signal<3>_15_6> <ram_signal<3>_15_7> <ram_signal<5>_7_4> <ram_signal<5>_7_5> <ram_signal<5>_7_6> <ram_signal<5>_7_7> <ram_signal<0>_28_4> <ram_signal<0>_28_5> <ram_signal<0>_28_6> <ram_signal<0>_28_7> <ram_signal<2>_23_4> <ram_signal<2>_23_5> <ram_signal<2>_23_6> <ram_signal<2>_23_7> <ram_signal<2>_18_4> <ram_signal<2>_18_5> <ram_signal<2>_18_6> <ram_signal<2>_18_7> <ram_signal<4>_13_4> <ram_signal<4>_13_5> <ram_signal<4>_13_6> <ram_signal<4>_13_7> <ram_signal<1>_31_4> <ram_signal<1>_31_5> <ram_signal<1>_31_6> <ram_signal<1>_31_7> <ram_signal<3>_16_4> <ram_signal<3>_16_5> <ram_signal<3>_16_6> <ram_signal<3>_16_7> <ram_signal<1>_26_4> <ram_signal<1>_26_5> <ram_signal<1>_26_6> <ram_signal<1>_26_7> <ram_signal<3>_21_4> <ram_signal<3>_21_5> <ram_signal<3>_21_6> <ram_signal<3>_21_7> <ram_signal<5>_11_4> <ram_signal<5>_11_5> <ram_signal<5>_11_6> <ram_signal<5>_11_7> <ram_signal<5>_8_4> <ram_signal<5>_8_5> <ram_signal<5>_8_6> <ram_signal<5>_8_7>
+   <ram_signal<0>_29_4> <ram_signal<0>_29_5> <ram_signal<0>_29_6> <ram_signal<0>_29_7> <ram_signal<2>_24_4> <ram_signal<2>_24_5> <ram_signal<2>_24_6> <ram_signal<2>_24_7> <ram_signal<2>_19_4> <ram_signal<2>_19_5> <ram_signal<2>_19_6> <ram_signal<2>_19_7> <ram_signal<4>_14_4> <ram_signal<4>_14_5> <ram_signal<4>_14_6> <ram_signal<4>_14_7> <ram_signal<3>_17_4> <ram_signal<3>_17_5> <ram_signal<3>_17_6> <ram_signal<3>_17_7> <ram_signal<1>_27_4> <ram_signal<1>_27_5> <ram_signal<1>_27_6> <ram_signal<1>_27_7> <ram_signal<3>_22_4> <ram_signal<3>_22_5> <ram_signal<3>_22_6> <ram_signal<3>_22_7> <ram_signal<5>_12_4> <ram_signal<5>_12_5> <ram_signal<5>_12_6> <ram_signal<5>_12_7> <ram_signal<5>_9_4> <ram_signal<5>_9_5> <ram_signal<5>_9_6> <ram_signal<5>_9_7> <ram_signal<2>_30_4> <ram_signal<2>_30_5> <ram_signal<2>_30_6> <ram_signal<2>_30_7> <ram_signal<2>_25_4> <ram_signal<2>_25_5> <ram_signal<2>_25_6> <ram_signal<2>_25_7> <ram_signal<4>_20_4> <ram_signal<4>_20_5> <ram_signal<4>_20_6> <ram_signal<4>_20_7>
+   <ram_signal<4>_15_4> <ram_signal<4>_15_5> <ram_signal<4>_15_6> <ram_signal<4>_15_7> <ram_signal<3>_23_4> <ram_signal<3>_23_5> <ram_signal<3>_23_6> <ram_signal<3>_23_7> <ram_signal<1>_28_4> <ram_signal<1>_28_5> <ram_signal<1>_28_6> <ram_signal<1>_28_7> <ram_signal<6>_10_4> <ram_signal<6>_10_5> <ram_signal<6>_10_6> <ram_signal<6>_10_7> <ram_signal<3>_18_4> <ram_signal<3>_18_5> <ram_signal<3>_18_6> <ram_signal<3>_18_7> <ram_signal<5>_13_4> <ram_signal<5>_13_5> <ram_signal<5>_13_6> <ram_signal<5>_13_7> <ram_signal<2>_31_4> <ram_signal<2>_31_5> <ram_signal<2>_31_6> <ram_signal<2>_31_7> <ram_signal<2>_26_4> <ram_signal<2>_26_5> <ram_signal<2>_26_6> <ram_signal<2>_26_7> <ram_signal<4>_16_4> <ram_signal<4>_16_5> <ram_signal<4>_16_6> <ram_signal<4>_16_7> <ram_signal<4>_21_4> <ram_signal<4>_21_5> <ram_signal<4>_21_6> <ram_signal<4>_21_7> <ram_signal<3>_24_4> <ram_signal<3>_24_5> <ram_signal<3>_24_6> <ram_signal<3>_24_7> <ram_signal<1>_29_4> <ram_signal<1>_29_5> <ram_signal<1>_29_6> <ram_signal<1>_29_7>
+   <ram_signal<6>_11_4> <ram_signal<6>_11_5> <ram_signal<6>_11_6> <ram_signal<6>_11_7> <ram_signal<3>_19_4> <ram_signal<3>_19_5> <ram_signal<3>_19_6> <ram_signal<3>_19_7> <ram_signal<5>_14_4> <ram_signal<5>_14_5> <ram_signal<5>_14_6> <ram_signal<5>_14_7> <ram_signal<4>_22_4> <ram_signal<4>_22_5> <ram_signal<4>_22_6> <ram_signal<4>_22_7> <ram_signal<2>_27_4> <ram_signal<2>_27_5> <ram_signal<2>_27_6> <ram_signal<2>_27_7> <ram_signal<4>_17_4> <ram_signal<4>_17_5> <ram_signal<4>_17_6> <ram_signal<4>_17_7> <ram_signal<6>_12_4> <ram_signal<6>_12_5> <ram_signal<6>_12_6> <ram_signal<6>_12_7> <ram_signal<3>_30_4> <ram_signal<3>_30_5> <ram_signal<3>_30_6> <ram_signal<3>_30_7> <ram_signal<5>_15_4> <ram_signal<5>_15_5> <ram_signal<5>_15_6> <ram_signal<5>_15_7> <ram_signal<3>_25_4> <ram_signal<3>_25_5> <ram_signal<3>_25_6> <ram_signal<3>_25_7> <ram_signal<5>_20_4> <ram_signal<5>_20_5> <ram_signal<5>_20_6> <ram_signal<5>_20_7> <ram_signal<2>_28_4> <ram_signal<2>_28_5> <ram_signal<2>_28_6> <ram_signal<2>_28_7>
+   <ram_signal<7>_10_4> <ram_signal<7>_10_5> <ram_signal<7>_10_6> <ram_signal<7>_10_7> <ram_signal<4>_18_4> <ram_signal<4>_18_5> <ram_signal<4>_18_6> <ram_signal<4>_18_7> <ram_signal<4>_23_4> <ram_signal<4>_23_5> <ram_signal<4>_23_6> <ram_signal<4>_23_7> <ram_signal<6>_13_4> <ram_signal<6>_13_5> <ram_signal<6>_13_6> <ram_signal<6>_13_7> <ram_signal<3>_31_4> <ram_signal<3>_31_5> <ram_signal<3>_31_6> <ram_signal<3>_31_7> <ram_signal<5>_16_4> <ram_signal<5>_16_5> <ram_signal<5>_16_6> <ram_signal<5>_16_7> <ram_signal<3>_26_4> <ram_signal<3>_26_5> <ram_signal<3>_26_6> <ram_signal<3>_26_7> <ram_signal<5>_21_4> <ram_signal<5>_21_5> <ram_signal<5>_21_6> <ram_signal<5>_21_7> <ram_signal<2>_29_4> <ram_signal<2>_29_5> <ram_signal<2>_29_6> <ram_signal<2>_29_7> <ram_signal<7>_11_4> <ram_signal<7>_11_5> <ram_signal<7>_11_6> <ram_signal<7>_11_7> <ram_signal<4>_19_4> <ram_signal<4>_19_5> <ram_signal<4>_19_6> <ram_signal<4>_19_7> <ram_signal<4>_24_4> <ram_signal<4>_24_5> <ram_signal<4>_24_6> <ram_signal<4>_24_7>
+   <ram_signal<6>_14_4> <ram_signal<6>_14_5> <ram_signal<6>_14_6> <ram_signal<6>_14_7> <ram_signal<3>_27_4> <ram_signal<3>_27_5> <ram_signal<3>_27_6> <ram_signal<3>_27_7> <ram_signal<2>_0_4> <ram_signal<2>_0_5> <ram_signal<2>_0_6> <ram_signal<2>_0_7> <ram_signal<5>_22_4> <ram_signal<5>_22_5> <ram_signal<5>_22_6> <ram_signal<5>_22_7> <ram_signal<5>_17_4> <ram_signal<5>_17_5> <ram_signal<5>_17_6> <ram_signal<5>_17_7> <ram_signal<7>_12_4> <ram_signal<7>_12_5> <ram_signal<7>_12_6> <ram_signal<7>_12_7> <ram_signal<4>_25_4> <ram_signal<4>_25_5> <ram_signal<4>_25_6> <ram_signal<4>_25_7> <ram_signal<4>_30_4> <ram_signal<4>_30_5> <ram_signal<4>_30_6> <ram_signal<4>_30_7> <ram_signal<6>_15_4> <ram_signal<6>_15_5> <ram_signal<6>_15_6> <ram_signal<6>_15_7> <ram_signal<6>_20_4> <ram_signal<6>_20_5> <ram_signal<6>_20_6> <ram_signal<6>_20_7> <ram_signal<3>_28_4> <ram_signal<3>_28_5> <ram_signal<3>_28_6> <ram_signal<3>_28_7> <ram_signal<2>_1_4> <ram_signal<2>_1_5> <ram_signal<2>_1_6> <ram_signal<2>_1_7> <ram_signal<5>_23_4>
+   <ram_signal<5>_23_5> <ram_signal<5>_23_6> <ram_signal<5>_23_7> <ram_signal<5>_18_4> <ram_signal<5>_18_5> <ram_signal<5>_18_6> <ram_signal<5>_18_7> <ram_signal<7>_13_4> <ram_signal<7>_13_5> <ram_signal<7>_13_6> <ram_signal<7>_13_7> <ram_signal<4>_26_4> <ram_signal<4>_26_5> <ram_signal<4>_26_6> <ram_signal<4>_26_7> <ram_signal<4>_31_4> <ram_signal<4>_31_5> <ram_signal<4>_31_6> <ram_signal<4>_31_7> <ram_signal<6>_16_4> <ram_signal<6>_16_5> <ram_signal<6>_16_6> <ram_signal<6>_16_7> <ram_signal<6>_21_4> <ram_signal<6>_21_5> <ram_signal<6>_21_6> <ram_signal<6>_21_7> <ram_signal<3>_29_4> <ram_signal<3>_29_5> <ram_signal<3>_29_6> <ram_signal<3>_29_7> <ram_signal<2>_2_4> <ram_signal<2>_2_5> <ram_signal<2>_2_6> <ram_signal<2>_2_7> <ram_signal<5>_19_4> <ram_signal<5>_19_5> <ram_signal<5>_19_6> <ram_signal<5>_19_7> <ram_signal<5>_24_4> <ram_signal<5>_24_5> <ram_signal<5>_24_6> <ram_signal<5>_24_7> <ram_signal<7>_14_4> <ram_signal<7>_14_5> <ram_signal<7>_14_6> <ram_signal<7>_14_7> <ram_signal<4>_27_4>
+   <ram_signal<4>_27_5> <ram_signal<4>_27_6> <ram_signal<4>_27_7> <ram_signal<6>_17_4> <ram_signal<6>_17_5> <ram_signal<6>_17_6> <ram_signal<6>_17_7> <ram_signal<7>_0_4> <ram_signal<7>_0_5> <ram_signal<7>_0_6> <ram_signal<7>_0_7> <ram_signal<6>_22_4> <ram_signal<6>_22_5> <ram_signal<6>_22_6> <ram_signal<6>_22_7> <ram_signal<5>_25_4> <ram_signal<5>_25_5> <ram_signal<5>_25_6> <ram_signal<5>_25_7> <ram_signal<7>_15_4> <ram_signal<7>_15_5> <ram_signal<7>_15_6> <ram_signal<7>_15_7> <ram_signal<5>_30_4> <ram_signal<5>_30_5> <ram_signal<5>_30_6> <ram_signal<5>_30_7> <ram_signal<2>_3_4> <ram_signal<2>_3_5> <ram_signal<2>_3_6> <ram_signal<2>_3_7> <ram_signal<7>_20_4> <ram_signal<7>_20_5> <ram_signal<7>_20_6> <ram_signal<7>_20_7> <ram_signal<4>_28_4> <ram_signal<4>_28_5> <ram_signal<4>_28_6> <ram_signal<4>_28_7> <ram_signal<6>_18_4> <ram_signal<6>_18_5> <ram_signal<6>_18_6> <ram_signal<6>_18_7> <ram_signal<7>_1_4> <ram_signal<7>_1_5> <ram_signal<7>_1_6> <ram_signal<7>_1_7> <ram_signal<6>_23_4> <ram_signal<6>_23_5>
+   <ram_signal<6>_23_6> <ram_signal<6>_23_7> <ram_signal<5>_26_4> <ram_signal<5>_26_5> <ram_signal<5>_26_6> <ram_signal<5>_26_7> <ram_signal<7>_16_4> <ram_signal<7>_16_5> <ram_signal<7>_16_6> <ram_signal<7>_16_7> <ram_signal<5>_31_4> <ram_signal<5>_31_5> <ram_signal<5>_31_6> <ram_signal<5>_31_7> <ram_signal<2>_4_4> <ram_signal<2>_4_5> <ram_signal<2>_4_6> <ram_signal<2>_4_7> <ram_signal<7>_21_4> <ram_signal<7>_21_5> <ram_signal<7>_21_6> <ram_signal<7>_21_7> <ram_signal<4>_29_4> <ram_signal<4>_29_5> <ram_signal<4>_29_6> <ram_signal<4>_29_7> <ram_signal<6>_19_4> <ram_signal<6>_19_5> <ram_signal<6>_19_6> <ram_signal<6>_19_7> <ram_signal<7>_2_4> <ram_signal<7>_2_5> <ram_signal<7>_2_6> <ram_signal<7>_2_7> <ram_signal<6>_24_4> <ram_signal<6>_24_5> <ram_signal<6>_24_6> <ram_signal<6>_24_7> <ram_signal<2>_5_4> <ram_signal<2>_5_5> <ram_signal<2>_5_6> <ram_signal<2>_5_7> <ram_signal<7>_22_4> <ram_signal<7>_22_5> <ram_signal<7>_22_6> <ram_signal<7>_22_7> <ram_signal<5>_27_4> <ram_signal<5>_27_5> <ram_signal<5>_27_6>
+   <ram_signal<5>_27_7> <ram_signal<7>_17_4> <ram_signal<7>_17_5> <ram_signal<7>_17_6> <ram_signal<7>_17_7> <ram_signal<6>_25_4> <ram_signal<6>_25_5> <ram_signal<6>_25_6> <ram_signal<6>_25_7> <ram_signal<7>_3_4> <ram_signal<7>_3_5> <ram_signal<7>_3_6> <ram_signal<7>_3_7> <ram_signal<6>_30_4> <ram_signal<6>_30_5> <ram_signal<6>_30_6> <ram_signal<6>_30_7> <ram_signal<2>_6_4> <ram_signal<2>_6_5> <ram_signal<2>_6_6> <ram_signal<2>_6_7> <ram_signal<5>_28_4> <ram_signal<5>_28_5> <ram_signal<5>_28_6> <ram_signal<5>_28_7> <ram_signal<7>_18_4> <ram_signal<7>_18_5> <ram_signal<7>_18_6> <ram_signal<7>_18_7> <ram_signal<7>_4_4> <ram_signal<7>_4_5> <ram_signal<7>_4_6> <ram_signal<7>_4_7> <ram_signal<7>_23_4> <ram_signal<7>_23_5> <ram_signal<7>_23_6> <ram_signal<7>_23_7> <ram_signal<6>_26_4> <ram_signal<6>_26_5> <ram_signal<6>_26_6> <ram_signal<6>_26_7> <ram_signal<6>_31_4> <ram_signal<6>_31_5> <ram_signal<6>_31_6> <ram_signal<6>_31_7> <ram_signal<2>_7_4> <ram_signal<2>_7_5> <ram_signal<2>_7_6> <ram_signal<2>_7_7>
+   <ram_signal<5>_29_4> <ram_signal<5>_29_5> <ram_signal<5>_29_6> <ram_signal<5>_29_7> <ram_signal<7>_19_4> <ram_signal<7>_19_5> <ram_signal<7>_19_6> <ram_signal<7>_19_7> <ram_signal<7>_24_4> <ram_signal<7>_24_5> <ram_signal<7>_24_6> <ram_signal<7>_24_7> <ram_signal<6>_27_4> <ram_signal<6>_27_5> <ram_signal<6>_27_6> <ram_signal<6>_27_7> <ram_signal<7>_25_4> <ram_signal<7>_25_5> <ram_signal<7>_25_6> <ram_signal<7>_25_7> <ram_signal<7>_5_4> <ram_signal<7>_5_5> <ram_signal<7>_5_6> <ram_signal<7>_5_7> <ram_signal<2>_8_4> <ram_signal<2>_8_5> <ram_signal<2>_8_6> <ram_signal<2>_8_7> <ram_signal<7>_30_4> <ram_signal<7>_30_5> <ram_signal<7>_30_6> <ram_signal<7>_30_7> <ram_signal<6>_28_4> <ram_signal<6>_28_5> <ram_signal<6>_28_6> <ram_signal<6>_28_7> <ram_signal<7>_6_4> <ram_signal<7>_6_5> <ram_signal<7>_6_6> <ram_signal<7>_6_7> <ram_signal<2>_9_4> <ram_signal<2>_9_5> <ram_signal<2>_9_6> <ram_signal<2>_9_7> <ram_signal<7>_26_4> <ram_signal<7>_26_5> <ram_signal<7>_26_6> <ram_signal<7>_26_7> <ram_signal<7>_31_4>
+   <ram_signal<7>_31_5> <ram_signal<7>_31_6> <ram_signal<7>_31_7> <ram_signal<7>_27_4> <ram_signal<7>_27_5> <ram_signal<7>_27_6> <ram_signal<7>_27_7> <ram_signal<6>_29_4> <ram_signal<6>_29_5> <ram_signal<6>_29_6> <ram_signal<6>_29_7> <ram_signal<7>_7_4> <ram_signal<7>_7_5> <ram_signal<7>_7_6> <ram_signal<7>_7_7> <ram_signal<7>_8_4> <ram_signal<7>_8_5> <ram_signal<7>_8_6> <ram_signal<7>_8_7> <ram_signal<7>_28_4> <ram_signal<7>_28_5> <ram_signal<7>_28_6> <ram_signal<7>_28_7> <ram_signal<7>_9_4> <ram_signal<7>_9_5> <ram_signal<7>_9_6> <ram_signal<7>_9_7> <ram_signal<7>_29_4> <ram_signal<7>_29_5> <ram_signal<7>_29_6> <ram_signal<7>_29_7> <ram_signal<4>_0_4> <ram_signal<4>_0_5> <ram_signal<4>_0_6> <ram_signal<4>_0_7> <ram_signal<4>_1_4> <ram_signal<4>_1_5> <ram_signal<4>_1_6> <ram_signal<4>_1_7> <ram_signal<4>_4_4> <ram_signal<4>_4_5> <ram_signal<4>_4_6> <ram_signal<4>_4_7> <ram_signal<4>_2_4> <ram_signal<4>_2_5> <ram_signal<4>_2_6> <ram_signal<4>_2_7> <ram_signal<4>_3_4> <ram_signal<4>_3_5> <ram_signal<4>_3_6>
+   <ram_signal<4>_3_7>
+INFO:Xst:2261 - The FF/Latch <ram_signal<4>_7_0> in Unit <sys_sdram_controller> is equivalent to the following 1023 FFs/Latches, which will be removed : <ram_signal<4>_7_1> <ram_signal<4>_7_2> <ram_signal<4>_7_3> <ram_signal<4>_5_0> <ram_signal<4>_5_1> <ram_signal<4>_5_2> <ram_signal<4>_5_3> <ram_signal<4>_6_0> <ram_signal<4>_6_1> <ram_signal<4>_6_2> <ram_signal<4>_6_3> <ram_signal<4>_8_0> <ram_signal<4>_8_1> <ram_signal<4>_8_2> <ram_signal<4>_8_3> <ram_signal<4>_9_0> <ram_signal<4>_9_1> <ram_signal<4>_9_2> <ram_signal<4>_9_3> <ram_signal<1>_2_0> <ram_signal<1>_2_1> <ram_signal<1>_2_2> <ram_signal<1>_2_3> <ram_signal<1>_0_0> <ram_signal<1>_0_1> <ram_signal<1>_0_2> <ram_signal<1>_0_3> <ram_signal<1>_1_0> <ram_signal<1>_1_1> <ram_signal<1>_1_2> <ram_signal<1>_1_3> <ram_signal<6>_0_0> <ram_signal<6>_0_1> <ram_signal<6>_0_2> <ram_signal<6>_0_3> <ram_signal<1>_3_0> <ram_signal<1>_3_1> <ram_signal<1>_3_2> <ram_signal<1>_3_3> <ram_signal<6>_2_0> <ram_signal<6>_2_1> <ram_signal<6>_2_2> <ram_signal<6>_2_3>
+   <ram_signal<6>_1_0> <ram_signal<6>_1_1> <ram_signal<6>_1_2> <ram_signal<6>_1_3> <ram_signal<1>_4_0> <ram_signal<1>_4_1> <ram_signal<1>_4_2> <ram_signal<1>_4_3> <ram_signal<1>_5_0> <ram_signal<1>_5_1> <ram_signal<1>_5_2> <ram_signal<1>_5_3> <ram_signal<6>_3_0> <ram_signal<6>_3_1> <ram_signal<6>_3_2> <ram_signal<6>_3_3> <ram_signal<1>_6_0> <ram_signal<1>_6_1> <ram_signal<1>_6_2> <ram_signal<1>_6_3> <ram_signal<6>_4_0> <ram_signal<6>_4_1> <ram_signal<6>_4_2> <ram_signal<6>_4_3> <ram_signal<1>_7_0> <ram_signal<1>_7_1> <ram_signal<1>_7_2> <ram_signal<1>_7_3> <ram_signal<6>_5_0> <ram_signal<6>_5_1> <ram_signal<6>_5_2> <ram_signal<6>_5_3> <ram_signal<1>_9_0> <ram_signal<1>_9_1> <ram_signal<1>_9_2> <ram_signal<1>_9_3> <ram_signal<1>_8_0> <ram_signal<1>_8_1> <ram_signal<1>_8_2> <ram_signal<1>_8_3> <ram_signal<6>_6_0> <ram_signal<6>_6_1> <ram_signal<6>_6_2> <ram_signal<6>_6_3> <ram_signal<6>_7_0> <ram_signal<6>_7_1> <ram_signal<6>_7_2> <ram_signal<6>_7_3> <ram_signal<6>_8_0> <ram_signal<6>_8_1> <ram_signal<6>_8_2>
+   <ram_signal<6>_8_3> <ram_signal<6>_9_0> <ram_signal<6>_9_1> <ram_signal<6>_9_2> <ram_signal<6>_9_3> <ram_signal<3>_0_0> <ram_signal<3>_0_1> <ram_signal<3>_0_2> <ram_signal<3>_0_3> <ram_signal<3>_1_0> <ram_signal<3>_1_1> <ram_signal<3>_1_2> <ram_signal<3>_1_3> <ram_signal<3>_4_0> <ram_signal<3>_4_1> <ram_signal<3>_4_2> <ram_signal<3>_4_3> <ram_signal<3>_2_0> <ram_signal<3>_2_1> <ram_signal<3>_2_2> <ram_signal<3>_2_3> <ram_signal<3>_3_0> <ram_signal<3>_3_1> <ram_signal<3>_3_2> <ram_signal<3>_3_3> <ram_signal<3>_5_0> <ram_signal<3>_5_1> <ram_signal<3>_5_2> <ram_signal<3>_5_3> <ram_signal<3>_6_0> <ram_signal<3>_6_1> <ram_signal<3>_6_2> <ram_signal<3>_6_3> <ram_signal<3>_7_0> <ram_signal<3>_7_1> <ram_signal<3>_7_2> <ram_signal<3>_7_3> <ram_signal<3>_8_0> <ram_signal<3>_8_1> <ram_signal<3>_8_2> <ram_signal<3>_8_3> <ram_signal<3>_9_0> <ram_signal<3>_9_1> <ram_signal<3>_9_2> <ram_signal<3>_9_3> <ram_signal<0>_10_0> <ram_signal<0>_10_1> <ram_signal<0>_10_2> <ram_signal<0>_10_3> <ram_signal<1>_10_0>
+   <ram_signal<1>_10_1> <ram_signal<1>_10_2> <ram_signal<1>_10_3> <ram_signal<0>_11_0> <ram_signal<0>_11_1> <ram_signal<0>_11_2> <ram_signal<0>_11_3> <ram_signal<0>_12_0> <ram_signal<0>_12_1> <ram_signal<0>_12_2> <ram_signal<0>_12_3> <ram_signal<0>_13_0> <ram_signal<0>_13_1> <ram_signal<0>_13_2> <ram_signal<0>_13_3> <ram_signal<0>_0_0> <ram_signal<0>_0_1> <ram_signal<0>_0_2> <ram_signal<0>_0_3> <ram_signal<1>_11_0> <ram_signal<1>_11_1> <ram_signal<1>_11_2> <ram_signal<1>_11_3> <ram_signal<0>_14_0> <ram_signal<0>_14_1> <ram_signal<0>_14_2> <ram_signal<0>_14_3> <ram_signal<0>_1_0> <ram_signal<0>_1_1> <ram_signal<0>_1_2> <ram_signal<0>_1_3> <ram_signal<1>_12_0> <ram_signal<1>_12_1> <ram_signal<1>_12_2> <ram_signal<1>_12_3> <ram_signal<2>_10_0> <ram_signal<2>_10_1> <ram_signal<2>_10_2> <ram_signal<2>_10_3> <ram_signal<0>_20_0> <ram_signal<0>_20_1> <ram_signal<0>_20_2> <ram_signal<0>_20_3> <ram_signal<0>_15_0> <ram_signal<0>_15_1> <ram_signal<0>_15_2> <ram_signal<0>_15_3> <ram_signal<0>_2_0> <ram_signal<0>_2_1>
+   <ram_signal<0>_2_2> <ram_signal<0>_2_3> <ram_signal<1>_13_0> <ram_signal<1>_13_1> <ram_signal<1>_13_2> <ram_signal<1>_13_3> <ram_signal<0>_21_0> <ram_signal<0>_21_1> <ram_signal<0>_21_2> <ram_signal<0>_21_3> <ram_signal<0>_16_0> <ram_signal<0>_16_1> <ram_signal<0>_16_2> <ram_signal<0>_16_3> <ram_signal<5>_0_0> <ram_signal<5>_0_1> <ram_signal<5>_0_2> <ram_signal<5>_0_3> <ram_signal<2>_11_0> <ram_signal<2>_11_1> <ram_signal<2>_11_2> <ram_signal<2>_11_3> <ram_signal<0>_22_0> <ram_signal<0>_22_1> <ram_signal<0>_22_2> <ram_signal<0>_22_3> <ram_signal<0>_3_0> <ram_signal<0>_3_1> <ram_signal<0>_3_2> <ram_signal<0>_3_3> <ram_signal<1>_14_0> <ram_signal<1>_14_1> <ram_signal<1>_14_2> <ram_signal<1>_14_3> <ram_signal<0>_17_0> <ram_signal<0>_17_1> <ram_signal<0>_17_2> <ram_signal<0>_17_3> <ram_signal<5>_1_0> <ram_signal<5>_1_1> <ram_signal<5>_1_2> <ram_signal<5>_1_3> <ram_signal<2>_12_0> <ram_signal<2>_12_1> <ram_signal<2>_12_2> <ram_signal<2>_12_3> <ram_signal<0>_4_0> <ram_signal<0>_4_1> <ram_signal<0>_4_2>
+   <ram_signal<0>_4_3> <ram_signal<1>_20_0> <ram_signal<1>_20_1> <ram_signal<1>_20_2> <ram_signal<1>_20_3> <ram_signal<1>_15_0> <ram_signal<1>_15_1> <ram_signal<1>_15_2> <ram_signal<1>_15_3> <ram_signal<0>_18_0> <ram_signal<0>_18_1> <ram_signal<0>_18_2> <ram_signal<0>_18_3> <ram_signal<3>_10_0> <ram_signal<3>_10_1> <ram_signal<3>_10_2> <ram_signal<3>_10_3> <ram_signal<0>_23_0> <ram_signal<0>_23_1> <ram_signal<0>_23_2> <ram_signal<0>_23_3> <ram_signal<5>_2_0> <ram_signal<5>_2_1> <ram_signal<5>_2_2> <ram_signal<5>_2_3> <ram_signal<2>_13_0> <ram_signal<2>_13_1> <ram_signal<2>_13_2> <ram_signal<2>_13_3> <ram_signal<0>_5_0> <ram_signal<0>_5_1> <ram_signal<0>_5_2> <ram_signal<0>_5_3> <ram_signal<1>_21_0> <ram_signal<1>_21_1> <ram_signal<1>_21_2> <ram_signal<1>_21_3> <ram_signal<1>_16_0> <ram_signal<1>_16_1> <ram_signal<1>_16_2> <ram_signal<1>_16_3> <ram_signal<3>_11_0> <ram_signal<3>_11_1> <ram_signal<3>_11_2> <ram_signal<3>_11_3> <ram_signal<5>_3_0> <ram_signal<5>_3_1> <ram_signal<5>_3_2> <ram_signal<5>_3_3>
+   <ram_signal<0>_24_0> <ram_signal<0>_24_1> <ram_signal<0>_24_2> <ram_signal<0>_24_3> <ram_signal<0>_19_0> <ram_signal<0>_19_1> <ram_signal<0>_19_2> <ram_signal<0>_19_3> <ram_signal<2>_14_0> <ram_signal<2>_14_1> <ram_signal<2>_14_2> <ram_signal<2>_14_3> <ram_signal<0>_6_0> <ram_signal<0>_6_1> <ram_signal<0>_6_2> <ram_signal<0>_6_3> <ram_signal<1>_22_0> <ram_signal<1>_22_1> <ram_signal<1>_22_2> <ram_signal<1>_22_3> <ram_signal<1>_17_0> <ram_signal<1>_17_1> <ram_signal<1>_17_2> <ram_signal<1>_17_3> <ram_signal<3>_12_0> <ram_signal<3>_12_1> <ram_signal<3>_12_2> <ram_signal<3>_12_3> <ram_signal<0>_30_0> <ram_signal<0>_30_1> <ram_signal<0>_30_2> <ram_signal<0>_30_3> <ram_signal<2>_20_0> <ram_signal<2>_20_1> <ram_signal<2>_20_2> <ram_signal<2>_20_3> <ram_signal<0>_25_0> <ram_signal<0>_25_1> <ram_signal<0>_25_2> <ram_signal<0>_25_3> <ram_signal<5>_4_0> <ram_signal<5>_4_1> <ram_signal<5>_4_2> <ram_signal<5>_4_3> <ram_signal<2>_15_0> <ram_signal<2>_15_1> <ram_signal<2>_15_2> <ram_signal<2>_15_3> <ram_signal<4>_10_0>
+   <ram_signal<4>_10_1> <ram_signal<4>_10_2> <ram_signal<4>_10_3> <ram_signal<0>_7_0> <ram_signal<0>_7_1> <ram_signal<0>_7_2> <ram_signal<0>_7_3> <ram_signal<1>_23_0> <ram_signal<1>_23_1> <ram_signal<1>_23_2> <ram_signal<1>_23_3> <ram_signal<1>_18_0> <ram_signal<1>_18_1> <ram_signal<1>_18_2> <ram_signal<1>_18_3> <ram_signal<3>_13_0> <ram_signal<3>_13_1> <ram_signal<3>_13_2> <ram_signal<3>_13_3> <ram_signal<0>_26_0> <ram_signal<0>_26_1> <ram_signal<0>_26_2> <ram_signal<0>_26_3> <ram_signal<5>_5_0> <ram_signal<5>_5_1> <ram_signal<5>_5_2> <ram_signal<5>_5_3> <ram_signal<0>_31_0> <ram_signal<0>_31_1> <ram_signal<0>_31_2> <ram_signal<0>_31_3> <ram_signal<2>_21_0> <ram_signal<2>_21_1> <ram_signal<2>_21_2> <ram_signal<2>_21_3> <ram_signal<2>_16_0> <ram_signal<2>_16_1> <ram_signal<2>_16_2> <ram_signal<2>_16_3> <ram_signal<4>_11_0> <ram_signal<4>_11_1> <ram_signal<4>_11_2> <ram_signal<4>_11_3> <ram_signal<0>_8_0> <ram_signal<0>_8_1> <ram_signal<0>_8_2> <ram_signal<0>_8_3> <ram_signal<1>_24_0> <ram_signal<1>_24_1>
+   <ram_signal<1>_24_2> <ram_signal<1>_24_3> <ram_signal<1>_19_0> <ram_signal<1>_19_1> <ram_signal<1>_19_2> <ram_signal<1>_19_3> <ram_signal<0>_27_0> <ram_signal<0>_27_1> <ram_signal<0>_27_2> <ram_signal<0>_27_3> <ram_signal<3>_14_0> <ram_signal<3>_14_1> <ram_signal<3>_14_2> <ram_signal<3>_14_3> <ram_signal<5>_6_0> <ram_signal<5>_6_1> <ram_signal<5>_6_2> <ram_signal<5>_6_3> <ram_signal<2>_22_0> <ram_signal<2>_22_1> <ram_signal<2>_22_2> <ram_signal<2>_22_3> <ram_signal<2>_17_0> <ram_signal<2>_17_1> <ram_signal<2>_17_2> <ram_signal<2>_17_3> <ram_signal<4>_12_0> <ram_signal<4>_12_1> <ram_signal<4>_12_2> <ram_signal<4>_12_3> <ram_signal<0>_9_0> <ram_signal<0>_9_1> <ram_signal<0>_9_2> <ram_signal<0>_9_3> <ram_signal<1>_30_0> <ram_signal<1>_30_1> <ram_signal<1>_30_2> <ram_signal<1>_30_3> <ram_signal<1>_25_0> <ram_signal<1>_25_1> <ram_signal<1>_25_2> <ram_signal<1>_25_3> <ram_signal<5>_10_0> <ram_signal<5>_10_1> <ram_signal<5>_10_2> <ram_signal<5>_10_3> <ram_signal<3>_20_0> <ram_signal<3>_20_1> <ram_signal<3>_20_2>
+   <ram_signal<3>_20_3> <ram_signal<3>_15_0> <ram_signal<3>_15_1> <ram_signal<3>_15_2> <ram_signal<3>_15_3> <ram_signal<5>_7_0> <ram_signal<5>_7_1> <ram_signal<5>_7_2> <ram_signal<5>_7_3> <ram_signal<0>_28_0> <ram_signal<0>_28_1> <ram_signal<0>_28_2> <ram_signal<0>_28_3> <ram_signal<2>_23_0> <ram_signal<2>_23_1> <ram_signal<2>_23_2> <ram_signal<2>_23_3> <ram_signal<2>_18_0> <ram_signal<2>_18_1> <ram_signal<2>_18_2> <ram_signal<2>_18_3> <ram_signal<4>_13_0> <ram_signal<4>_13_1> <ram_signal<4>_13_2> <ram_signal<4>_13_3> <ram_signal<1>_31_0> <ram_signal<1>_31_1> <ram_signal<1>_31_2> <ram_signal<1>_31_3> <ram_signal<3>_16_0> <ram_signal<3>_16_1> <ram_signal<3>_16_2> <ram_signal<3>_16_3> <ram_signal<1>_26_0> <ram_signal<1>_26_1> <ram_signal<1>_26_2> <ram_signal<1>_26_3> <ram_signal<3>_21_0> <ram_signal<3>_21_1> <ram_signal<3>_21_2> <ram_signal<3>_21_3> <ram_signal<5>_11_0> <ram_signal<5>_11_1> <ram_signal<5>_11_2> <ram_signal<5>_11_3> <ram_signal<5>_8_0> <ram_signal<5>_8_1> <ram_signal<5>_8_2> <ram_signal<5>_8_3>
+   <ram_signal<0>_29_0> <ram_signal<0>_29_1> <ram_signal<0>_29_2> <ram_signal<0>_29_3> <ram_signal<2>_24_0> <ram_signal<2>_24_1> <ram_signal<2>_24_2> <ram_signal<2>_24_3> <ram_signal<2>_19_0> <ram_signal<2>_19_1> <ram_signal<2>_19_2> <ram_signal<2>_19_3> <ram_signal<4>_14_0> <ram_signal<4>_14_1> <ram_signal<4>_14_2> <ram_signal<4>_14_3> <ram_signal<3>_17_0> <ram_signal<3>_17_1> <ram_signal<3>_17_2> <ram_signal<3>_17_3> <ram_signal<1>_27_0> <ram_signal<1>_27_1> <ram_signal<1>_27_2> <ram_signal<1>_27_3> <ram_signal<3>_22_0> <ram_signal<3>_22_1> <ram_signal<3>_22_2> <ram_signal<3>_22_3> <ram_signal<5>_12_0> <ram_signal<5>_12_1> <ram_signal<5>_12_2> <ram_signal<5>_12_3> <ram_signal<5>_9_0> <ram_signal<5>_9_1> <ram_signal<5>_9_2> <ram_signal<5>_9_3> <ram_signal<2>_30_0> <ram_signal<2>_30_1> <ram_signal<2>_30_2> <ram_signal<2>_30_3> <ram_signal<2>_25_0> <ram_signal<2>_25_1> <ram_signal<2>_25_2> <ram_signal<2>_25_3> <ram_signal<4>_20_0> <ram_signal<4>_20_1> <ram_signal<4>_20_2> <ram_signal<4>_20_3>
+   <ram_signal<4>_15_0> <ram_signal<4>_15_1> <ram_signal<4>_15_2> <ram_signal<4>_15_3> <ram_signal<3>_23_0> <ram_signal<3>_23_1> <ram_signal<3>_23_2> <ram_signal<3>_23_3> <ram_signal<1>_28_0> <ram_signal<1>_28_1> <ram_signal<1>_28_2> <ram_signal<1>_28_3> <ram_signal<6>_10_0> <ram_signal<6>_10_1> <ram_signal<6>_10_2> <ram_signal<6>_10_3> <ram_signal<3>_18_0> <ram_signal<3>_18_1> <ram_signal<3>_18_2> <ram_signal<3>_18_3> <ram_signal<5>_13_0> <ram_signal<5>_13_1> <ram_signal<5>_13_2> <ram_signal<5>_13_3> <ram_signal<2>_31_0> <ram_signal<2>_31_1> <ram_signal<2>_31_2> <ram_signal<2>_31_3> <ram_signal<2>_26_0> <ram_signal<2>_26_1> <ram_signal<2>_26_2> <ram_signal<2>_26_3> <ram_signal<4>_16_0> <ram_signal<4>_16_1> <ram_signal<4>_16_2> <ram_signal<4>_16_3> <ram_signal<4>_21_0> <ram_signal<4>_21_1> <ram_signal<4>_21_2> <ram_signal<4>_21_3> <ram_signal<3>_24_0> <ram_signal<3>_24_1> <ram_signal<3>_24_2> <ram_signal<3>_24_3> <ram_signal<1>_29_0> <ram_signal<1>_29_1> <ram_signal<1>_29_2> <ram_signal<1>_29_3>
+   <ram_signal<6>_11_0> <ram_signal<6>_11_1> <ram_signal<6>_11_2> <ram_signal<6>_11_3> <ram_signal<3>_19_0> <ram_signal<3>_19_1> <ram_signal<3>_19_2> <ram_signal<3>_19_3> <ram_signal<5>_14_0> <ram_signal<5>_14_1> <ram_signal<5>_14_2> <ram_signal<5>_14_3> <ram_signal<4>_22_0> <ram_signal<4>_22_1> <ram_signal<4>_22_2> <ram_signal<4>_22_3> <ram_signal<2>_27_0> <ram_signal<2>_27_1> <ram_signal<2>_27_2> <ram_signal<2>_27_3> <ram_signal<4>_17_0> <ram_signal<4>_17_1> <ram_signal<4>_17_2> <ram_signal<4>_17_3> <ram_signal<6>_12_0> <ram_signal<6>_12_1> <ram_signal<6>_12_2> <ram_signal<6>_12_3> <ram_signal<3>_30_0> <ram_signal<3>_30_1> <ram_signal<3>_30_2> <ram_signal<3>_30_3> <ram_signal<5>_15_0> <ram_signal<5>_15_1> <ram_signal<5>_15_2> <ram_signal<5>_15_3> <ram_signal<3>_25_0> <ram_signal<3>_25_1> <ram_signal<3>_25_2> <ram_signal<3>_25_3> <ram_signal<5>_20_0> <ram_signal<5>_20_1> <ram_signal<5>_20_2> <ram_signal<5>_20_3> <ram_signal<2>_28_0> <ram_signal<2>_28_1> <ram_signal<2>_28_2> <ram_signal<2>_28_3>
+   <ram_signal<7>_10_0> <ram_signal<7>_10_1> <ram_signal<7>_10_2> <ram_signal<7>_10_3> <ram_signal<4>_18_0> <ram_signal<4>_18_1> <ram_signal<4>_18_2> <ram_signal<4>_18_3> <ram_signal<4>_23_0> <ram_signal<4>_23_1> <ram_signal<4>_23_2> <ram_signal<4>_23_3> <ram_signal<6>_13_0> <ram_signal<6>_13_1> <ram_signal<6>_13_2> <ram_signal<6>_13_3> <ram_signal<3>_31_0> <ram_signal<3>_31_1> <ram_signal<3>_31_2> <ram_signal<3>_31_3> <ram_signal<5>_16_0> <ram_signal<5>_16_1> <ram_signal<5>_16_2> <ram_signal<5>_16_3> <ram_signal<3>_26_0> <ram_signal<3>_26_1> <ram_signal<3>_26_2> <ram_signal<3>_26_3> <ram_signal<5>_21_0> <ram_signal<5>_21_1> <ram_signal<5>_21_2> <ram_signal<5>_21_3> <ram_signal<2>_29_0> <ram_signal<2>_29_1> <ram_signal<2>_29_2> <ram_signal<2>_29_3> <ram_signal<7>_11_0> <ram_signal<7>_11_1> <ram_signal<7>_11_2> <ram_signal<7>_11_3> <ram_signal<4>_19_0> <ram_signal<4>_19_1> <ram_signal<4>_19_2> <ram_signal<4>_19_3> <ram_signal<4>_24_0> <ram_signal<4>_24_1> <ram_signal<4>_24_2> <ram_signal<4>_24_3>
+   <ram_signal<6>_14_0> <ram_signal<6>_14_1> <ram_signal<6>_14_2> <ram_signal<6>_14_3> <ram_signal<3>_27_0> <ram_signal<3>_27_1> <ram_signal<3>_27_2> <ram_signal<3>_27_3> <ram_signal<2>_0_0> <ram_signal<2>_0_1> <ram_signal<2>_0_2> <ram_signal<2>_0_3> <ram_signal<5>_22_0> <ram_signal<5>_22_1> <ram_signal<5>_22_2> <ram_signal<5>_22_3> <ram_signal<5>_17_0> <ram_signal<5>_17_1> <ram_signal<5>_17_2> <ram_signal<5>_17_3> <ram_signal<7>_12_0> <ram_signal<7>_12_1> <ram_signal<7>_12_2> <ram_signal<7>_12_3> <ram_signal<4>_25_0> <ram_signal<4>_25_1> <ram_signal<4>_25_2> <ram_signal<4>_25_3> <ram_signal<4>_30_0> <ram_signal<4>_30_1> <ram_signal<4>_30_2> <ram_signal<4>_30_3> <ram_signal<6>_15_0> <ram_signal<6>_15_1> <ram_signal<6>_15_2> <ram_signal<6>_15_3> <ram_signal<6>_20_0> <ram_signal<6>_20_1> <ram_signal<6>_20_2> <ram_signal<6>_20_3> <ram_signal<3>_28_0> <ram_signal<3>_28_1> <ram_signal<3>_28_2> <ram_signal<3>_28_3> <ram_signal<2>_1_0> <ram_signal<2>_1_1> <ram_signal<2>_1_2> <ram_signal<2>_1_3> <ram_signal<5>_23_0>
+   <ram_signal<5>_23_1> <ram_signal<5>_23_2> <ram_signal<5>_23_3> <ram_signal<5>_18_0> <ram_signal<5>_18_1> <ram_signal<5>_18_2> <ram_signal<5>_18_3> <ram_signal<7>_13_0> <ram_signal<7>_13_1> <ram_signal<7>_13_2> <ram_signal<7>_13_3> <ram_signal<4>_26_0> <ram_signal<4>_26_1> <ram_signal<4>_26_2> <ram_signal<4>_26_3> <ram_signal<4>_31_0> <ram_signal<4>_31_1> <ram_signal<4>_31_2> <ram_signal<4>_31_3> <ram_signal<6>_16_0> <ram_signal<6>_16_1> <ram_signal<6>_16_2> <ram_signal<6>_16_3> <ram_signal<6>_21_0> <ram_signal<6>_21_1> <ram_signal<6>_21_2> <ram_signal<6>_21_3> <ram_signal<3>_29_0> <ram_signal<3>_29_1> <ram_signal<3>_29_2> <ram_signal<3>_29_3> <ram_signal<2>_2_0> <ram_signal<2>_2_1> <ram_signal<2>_2_2> <ram_signal<2>_2_3> <ram_signal<5>_19_0> <ram_signal<5>_19_1> <ram_signal<5>_19_2> <ram_signal<5>_19_3> <ram_signal<5>_24_0> <ram_signal<5>_24_1> <ram_signal<5>_24_2> <ram_signal<5>_24_3> <ram_signal<7>_14_0> <ram_signal<7>_14_1> <ram_signal<7>_14_2> <ram_signal<7>_14_3> <ram_signal<4>_27_0>
+   <ram_signal<4>_27_1> <ram_signal<4>_27_2> <ram_signal<4>_27_3> <ram_signal<6>_17_0> <ram_signal<6>_17_1> <ram_signal<6>_17_2> <ram_signal<6>_17_3> <ram_signal<7>_0_0> <ram_signal<7>_0_1> <ram_signal<7>_0_2> <ram_signal<7>_0_3> <ram_signal<6>_22_0> <ram_signal<6>_22_1> <ram_signal<6>_22_2> <ram_signal<6>_22_3> <ram_signal<5>_25_0> <ram_signal<5>_25_1> <ram_signal<5>_25_2> <ram_signal<5>_25_3> <ram_signal<7>_15_0> <ram_signal<7>_15_1> <ram_signal<7>_15_2> <ram_signal<7>_15_3> <ram_signal<5>_30_0> <ram_signal<5>_30_1> <ram_signal<5>_30_2> <ram_signal<5>_30_3> <ram_signal<2>_3_0> <ram_signal<2>_3_1> <ram_signal<2>_3_2> <ram_signal<2>_3_3> <ram_signal<7>_20_0> <ram_signal<7>_20_1> <ram_signal<7>_20_2> <ram_signal<7>_20_3> <ram_signal<4>_28_0> <ram_signal<4>_28_1> <ram_signal<4>_28_2> <ram_signal<4>_28_3> <ram_signal<6>_18_0> <ram_signal<6>_18_1> <ram_signal<6>_18_2> <ram_signal<6>_18_3> <ram_signal<7>_1_0> <ram_signal<7>_1_1> <ram_signal<7>_1_2> <ram_signal<7>_1_3> <ram_signal<6>_23_0> <ram_signal<6>_23_1>
+   <ram_signal<6>_23_2> <ram_signal<6>_23_3> <ram_signal<5>_26_0> <ram_signal<5>_26_1> <ram_signal<5>_26_2> <ram_signal<5>_26_3> <ram_signal<7>_16_0> <ram_signal<7>_16_1> <ram_signal<7>_16_2> <ram_signal<7>_16_3> <ram_signal<5>_31_0> <ram_signal<5>_31_1> <ram_signal<5>_31_2> <ram_signal<5>_31_3> <ram_signal<2>_4_0> <ram_signal<2>_4_1> <ram_signal<2>_4_2> <ram_signal<2>_4_3> <ram_signal<7>_21_0> <ram_signal<7>_21_1> <ram_signal<7>_21_2> <ram_signal<7>_21_3> <ram_signal<4>_29_0> <ram_signal<4>_29_1> <ram_signal<4>_29_2> <ram_signal<4>_29_3> <ram_signal<6>_19_0> <ram_signal<6>_19_1> <ram_signal<6>_19_2> <ram_signal<6>_19_3> <ram_signal<7>_2_0> <ram_signal<7>_2_1> <ram_signal<7>_2_2> <ram_signal<7>_2_3> <ram_signal<6>_24_0> <ram_signal<6>_24_1> <ram_signal<6>_24_2> <ram_signal<6>_24_3> <ram_signal<2>_5_0> <ram_signal<2>_5_1> <ram_signal<2>_5_2> <ram_signal<2>_5_3> <ram_signal<7>_22_0> <ram_signal<7>_22_1> <ram_signal<7>_22_2> <ram_signal<7>_22_3> <ram_signal<5>_27_0> <ram_signal<5>_27_1> <ram_signal<5>_27_2>
+   <ram_signal<5>_27_3> <ram_signal<7>_17_0> <ram_signal<7>_17_1> <ram_signal<7>_17_2> <ram_signal<7>_17_3> <ram_signal<6>_25_0> <ram_signal<6>_25_1> <ram_signal<6>_25_2> <ram_signal<6>_25_3> <ram_signal<7>_3_0> <ram_signal<7>_3_1> <ram_signal<7>_3_2> <ram_signal<7>_3_3> <ram_signal<6>_30_0> <ram_signal<6>_30_1> <ram_signal<6>_30_2> <ram_signal<6>_30_3> <ram_signal<2>_6_0> <ram_signal<2>_6_1> <ram_signal<2>_6_2> <ram_signal<2>_6_3> <ram_signal<5>_28_0> <ram_signal<5>_28_1> <ram_signal<5>_28_2> <ram_signal<5>_28_3> <ram_signal<7>_18_0> <ram_signal<7>_18_1> <ram_signal<7>_18_2> <ram_signal<7>_18_3> <ram_signal<7>_4_0> <ram_signal<7>_4_1> <ram_signal<7>_4_2> <ram_signal<7>_4_3> <ram_signal<7>_23_0> <ram_signal<7>_23_1> <ram_signal<7>_23_2> <ram_signal<7>_23_3> <ram_signal<6>_26_0> <ram_signal<6>_26_1> <ram_signal<6>_26_2> <ram_signal<6>_26_3> <ram_signal<6>_31_0> <ram_signal<6>_31_1> <ram_signal<6>_31_2> <ram_signal<6>_31_3> <ram_signal<2>_7_0> <ram_signal<2>_7_1> <ram_signal<2>_7_2> <ram_signal<2>_7_3>
+   <ram_signal<5>_29_0> <ram_signal<5>_29_1> <ram_signal<5>_29_2> <ram_signal<5>_29_3> <ram_signal<7>_19_0> <ram_signal<7>_19_1> <ram_signal<7>_19_2> <ram_signal<7>_19_3> <ram_signal<7>_24_0> <ram_signal<7>_24_1> <ram_signal<7>_24_2> <ram_signal<7>_24_3> <ram_signal<6>_27_0> <ram_signal<6>_27_1> <ram_signal<6>_27_2> <ram_signal<6>_27_3> <ram_signal<7>_25_0> <ram_signal<7>_25_1> <ram_signal<7>_25_2> <ram_signal<7>_25_3> <ram_signal<7>_5_0> <ram_signal<7>_5_1> <ram_signal<7>_5_2> <ram_signal<7>_5_3> <ram_signal<2>_8_0> <ram_signal<2>_8_1> <ram_signal<2>_8_2> <ram_signal<2>_8_3> <ram_signal<7>_30_0> <ram_signal<7>_30_1> <ram_signal<7>_30_2> <ram_signal<7>_30_3> <ram_signal<6>_28_0> <ram_signal<6>_28_1> <ram_signal<6>_28_2> <ram_signal<6>_28_3> <ram_signal<7>_6_0> <ram_signal<7>_6_1> <ram_signal<7>_6_2> <ram_signal<7>_6_3> <ram_signal<2>_9_0> <ram_signal<2>_9_1> <ram_signal<2>_9_2> <ram_signal<2>_9_3> <ram_signal<7>_26_0> <ram_signal<7>_26_1> <ram_signal<7>_26_2> <ram_signal<7>_26_3> <ram_signal<7>_31_0>
+   <ram_signal<7>_31_1> <ram_signal<7>_31_2> <ram_signal<7>_31_3> <ram_signal<7>_27_0> <ram_signal<7>_27_1> <ram_signal<7>_27_2> <ram_signal<7>_27_3> <ram_signal<6>_29_0> <ram_signal<6>_29_1> <ram_signal<6>_29_2> <ram_signal<6>_29_3> <ram_signal<7>_7_0> <ram_signal<7>_7_1> <ram_signal<7>_7_2> <ram_signal<7>_7_3> <ram_signal<7>_8_0> <ram_signal<7>_8_1> <ram_signal<7>_8_2> <ram_signal<7>_8_3> <ram_signal<7>_28_0> <ram_signal<7>_28_1> <ram_signal<7>_28_2> <ram_signal<7>_28_3> <ram_signal<7>_9_0> <ram_signal<7>_9_1> <ram_signal<7>_9_2> <ram_signal<7>_9_3> <ram_signal<7>_29_0> <ram_signal<7>_29_1> <ram_signal<7>_29_2> <ram_signal<7>_29_3> <ram_signal<4>_0_0> <ram_signal<4>_0_1> <ram_signal<4>_0_2> <ram_signal<4>_0_3> <ram_signal<4>_1_0> <ram_signal<4>_1_1> <ram_signal<4>_1_2> <ram_signal<4>_1_3> <ram_signal<4>_4_0> <ram_signal<4>_4_1> <ram_signal<4>_4_2> <ram_signal<4>_4_3> <ram_signal<4>_2_0> <ram_signal<4>_2_1> <ram_signal<4>_2_2> <ram_signal<4>_2_3> <ram_signal<4>_3_0> <ram_signal<4>_3_1> <ram_signal<4>_3_2>
+   <ram_signal<4>_3_3>
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_signal<4>_7_0> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_signal<4>_7_4> (without init value) has a constant value of 1 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_0> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_1> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_2> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_3> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_4> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_5> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_6> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_7> (without init value) has a constant value of 0 in block <sys_sdram_controller>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# ROMs                                                 : 1
+ 8x25-bit ROM                                          : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 2077
+ Flip-Flops                                            : 2077
+# Latches                                              : 9
+ 1-bit latch                                           : 7
+ 16-bit latch                                          : 1
+ 8-bit latch                                           : 1
+# Multiplexers                                         : 33
+ 8-bit 32-to-1 multiplexer                             : 1
+ 8-bit 8-to-1 multiplexer                              : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+ERROR:Xst:528 - Multi-source in Unit <main> on signal <control0<3>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LUT3 instance <sys_ila/U0/I_YES_D.U_ILA/U_DOUT>
+   Output signal of LUT3 instance <sys_vio/U0/I_VIO/U_DOUT>
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 7.27 secs
+ 
+--> 
+
+
+Total memory usage is 678568 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :  106 (   0 filtered)
+Number of infos    :   22 (   0 filtered)
+
