@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity TagCompareDirectMapping is
     Port ( CPU_ADD : in  STD_LOGIC_VECTOR (15 downto 0);
-			  clk: in STD_LOGIC;
+		   clk: in STD_LOGIC;
            HIT_MISS : out  STD_LOGIC);
 end TagCompareDirectMapping;
 
@@ -44,16 +44,19 @@ architecture Behavioral of TagCompareDirectMapping is
 	signal memtag: cachememory := ((others=> (others=>'0')));
 	-- CPU signals
 	signal cpu_address : STD_LOGIC_VECTOR (15 downto 0);
-	signal cpu_tag : STD_LOGIC_VECTOR(7 DOWNTO 0) := cpu_address(15 DOWNTO 8);
-	signal cpu_index : STD_LOGIC_VECTOR(2 DOWNTO 0) := cpu_address(7 DOWNTO 5);
-	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0) := cpu_address(4 DOWNTO 0);
+	signal cpu_tag : STD_LOGIC_VECTOR(7 DOWNTO 0) := CPU_ADD(15 DOWNTO 8);
+	signal cpu_index : STD_LOGIC_VECTOR(2 DOWNTO 0) := CPU_ADD(7 DOWNTO 5);
+	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0) := CPU_ADD(4 DOWNTO 0);
 	-- Hit/Miss signal
 	signal is_cache_hit : STD_LOGIC;
+	-- Functional simulation signal
+	signal trial : STD_LOGIC_VECTOR(7 DOWNTO 0) := "10000000";
 begin
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then
-			if(memtag(to_integer(unsigned(cpu_index))) = cpu_tag) then
+			-- if(memtag(to_integer(unsigned(cpu_index))) = cpu_tag) then
+			if(trial = cpu_tag) then
 				is_cache_hit <= '1';
 			else
 				-- Should a miss add this tag to our array for next time?

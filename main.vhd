@@ -71,7 +71,8 @@ architecture Behavioral of main is
 		CACHE_DOUT_EN : OUT std_logic;
 		WEN_SDRAM : OUT std_logic;
 		MSTRB : OUT std_logic;
-		RDY : OUT std_logic
+		RDY : OUT std_logic;
+		DEBUG : out STD_LOGIC_VECTOR(15 DOWNTO 0)
 		);
 	END COMPONENT;
 	-- Cache controller signals
@@ -83,6 +84,7 @@ architecture Behavioral of main is
 	signal cache_dout_wen: std_logic;
 	signal memstrb: std_logic;
 	signal rdy: std_logic;
+	signal debug : std_logic_vector(15 downto 0);
 	-- SRAM component
 	COMPONENT sram
 	  PORT (
@@ -163,7 +165,8 @@ begin
 		CACHE_DOUT_EN => cache_dout_wen,
 		WEN_SDRAM => sdram_wen,
 		MSTRB => memstrb,
-		RDY => rdy
+		RDY => rdy,
+		DEBUG => debug
 	);
 	local_sram : sram
 	  PORT MAP (
@@ -221,6 +224,7 @@ begin
 	ila_data(68 DOWNTO 61) <= sdram_din;
 	ila_data(76 DOWNTO 69) <= sdram_dout;
 	ila_data(84 DOWNTO 77) <= cpu_dout;
+	ila_data(87 DOWNTO 85) <= debug(2 DOWNTO 0);
 
 end Behavioral;
 
