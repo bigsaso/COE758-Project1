@@ -48,3 +48,5 @@ xst -intstyle ise -ifn "D:/COE758/COE758-Project1/CacheControllerFSM.xst" -ofn "
 xst -intstyle ise -ifn "D:/COE758/COE758-Project1/CacheControllerFSM.xst" -ofn "D:/COE758/COE758-Project1/CacheControllerFSM.syr" 
 xst -intstyle ise -ifn "D:/COE758/COE758-Project1/CacheControllerFSM.xst" -ofn "D:/COE758/COE758-Project1/CacheControllerFSM.syr" 
 xst -intstyle ise -ifn "D:/COE758/COE758-Project1/CacheControllerFSM.xst" -ofn "D:/COE758/COE758-Project1/CacheControllerFSM.syr" 
+vhdtdtfi -prj Project1 -o /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhi -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ipcore_dir/icon.vhd -lib work TagCompareDirectMapping.vhd -lib work ipcore_dir/sram.vhd -lib work CacheControllerFSM.vhd 
+vhdtdtfi -prj Project1 -o /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhi -module CacheControllerFSM -template /CMC/tools/xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work ipcore_dir/icon.vhd -lib work TagCompareDirectMapping.vhd -lib work ipcore_dir/sram.vhd -lib work CacheControllerFSM.vhd 

@@ -58,7 +58,7 @@ architecture Behavioral of main is
 	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0) := cpu_address(4 DOWNTO 0);
 	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0) := cpu_address(7 DOWNTO 0);
 	-- Cache controller component
-	COMPONENT CacheController
+	COMPONENT CacheControllerFSM
 	PORT(
 		clk : IN std_logic;
 		WR_RD : IN std_logic;
@@ -66,13 +66,13 @@ architecture Behavioral of main is
 		CPU_ADD : IN std_logic_vector(15 downto 0);          
 		SDRAM_ADD : OUT std_logic_vector(15 downto 0);
 		CACHE_ADD : OUT std_logic_vector(7 downto 0);
-		WEN_CACHE : OUT std_logic;
-		CACHE_DIN_EN : OUT std_logic;
-		CACHE_DOUT_EN : OUT std_logic;
+		CACHE_WEN : OUT std_logic;
+		CACHE_DIN_WEN : OUT std_logic;
+		CACHE_DOUT_WEN : OUT std_logic;
 		WEN_SDRAM : OUT std_logic;
-		MSTRB : OUT std_logic;
+		MEMSTRB : OUT std_logic;
 		RDY : OUT std_logic;
-		DEBUG : out STD_LOGIC_VECTOR(15 DOWNTO 0)
+		DEBUG : OUT std_logic_vector(15 downto 0)
 		);
 	END COMPONENT;
 	-- Cache controller signals
@@ -127,12 +127,12 @@ architecture Behavioral of main is
 	PORT (
 		CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
 		CLK : IN STD_LOGIC;
-		DATA : IN STD_LOGIC_VECTOR(84 DOWNTO 0);
+		DATA : IN STD_LOGIC_VECTOR(98 DOWNTO 0);
 		TRIG0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0));
 	end component;
 	--ICON and ILA signals
 	signal control0: STD_LOGIC_VECTOR(35 DOWNTO 0);
-	signal ila_data: STD_LOGIC_VECTOR(84 DOWNTO 0);
+	signal ila_data: STD_LOGIC_VECTOR(98 DOWNTO 0);
 	signal ila_trig0: STD_LOGIC_VECTOR(7 DOWNTO 0);
 	-- VIO component
 	component vio
@@ -153,18 +153,18 @@ begin
 		cs => cpu_cs,
 		DOut => cpu_dout
 	);
-	sys_cache_controller: CacheController PORT MAP(
+	sys_cache_controller: CacheControllerFSM PORT MAP(
 		clk => clk,
 		WR_RD => cpu_wr_rd,
 		CS => cpu_cs,
 		CPU_ADD => cpu_address,
 		SDRAM_ADD => sdram_address,
 		CACHE_ADD => cache_address,
-		WEN_CACHE => cache_wen,
-		CACHE_DIN_EN => cache_din_wen,
-		CACHE_DOUT_EN => cache_dout_wen,
+		CACHE_WEN => cache_wen,
+		CACHE_DIN_WEN => cache_din_wen,
+		CACHE_DOUT_WEN => cache_dout_wen,
 		WEN_SDRAM => sdram_wen,
-		MSTRB => memstrb,
+		MEMSTRB => memstrb,
 		RDY => rdy,
 		DEBUG => debug
 	);

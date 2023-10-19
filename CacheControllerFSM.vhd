@@ -132,7 +132,7 @@ begin
 	-- 	DOut => cpu_dout
 	-- );
 	sys_tag_compare: TagCompareDirectMapping PORT MAP(
-		CPU_ADD => cpu_address,
+		CPU_ADD => CPU_ADD,
 		clk => clk,
 		HIT_MISS => hit_miss_signal
 	);

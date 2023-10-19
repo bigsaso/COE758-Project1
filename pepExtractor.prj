@@ -1,3 +1,4 @@
-work	"CPU_gen.vhd"
 work	"CacheControllerFSM.vhd"
 work	"TagCompareDirectMapping.vhd"
+work	"ipcore_dir/icon.vhd"
+work	"ipcore_dir/sram.vhd"

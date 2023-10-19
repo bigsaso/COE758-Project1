@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file CacheControllerFSM.vhd -- 12:12:25 10/11/2023
+-- VHDL Instantiation Created from source file CacheControllerFSM.vhd -- 19:41:59 10/19/2023
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
@@ -14,12 +14,13 @@
 		CPU_ADD : IN std_logic_vector(15 downto 0);          
 		SDRAM_ADD : OUT std_logic_vector(15 downto 0);
 		CACHE_ADD : OUT std_logic_vector(7 downto 0);
-		WEN_CACHE : OUT std_logic;
-		CACHE_DIN_EN : OUT std_logic;
-		CACHE_DOUT_EN : OUT std_logic;
+		CACHE_WEN : OUT std_logic;
+		CACHE_DIN_WEN : OUT std_logic;
+		CACHE_DOUT_WEN : OUT std_logic;
 		WEN_SDRAM : OUT std_logic;
-		MSTRB : OUT std_logic;
-		RDY : OUT std_logic
+		MEMSTRB : OUT std_logic;
+		RDY : OUT std_logic;
+		DEBUG : OUT std_logic_vector(15 downto 0)
 		);
 	END COMPONENT;
 
@@ -30,12 +31,13 @@
 		CPU_ADD => ,
 		SDRAM_ADD => ,
 		CACHE_ADD => ,
-		WEN_CACHE => ,
-		CACHE_DIN_EN => ,
-		CACHE_DOUT_EN => ,
+		CACHE_WEN => ,
+		CACHE_DIN_WEN => ,
+		CACHE_DOUT_WEN => ,
 		WEN_SDRAM => ,
-		MSTRB => ,
-		RDY => 
+		MEMSTRB => ,
+		RDY => ,
+		DEBUG => 
 	);
 
 
