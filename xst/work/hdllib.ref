@@ -1,5 +1,5 @@
 EN sdram NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd sub00/vhpl10 1697758989
-EN tagcomparedirectmapping NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd sub00/vhpl00 1697758991
+EN tagcomparedirectmapping NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd sub00/vhpl00 1697759804
 AR sdram sdram_a /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd sub00/vhpl11 1697758990
 EN cachecontrollerfsm NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd sub00/vhpl01 1697758997
 AR main behavioral /home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd sub00/vhpl21 1697759008
@@ -7,7 +7,7 @@ AR ila ila_a /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/
 EN cachecontroller NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheController.vhd sub00/vhpl16 1697758659
 AR icon icon_a /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd sub00/vhpl07 1697759002
 EN sdramcontroller NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd sub00/vhpl04 1697758999
-AR tagcomparedirectmapping behavioral /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd sub00/vhpl02 1697758992
+AR tagcomparedirectmapping behavioral /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd sub00/vhpl02 1697759805
 EN icon NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd sub00/vhpl06 1697759001
 EN cpu_gen NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd sub00/vhpl14 1697758995
 EN sram NULL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd sub00/vhpl12 1697758993
