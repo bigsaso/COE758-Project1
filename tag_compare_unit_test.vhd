@@ -82,9 +82,9 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-		CPU_ADD <= "1000000000100000";
+		CPU_ADD <= "0000000100000000";
       wait for clk_period*10;
-		CPU_ADD <= "0000000000100000";
+		CPU_ADD <= "0000001000000000";
       -- insert stimulus here 
 
       wait;

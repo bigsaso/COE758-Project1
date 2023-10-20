@@ -112,16 +112,24 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+--		-- Cache Hit and Write
+--		CS <= '1';
+--		CPU_ADD <= "0000000100000000";
+--		WR_RD <= '1';
+--		-- Cache Hit and Read
+--		CS <= '1';
+--		CPU_ADD <= "0000000100000000";
+--		WR_RD <= '0';
+--		-- Cache Miss, Dirty bit not set and write
+--		CS <= '1';
+--		CPU_ADD <= "1000000000000000";
+--		WR_RD <= '0';
+		-- Cache Miss, Dirty bit set and write
 		CS <= '1';
-      wait for clk_period*10;
-		CS <= '0';
-		CPU_ADD <= "1000000000100000";
+		CPU_ADD <= "0000000100000000";
 		WR_RD <= '1';
-		wait for clk_period*10;
-		CS <= '1';
-		wait for clk_period*10;
-		CS <= '0';
-		CPU_ADD <= "1000000000100000";
+		wait for clk_period * 10;
+		CPU_ADD <= "1000000000000000";
 		WR_RD <= '0';
       -- insert stimulus here 
 

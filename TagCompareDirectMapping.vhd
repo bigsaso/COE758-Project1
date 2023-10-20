@@ -41,7 +41,9 @@ end TagCompareDirectMapping;
 architecture Behavioral of TagCompareDirectMapping is
 	-- Array of 8 blocks of Cache Memory
 	type cachememory is array (7 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
-	signal memtag: cachememory := ((others=> (others=>'0')));
+	-- Unit testing functional sim: commenting out array with all 0s and creating a sample one
+	--signal memtag: cachememory := ((others=> (others=>'0')));
+	signal memtag: cachememory := ("00001000","00000111","00000110","00000101","00000100","00000011","00000010","00000001");
 	-- CPU signals
 	--signal cpu_address : STD_LOGIC_VECTOR (15 downto 0);
 	signal cpu_tag : STD_LOGIC_VECTOR(7 DOWNTO 0);-- := CPU_ADD(15 DOWNTO 8);
@@ -49,8 +51,6 @@ architecture Behavioral of TagCompareDirectMapping is
 	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0);-- := CPU_ADD(4 DOWNTO 0);
 	-- Hit/Miss signal
 	signal is_cache_hit : STD_LOGIC;
-	-- Functional simulation signal
-	signal trial : STD_LOGIC_VECTOR(7 DOWNTO 0) := "10000000";
 begin
 	-- Continuous assignment of CPU signals
 	cpu_tag <= CPU_ADD(15 DOWNTO 8);
@@ -59,8 +59,8 @@ begin
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then
-			-- if(memtag(to_integer(unsigned(cpu_index))) = cpu_tag) then
-			if(trial = cpu_tag) then
+			if(memtag(to_integer(unsigned(cpu_index))) = cpu_tag) then
+			--if(trial = cpu_tag) then
 				HIT_MISS <= '1';
 			else
 				-- Should a miss add this tag to our array for next time?
@@ -68,6 +68,5 @@ begin
 			end if;
 		end if;
 	end process;
-
 end Behavioral;
 
