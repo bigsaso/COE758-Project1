@@ -1,0 +1,2 @@
+vhdl work "TagCompareDirectMapping.vhd"
+vhdl work "tag_compare_unit_test.vhd"

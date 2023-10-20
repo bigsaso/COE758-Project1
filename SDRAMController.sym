@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="SDRAMController">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2023-10-11T14:48:57</timestamp>
+    <timestamp>2023-10-20T2:31:21</timestamp>
     <pin polarity="Input" x="0" y="-288" name="WR_RD" />
     <pin polarity="Input" x="0" y="-224" name="MSTRB" />
     <pin polarity="Input" x="0" y="-160" name="Clk" />

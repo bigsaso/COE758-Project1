@@ -1,0 +1,3 @@
+vhdl isim_temp "TagCompareDirectMapping.vhd"
+vhdl isim_temp "CacheControllerFSM.vhd"
+vhdl isim_temp "cache_controller_unit_test.vhd"

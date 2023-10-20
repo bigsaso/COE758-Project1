@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: TMU
+-- Engineer: Salvatore Logozzo and Alexander Zwegers
 -- 
 -- Create Date:    13:25:54 10/02/2023 
 -- Design Name: 
@@ -44,33 +44,20 @@ entity CacheControllerFSM is
            WEN_SDRAM : out  STD_LOGIC;
            MEMSTRB : out  STD_LOGIC;
            RDY : out  STD_LOGIC;
-		   DEBUG : out STD_LOGIC_VECTOR(15 DOWNTO 0));
+		   DEBUG : out STD_LOGIC_VECTOR(31 DOWNTO 0));
 end CacheControllerFSM;
 
 architecture Behavioral of CacheControllerFSM is
-	-- -- CPU component
-	-- COMPONENT CPU_gen
-	-- 	PORT(
-	-- 		clk : IN std_logic;
-	-- 		rst : IN std_logic;
-	-- 		trig : IN std_logic;          
-	-- 		Address : OUT std_logic_vector(15 downto 0);
-	-- 		wr_rd : OUT std_logic;
-	-- 		cs : OUT std_logic;
-	-- 		DOut : OUT std_logic_vector(7 downto 0)
-	-- 		);
-	-- 	END COMPONENT;
-	-- -- CPU signals
-	-- signal cpu_reset: STD_LOGIC;
-	-- signal cpu_rdy: STD_LOGIC;
-	-- signal cpu_address: std_logic_vector(15 downto 0);
-	-- signal cpu_wr_rd: STD_LOGIC;
-	-- signal cpu_cs: STD_LOGIC;
-	-- signal cpu_dout: std_logic_vector(7 downto 0);
-	signal cpu_tag : STD_LOGIC_VECTOR(7 DOWNTO 0) := CPU_ADD(15 DOWNTO 8);
-	signal cpu_index : STD_LOGIC_VECTOR(2 DOWNTO 0) := CPU_ADD(7 DOWNTO 5);
-	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0) := CPU_ADD(4 DOWNTO 0);
-	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0) := CPU_ADD(7 DOWNTO 0);
+	-- Array of 8 blocks of dirty and valid bits
+	type dirty_bits is array (7 downto 0) of STD_LOGIC;
+	signal dbits: dirty_bits := (others => '0');
+	type valid_bits is array (7 downto 0) of STD_LOGIC;
+	signal vbits: valid_bits := (others => '0');
+	-- CPU signals
+	signal cpu_tag : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal cpu_index : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	-- Tag compare component
 	COMPONENT TagCompareDirectMapping
 	PORT(
@@ -81,78 +68,43 @@ architecture Behavioral of CacheControllerFSM is
 	END COMPONENT;
 	-- Tag compare signals
 	signal hit_miss_signal: STD_LOGIC;
-	-- -- ICON component
-	-- component icon
-	--   PORT (
-	-- 	 CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
-	-- end component;
-	-- -- ILA component
-	-- component ila
-	--   PORT (
-	-- 	 CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
-	-- 	 CLK : IN STD_LOGIC;
-	-- 	 DATA : IN STD_LOGIC_VECTOR(84 DOWNTO 0);
-	-- 	 TRIG0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0));
-	-- end component;
-	-- --ICON and ILA signals
-	-- signal control0: STD_LOGIC_VECTOR(35 DOWNTO 0);
-	-- signal ila_data: STD_LOGIC_VECTOR(84 DOWNTO 0);
-	-- signal ila_trig0: STD_LOGIC_VECTOR(7 DOWNTO 0);
 	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
 	signal yfsm : state_type;
-	-- SRAM component
-	COMPONENT sram
-	  PORT (
-		 clka : IN STD_LOGIC;
-		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-		 addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-	  );
-	END COMPONENT;
+--	-- SRAM component
+--	COMPONENT sram
+--	  PORT (
+--		 clka : IN STD_LOGIC;
+--		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+--		 addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+--		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+--		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+--	  );
+--	END COMPONENT;
 	-- SRAM signals
-	signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal dirty_bit : STD_LOGIC:=sram_add(7);
-   signal valid_bit : STD_LOGIC:=sram_add(6);
-	-- -- SDRAM signals
-	-- signal sdram_din, sdram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	-- signal sdram_wen: STD_LOGIC;
+	--signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	--signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
 	
 begin
-	-- sys_cpu: CPU_gen PORT MAP(
-	-- 	clk => clk,
-	-- 	rst => cpu_reset,
-	-- 	trig => rdy,
-	-- 	Address => cpu_address,
-	-- 	wr_rd => cpu_wr_rd,
-	-- 	cs => cpu_cs,
-	-- 	DOut => cpu_dout
-	-- );
+	-- Continuous assignment of CPU signals
+	cpu_tag <= CPU_ADD(15 DOWNTO 8);
+	cpu_index <= CPU_ADD(7 DOWNTO 5);
+	cpu_offset <= CPU_ADD(4 DOWNTO 0);
+	index_and_offset <= CPU_ADD(7 DOWNTO 0);
 	sys_tag_compare: TagCompareDirectMapping PORT MAP(
 		CPU_ADD => CPU_ADD,
 		clk => clk,
 		HIT_MISS => hit_miss_signal
 	);
-	-- sys_icon : icon
-	--   port map (
-	-- 	 CONTROL0 => control0);
-	-- sys_ila : ila
-	--   port map (
-	-- 	 CONTROL => control0,
-	-- 	 CLK => clk,
-	-- 	 DATA => ila_data,
-	-- 	 TRIG0 => ila_trig0);
-	local_sram : sram
-	  PORT MAP (
-		 clka => clk,
-		 wea => sram_wen,
-		 addra => sram_add,
-		 dina => sram_din,
-		 douta => sram_dout
-	  );
+--	local_sram : sram
+--	  PORT MAP (
+--		 clka => clk,
+--		 wea => CACHE_WEN,
+--		 addra => CACHE_ADD,
+--		 dina => sram_din,
+--		 douta => sram_dout
+--	  );
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then
@@ -174,10 +126,10 @@ begin
 					elsif(hit_miss_signal='1' AND WR_RD='0') then
 						yfsm <= s3;
 						DEBUG(2 DOWNTO 0) <= "011";
-					elsif(hit_miss_signal='0' AND dirty_bit='0') then
+					elsif(hit_miss_signal='0' AND dbits(to_integer(unsigned(cpu_index)))='0') then
 						yfsm <= s4;
 						DEBUG(2 DOWNTO 0) <= "100";
-					elsif(hit_miss_signal='0' AND dirty_bit='1') then
+					elsif(hit_miss_signal='0' AND dbits(to_integer(unsigned(cpu_index)))='1') then
 						yfsm <= s5;
 						DEBUG(2 DOWNTO 0) <= "101";
 					end if;
@@ -236,8 +188,8 @@ begin
 				CACHE_ADD <= index_and_offset;
 				CACHE_WEN <= '1';
 				CACHE_DIN_WEN <= '0';
-				dirty_bit <= '1'; --dirty bit
-				valid_bit <= '1'; --valid bit
+				dbits(to_integer(unsigned(cpu_index))) <= '1'; --dirty bit
+				vbits(to_integer(unsigned(cpu_index))) <= '1'; --valid bit
 				-- RDY <= '1'; -- This should happen when going back to s0
 			-- Generating outputs for s3
 			when s3 =>
@@ -251,7 +203,7 @@ begin
 				WEN_SDRAM <= '0';
 				CACHE_DIN_WEN <= '1';
 				CACHE_WEN <= '1';
-				valid_bit <= '1'; --valid bit
+				vbits(to_integer(unsigned(cpu_index))) <= '1'; --valid bit
 			-- Generating outputs for s5
 			when s5 =>
 				SDRAM_ADD <= (cpu_add AND "1111111111100000");
@@ -261,29 +213,8 @@ begin
 		end case;
 	end process;
 	
---	-- Mapping signals back into ports
---	WR_RD <= cpu_wr_rd;
---	CS <= cpu_cs;
---	HIT_MISS <= hit_miss_signal;
---	CPU_ADD <= cpu_address;
---	SDRAM_ADD <= sdram_address;
---	CACHE_ADD <= cache_address;
---	WEN_CACHE <= cache_wen;
---	CACHE_DIN_EN <= cache_din_wen;
---	CACHE_DOUT_EN <= cache_dout_wen;
---	WEN_SDRAM <= sdram_wen;
---	MSTRB <= memstrb;
---	RDY <= cpu_rdy;
---	
---	-- Mapping ILA ports
---	ila_data(15 DOWNTO 0) <= CPU_ADD;
---	ila_data(16) <= WR_RD;
---	ila_data(17) <= RDY;
---	ila_data(18) <= CS;
---	ila_data(26 DOWNTO 19) <= CACHE_ADD;
---	ila_data(27) <= HIT_MISS;
---	ila_data(28) <= MSTRB;
---	ila_data(44 DOWNTO 29) <= SDRAM_ADD;
+	DEBUG(3) <= dbits(to_integer(unsigned(cpu_index)));
+	DEBUG(4) <= vbits(to_integer(unsigned(cpu_index)));
 
 end Behavioral;
 

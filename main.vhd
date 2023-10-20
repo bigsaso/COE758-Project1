@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: TMU
+-- Engineer: Salvatore Logozzo and Alexander Zwegers
 -- 
 -- Create Date:    12:10:13 10/11/2023 
 -- Design Name: 
@@ -72,7 +72,7 @@ architecture Behavioral of main is
 		WEN_SDRAM : OUT std_logic;
 		MEMSTRB : OUT std_logic;
 		RDY : OUT std_logic;
-		DEBUG : OUT std_logic_vector(15 downto 0)
+		DEBUG : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
 	-- Cache controller signals
@@ -84,8 +84,8 @@ architecture Behavioral of main is
 	signal cache_dout_wen: std_logic;
 	signal memstrb: std_logic;
 	signal rdy: std_logic;
-	signal debug : std_logic_vector(15 downto 0);
-	-- SRAM component
+	signal debug : std_logic_vector(31 downto 0);
+--	-- SRAM component
 	COMPONENT sram
 	  PORT (
 		 clka : IN STD_LOGIC;
@@ -96,11 +96,9 @@ architecture Behavioral of main is
 	  );
 	END COMPONENT;
 	-- SRAM signals
-	signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	--signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
 	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal sram_dirty_bit : STD_LOGIC:=sram_add(7);
-   signal sram_valid_bit : STD_LOGIC:=sram_add(6);
+	--signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
 	-- SDRAM controller component
 	COMPONENT SDRAMController
 	PORT(
@@ -171,8 +169,8 @@ begin
 	local_sram : sram
 	  PORT MAP (
 		 clka => clk,
-		 wea => sram_wen,
-		 addra => sram_add,
+		 wea(0) => cache_wen,
+		 addra => cache_address,
 		 dina => sram_din,
 		 douta => sram_dout
 	);
@@ -215,16 +213,16 @@ begin
 	ila_data(16) <= cpu_wr_rd;
 	ila_data(17) <= rdy;
 	ila_data(18) <= cpu_cs;
-	ila_data(19) <= sram_dirty_bit;
-	ila_data(20) <= sram_valid_bit;
-	ila_data(28 DOWNTO 21) <= sram_add;
+	ila_data(19) <= debug(3); -- dirty bit
+	ila_data(20) <= debug(4); -- valid bit
+	ila_data(28 DOWNTO 21) <= cache_address;
 	ila_data(36 DOWNTO 29) <= sram_din;
 	ila_data(44 DOWNTO 37) <= sram_dout;
 	ila_data(60 DOWNTO 45) <= sdram_address;
 	ila_data(68 DOWNTO 61) <= sdram_din;
 	ila_data(76 DOWNTO 69) <= sdram_dout;
 	ila_data(84 DOWNTO 77) <= cpu_dout;
-	ila_data(87 DOWNTO 85) <= debug(2 DOWNTO 0);
+	ila_data(87 DOWNTO 85) <= debug(2 DOWNTO 0); -- current state
 
 end Behavioral;
 

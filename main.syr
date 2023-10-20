@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: main.prj
@@ -114,12 +114,12 @@ Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipc
 Architecture sdram_a of Entity sdram is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" in Library work.
 Architecture behavioral of Entity tagcomparedirectmapping is up to date.
-Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd" in Library work.
-Architecture sram_a of Entity sram is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd" in Library work.
 Architecture behavioral of Entity cpu_gen is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" in Library work.
 Architecture behavioral of Entity cachecontrollerfsm is up to date.
+Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd" in Library work.
+Architecture sram_a of Entity sram is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd" in Library work.
 Architecture behavioral of Entity sdramcontroller is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd" in Library work.
@@ -140,25 +140,14 @@ WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 102: Default value is ignored for signal <sram_dirty_bit>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 103: Default value is ignored for signal <sram_valid_bit>.
 
 Analyzing hierarchy for entity <CPU_gen> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <CacheControllerFSM> in library <work> (architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 70: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 71: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 72: Default value is ignored for signal <cpu_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 73: Default value is ignored for signal <index_and_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 118: Default value is ignored for signal <dirty_bit>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 119: Default value is ignored for signal <valid_bit>.
 
 Analyzing hierarchy for entity <SDRAMController> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <TagCompareDirectMapping> in library <work> (architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 47: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 48: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 49: Default value is ignored for signal <cpu_offset>.
 
 
 =========================================================================
@@ -169,36 +158,22 @@ WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
 WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 102: Default value is ignored for signal <sram_dirty_bit>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 103: Default value is ignored for signal <sram_valid_bit>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 171: Instantiating black box module <sram>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 187: Instantiating black box module <icon>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 190: Instantiating black box module <ila>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 196: Instantiating black box module <vio>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 169: Instantiating black box module <sram>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 185: Instantiating black box module <icon>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 188: Instantiating black box module <ila>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 194: Instantiating black box module <vio>.
 Entity <main> analyzed. Unit <main> generated.
 
 Analyzing Entity <CPU_gen> in library <work> (Architecture <behavioral>).
 Entity <CPU_gen> analyzed. Unit <CPU_gen> generated.
 
 Analyzing Entity <CacheControllerFSM> in library <work> (Architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 70: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 71: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 72: Default value is ignored for signal <cpu_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 73: Default value is ignored for signal <index_and_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 118: Default value is ignored for signal <dirty_bit>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 119: Default value is ignored for signal <valid_bit>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 148: Instantiating black box module <sram>.
-WARNING:Xst:819 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 225: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" line 177: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <index_and_offset>, <CPU_ADD>
-INFO:Xst:2679 - Register <dirty_bit> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <valid_bit> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <MEMSTRB> in unit <CacheControllerFSM> has a constant value of 1 during circuit operation. The register is replaced by logic.
 Entity <CacheControllerFSM> analyzed. Unit <CacheControllerFSM> generated.
 
 Analyzing Entity <TagCompareDirectMapping> in library <work> (Architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 47: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 48: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" line 49: Default value is ignored for signal <cpu_offset>.
 Entity <TagCompareDirectMapping> analyzed. Unit <TagCompareDirectMapping> generated.
 
 Analyzing Entity <SDRAMController> in library <work> (Architecture <behavioral>).
@@ -246,41 +221,41 @@ Unit <CPU_gen> synthesized.
 
 Synthesizing Unit <TagCompareDirectMapping>.
     Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd".
-WARNING:Xst:1305 - Output <HIT_MISS> is never assigned. Tied to value 0.
-WARNING:Xst:647 - Input <CPU_ADD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <trial> is used but never assigned. This sourceless signal will be automatically connected to value 10000000.
 WARNING:Xst:1780 - Signal <memtag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <is_cache_hit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <cpu_tag> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cpu_address> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <is_cache_hit> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cpu_offset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cpu_index> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <HIT_MISS>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
 Unit <TagCompareDirectMapping> synthesized.
 
 
 Synthesizing Unit <CacheControllerFSM>.
     Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd".
-WARNING:Xst:1305 - Output <DEBUG<15:3>> is never assigned. Tied to value 0000000000000.
-WARNING:Xst:646 - Signal <valid_bit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <sram_wen<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:646 - Signal <sram_dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <sram_din> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:653 - Signal <sram_add> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:653 - Signal <index_and_offset> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:1780 - Signal <cpu_tag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1305 - Output <DEBUG<31:5>> is never assigned. Tied to value 000000000000000000000000000.
+WARNING:Xst:646 - Signal <cpu_tag> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cpu_offset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found finite state machine <FSM_1> for signal <yfsm>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
-    | Transitions        | 10                                             |
-    | Inputs             | 3                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 4                                              |
     | Outputs            | 6                                              |
     | Clock              | clk                       (rising_edge)        |
     | Power Up State     | s0                                             |
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dbits_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <RDY>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_DOUT_WEN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -291,14 +266,49 @@ WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_WEN>. Latches may be gener
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 16-bit latch for signal <SDRAM_ADD>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <vbits_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 1-bit latch for signal <WEN_SDRAM>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 1-bit latch for signal <CACHE_DIN_WEN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_7$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_6$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_5$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_4$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_3$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_2$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_1$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <vbits_0$mux0000> created at line 206. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit 8-to-1 multiplexer for signal <DEBUG<4>>.
     Found 3-bit register for signal <DEBUG<2:0>>.
+    Found 1-bit 8-to-1 multiplexer for signal <dbits$mux0000> created at line 128.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   3 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <CacheControllerFSM> synthesized.
 
 
@@ -369,10 +379,6 @@ Unit <SDRAMController> synthesized.
 Synthesizing Unit <main>.
     Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd".
 WARNING:Xst:646 - Signal <vio_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <sram_wen<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <sram_valid_bit> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <sram_dirty_bit> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <sram_add> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
 WARNING:Xst:653 - Signal <sdram_wr_rd> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <sdram_wen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <sdram_mstrb> is used but never assigned. This sourceless signal will be automatically connected to value 0.
@@ -380,13 +386,11 @@ WARNING:Xst:646 - Signal <memstrb> is assigned but never used. This unconnected 
 WARNING:Xst:1780 - Signal <index_and_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <ila_trig0> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
 WARNING:Xst:653 - Signal <ila_data<98:88>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000.
-WARNING:Xst:646 - Signal <debug<15:3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <debug<31:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <cpu_tag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <cpu_reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:1780 - Signal <cpu_offset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <cpu_index> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <cache_wen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <cache_address> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 8-bit register for signal <sdram_din>.
     Found 8-bit register for signal <sram_din>.
     Summary:
@@ -402,14 +406,15 @@ Macro Statistics
  8x25-bit ROM                                          : 1
 # Counters                                             : 1
  3-bit up counter                                      : 1
-# Registers                                            : 264
- 1-bit register                                        : 5
+# Registers                                            : 265
+ 1-bit register                                        : 6
  8-bit register                                        : 259
-# Latches                                              : 9
- 1-bit latch                                           : 7
+# Latches                                              : 33
+ 1-bit latch                                           : 31
  16-bit latch                                          : 1
  8-bit latch                                           : 1
-# Multiplexers                                         : 33
+# Multiplexers                                         : 35
+ 1-bit 8-to-1 multiplexer                              : 2
  8-bit 32-to-1 multiplexer                             : 1
  8-bit 8-to-1 multiplexer                              : 32
 
@@ -428,8 +433,8 @@ Optimizing FSM <sys_cache_controller/yfsm/FSM> on signal <yfsm[1:6]> with one-ho
  s1    | 000010
  s2    | 000100
  s3    | 001000
- s4    | 100000
- s5    | 010000
+ s4    | 010000
+ s5    | 100000
 -------------------
 Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <sys_cpu/st1/FSM> on signal <st1[1:6]> with one-hot encoding.
@@ -453,9 +458,6 @@ Loading core <icon> for timing and area information for instance <sys_icon>.
 Loading core <ila> for timing and area information for instance <sys_ila>.
 Loading core <vio> for timing and area information for instance <sys_vio>.
 Loading core <sdram> for timing and area information for instance <sdram_memory>.
-Loading core <sram> for timing and area information for instance <local_sram>.
-WARNING:Xst:1290 - Hierarchical block <sys_tag_compare> is unconnected in block <sys_cache_controller>.
-   It will be removed from the design.
 INFO:Xst:2261 - The FF/Latch <ram_signal<4>_7_4> in Unit <sys_sdram_controller> is equivalent to the following 1023 FFs/Latches, which will be removed : <ram_signal<4>_7_5> <ram_signal<4>_7_6> <ram_signal<4>_7_7> <ram_signal<4>_5_4> <ram_signal<4>_5_5> <ram_signal<4>_5_6> <ram_signal<4>_5_7> <ram_signal<4>_6_4> <ram_signal<4>_6_5> <ram_signal<4>_6_6> <ram_signal<4>_6_7> <ram_signal<4>_8_4> <ram_signal<4>_8_5> <ram_signal<4>_8_6> <ram_signal<4>_8_7> <ram_signal<4>_9_4> <ram_signal<4>_9_5> <ram_signal<4>_9_6> <ram_signal<4>_9_7> <ram_signal<1>_2_4> <ram_signal<1>_2_5> <ram_signal<1>_2_6> <ram_signal<1>_2_7> <ram_signal<1>_0_4> <ram_signal<1>_0_5> <ram_signal<1>_0_6> <ram_signal<1>_0_7> <ram_signal<1>_1_4> <ram_signal<1>_1_5> <ram_signal<1>_1_6> <ram_signal<1>_1_7> <ram_signal<6>_0_4> <ram_signal<6>_0_5> <ram_signal<6>_0_6> <ram_signal<6>_0_7> <ram_signal<1>_3_4> <ram_signal<1>_3_5> <ram_signal<1>_3_6> <ram_signal<1>_3_7> <ram_signal<6>_2_4> <ram_signal<6>_2_5> <ram_signal<6>_2_6> <ram_signal<6>_2_7>
    <ram_signal<6>_1_4> <ram_signal<6>_1_5> <ram_signal<6>_1_6> <ram_signal<6>_1_7> <ram_signal<1>_4_4> <ram_signal<1>_4_5> <ram_signal<1>_4_6> <ram_signal<1>_4_7> <ram_signal<1>_5_4> <ram_signal<1>_5_5> <ram_signal<1>_5_6> <ram_signal<1>_5_7> <ram_signal<6>_3_4> <ram_signal<6>_3_5> <ram_signal<6>_3_6> <ram_signal<6>_3_7> <ram_signal<1>_6_4> <ram_signal<1>_6_5> <ram_signal<1>_6_6> <ram_signal<1>_6_7> <ram_signal<6>_4_4> <ram_signal<6>_4_5> <ram_signal<6>_4_6> <ram_signal<6>_4_7> <ram_signal<1>_7_4> <ram_signal<1>_7_5> <ram_signal<1>_7_6> <ram_signal<1>_7_7> <ram_signal<6>_5_4> <ram_signal<6>_5_5> <ram_signal<6>_5_6> <ram_signal<6>_5_7> <ram_signal<1>_9_4> <ram_signal<1>_9_5> <ram_signal<1>_9_6> <ram_signal<1>_9_7> <ram_signal<1>_8_4> <ram_signal<1>_8_5> <ram_signal<1>_8_6> <ram_signal<1>_8_7> <ram_signal<6>_6_4> <ram_signal<6>_6_5> <ram_signal<6>_6_6> <ram_signal<6>_6_7> <ram_signal<6>_7_4> <ram_signal<6>_7_5> <ram_signal<6>_7_6> <ram_signal<6>_7_7> <ram_signal<6>_8_4> <ram_signal<6>_8_5> <ram_signal<6>_8_6>
    <ram_signal<6>_8_7> <ram_signal<6>_9_4> <ram_signal<6>_9_5> <ram_signal<6>_9_6> <ram_signal<6>_9_7> <ram_signal<3>_0_4> <ram_signal<3>_0_5> <ram_signal<3>_0_6> <ram_signal<3>_0_7> <ram_signal<3>_1_4> <ram_signal<3>_1_5> <ram_signal<3>_1_6> <ram_signal<3>_1_7> <ram_signal<3>_4_4> <ram_signal<3>_4_5> <ram_signal<3>_4_6> <ram_signal<3>_4_7> <ram_signal<3>_2_4> <ram_signal<3>_2_5> <ram_signal<3>_2_6> <ram_signal<3>_2_7> <ram_signal<3>_3_4> <ram_signal<3>_3_5> <ram_signal<3>_3_6> <ram_signal<3>_3_7> <ram_signal<3>_5_4> <ram_signal<3>_5_5> <ram_signal<3>_5_6> <ram_signal<3>_5_7> <ram_signal<3>_6_4> <ram_signal<3>_6_5> <ram_signal<3>_6_6> <ram_signal<3>_6_7> <ram_signal<3>_7_4> <ram_signal<3>_7_5> <ram_signal<3>_7_6> <ram_signal<3>_7_7> <ram_signal<3>_8_4> <ram_signal<3>_8_5> <ram_signal<3>_8_6> <ram_signal<3>_8_7> <ram_signal<3>_9_4> <ram_signal<3>_9_5> <ram_signal<3>_9_6> <ram_signal<3>_9_7> <ram_signal<0>_10_4> <ram_signal<0>_10_5> <ram_signal<0>_10_6> <ram_signal<0>_10_7> <ram_signal<1>_10_4>
@@ -500,6 +502,22 @@ INFO:Xst:2261 - The FF/Latch <ram_signal<4>_7_0> in Unit <sys_sdram_controller> 
    <ram_signal<5>_29_0> <ram_signal<5>_29_1> <ram_signal<5>_29_2> <ram_signal<5>_29_3> <ram_signal<7>_19_0> <ram_signal<7>_19_1> <ram_signal<7>_19_2> <ram_signal<7>_19_3> <ram_signal<7>_24_0> <ram_signal<7>_24_1> <ram_signal<7>_24_2> <ram_signal<7>_24_3> <ram_signal<6>_27_0> <ram_signal<6>_27_1> <ram_signal<6>_27_2> <ram_signal<6>_27_3> <ram_signal<7>_25_0> <ram_signal<7>_25_1> <ram_signal<7>_25_2> <ram_signal<7>_25_3> <ram_signal<7>_5_0> <ram_signal<7>_5_1> <ram_signal<7>_5_2> <ram_signal<7>_5_3> <ram_signal<2>_8_0> <ram_signal<2>_8_1> <ram_signal<2>_8_2> <ram_signal<2>_8_3> <ram_signal<7>_30_0> <ram_signal<7>_30_1> <ram_signal<7>_30_2> <ram_signal<7>_30_3> <ram_signal<6>_28_0> <ram_signal<6>_28_1> <ram_signal<6>_28_2> <ram_signal<6>_28_3> <ram_signal<7>_6_0> <ram_signal<7>_6_1> <ram_signal<7>_6_2> <ram_signal<7>_6_3> <ram_signal<2>_9_0> <ram_signal<2>_9_1> <ram_signal<2>_9_2> <ram_signal<2>_9_3> <ram_signal<7>_26_0> <ram_signal<7>_26_1> <ram_signal<7>_26_2> <ram_signal<7>_26_3> <ram_signal<7>_31_0>
    <ram_signal<7>_31_1> <ram_signal<7>_31_2> <ram_signal<7>_31_3> <ram_signal<7>_27_0> <ram_signal<7>_27_1> <ram_signal<7>_27_2> <ram_signal<7>_27_3> <ram_signal<6>_29_0> <ram_signal<6>_29_1> <ram_signal<6>_29_2> <ram_signal<6>_29_3> <ram_signal<7>_7_0> <ram_signal<7>_7_1> <ram_signal<7>_7_2> <ram_signal<7>_7_3> <ram_signal<7>_8_0> <ram_signal<7>_8_1> <ram_signal<7>_8_2> <ram_signal<7>_8_3> <ram_signal<7>_28_0> <ram_signal<7>_28_1> <ram_signal<7>_28_2> <ram_signal<7>_28_3> <ram_signal<7>_9_0> <ram_signal<7>_9_1> <ram_signal<7>_9_2> <ram_signal<7>_9_3> <ram_signal<7>_29_0> <ram_signal<7>_29_1> <ram_signal<7>_29_2> <ram_signal<7>_29_3> <ram_signal<4>_0_0> <ram_signal<4>_0_1> <ram_signal<4>_0_2> <ram_signal<4>_0_3> <ram_signal<4>_1_0> <ram_signal<4>_1_1> <ram_signal<4>_1_2> <ram_signal<4>_1_3> <ram_signal<4>_4_0> <ram_signal<4>_4_1> <ram_signal<4>_4_2> <ram_signal<4>_4_3> <ram_signal<4>_2_0> <ram_signal<4>_2_1> <ram_signal<4>_2_2> <ram_signal<4>_2_3> <ram_signal<4>_3_0> <ram_signal<4>_3_1> <ram_signal<4>_3_2>
    <ram_signal<4>_3_3>
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_0.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_1.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_3.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_4.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_5.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_6.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block dbits_7.
+   You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
@@ -525,13 +543,14 @@ Macro Statistics
  8x25-bit ROM                                          : 1
 # Counters                                             : 1
  3-bit up counter                                      : 1
-# Registers                                            : 2077
- Flip-Flops                                            : 2077
-# Latches                                              : 9
- 1-bit latch                                           : 7
+# Registers                                            : 2078
+ Flip-Flops                                            : 2078
+# Latches                                              : 33
+ 1-bit latch                                           : 31
  16-bit latch                                          : 1
  8-bit latch                                           : 1
-# Multiplexers                                         : 33
+# Multiplexers                                         : 35
+ 1-bit 8-to-1 multiplexer                              : 2
  8-bit 32-to-1 multiplexer                             : 1
  8-bit 8-to-1 multiplexer                              : 32
 
@@ -547,15 +566,15 @@ Drivers are:
    Output signal of LUT3 instance <sys_vio/U0/I_VIO/U_DOUT>
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 7.27 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.12 secs
  
 --> 
 
 
-Total memory usage is 678568 kilobytes
+Total memory usage is 680968 kilobytes
 
 Number of errors   :    1 (   0 filtered)
-Number of warnings :  106 (   0 filtered)
-Number of infos    :   22 (   0 filtered)
+Number of warnings :   97 (   0 filtered)
+Number of infos    :   36 (   0 filtered)
 
