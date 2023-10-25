@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: main.prj
@@ -133,10 +133,10 @@ Architecture behavioral of Entity main is up to date.
 *                     Design Hierarchy Analysis                         *
 =========================================================================
 Analyzing hierarchy for entity <main> in library <work> (architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 56: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 60: Default value is ignored for signal <index_and_offset>.
 
 Analyzing hierarchy for entity <CPU_gen> in library <work> (architecture <behavioral>).
 
@@ -151,14 +151,14 @@ Analyzing hierarchy for entity <TagCompareDirectMapping> in library <work> (arch
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <main> in library <work> (Architecture <behavioral>).
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 56: Default value is ignored for signal <cpu_tag>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_index>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_offset>.
-WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <index_and_offset>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 171: Instantiating black box module <sram>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 187: Instantiating black box module <icon>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 191: Instantiating black box module <ila>.
-WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 197: Instantiating black box module <vio>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 57: Default value is ignored for signal <cpu_tag>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 58: Default value is ignored for signal <cpu_index>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 59: Default value is ignored for signal <cpu_offset>.
+WARNING:Xst:2094 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 60: Default value is ignored for signal <index_and_offset>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 173: Instantiating black box module <sram>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 189: Instantiating black box module <icon>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 193: Instantiating black box module <ila>.
+WARNING:Xst:2211 - "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd" line 199: Instantiating black box module <vio>.
 Entity <main> analyzed. Unit <main> generated.
 
 Analyzing Entity <CPU_gen> in library <work> (Architecture <behavioral>).
@@ -372,7 +372,7 @@ Unit <CacheControllerFSM> synthesized.
 
 Synthesizing Unit <main>.
     Related source file is "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd".
-WARNING:Xst:646 - Signal <vio_out<17:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <vio_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <sdram_wr_rd> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <sdram_wen> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <sdram_mstrb> is used but never assigned. This sourceless signal will be automatically connected to value 0.
@@ -2670,11 +2670,11 @@ Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <sys_cache_controller/SDRAM_ADD_12> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sys_cache_controller/SDRAM_ADD_8> 
 INFO:Xst:2261 - The FF/Latch <sys_cache_controller/SDRAM_ADD_13> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sys_cache_controller/SDRAM_ADD_9> 
-INFO:Xst:2261 - The FF/Latch <sys_cache_controller/SDRAM_ADD_14> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sys_cache_controller/SDRAM_ADD_10> 
-INFO:Xst:2261 - The FF/Latch <sram_din_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_4> 
-INFO:Xst:2261 - The FF/Latch <sram_din_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_5> 
 INFO:Xst:2261 - The FF/Latch <sram_din_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_6> 
+INFO:Xst:2261 - The FF/Latch <sram_din_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_5> 
+INFO:Xst:2261 - The FF/Latch <sys_cache_controller/SDRAM_ADD_14> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sys_cache_controller/SDRAM_ADD_10> 
 INFO:Xst:2261 - The FF/Latch <sram_din_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_7> 
+INFO:Xst:2261 - The FF/Latch <sram_din_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <sram_din_4> 
 Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 9.
 
 Final Macro Processing ...
@@ -2713,14 +2713,14 @@ Design Statistics
 # IOs                              : 1
 
 Cell Usage :
-# BELS                             : 524
+# BELS                             : 521
 #      GND                         : 5
-#      INV                         : 8
+#      INV                         : 9
 #      LUT1                        : 59
 #      LUT2                        : 43
-#      LUT3                        : 58
+#      LUT3                        : 57
 #      LUT3_L                      : 1
-#      LUT4                        : 171
+#      LUT4                        : 168
 #      LUT4_L                      : 1
 #      MUXCY                       : 9
 #      MUXCY_L                     : 64
@@ -2732,10 +2732,10 @@ Cell Usage :
 #      FD                          : 105
 #      FDC                         : 6
 #      FDCE                        : 24
-#      FDE                         : 104
+#      FDE                         : 100
 #      FDP                         : 109
 #      FDPE                        : 21
-#      FDR                         : 45
+#      FDR                         : 49
 #      FDRE                        : 91
 #      FDRS                        : 4
 #      FDS                         : 14
@@ -2766,8 +2766,8 @@ Selected Device : 3s500efg320-5
 
  Number of Slices:                      427  out of   4656     9%  
  Number of Slice Flip Flops:            543  out of   9312     5%  
- Number of 4 input LUTs:                495  out of   9312     5%  
-    Number used as logic:               341
+ Number of 4 input LUTs:                492  out of   9312     5%  
+    Number used as logic:               338
     Number used as Shift registers:     154
  Number of IOs:                           1
  Number of bonded IOBs:                   1  out of    232     0%  
@@ -2837,7 +2837,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 11.202ns (Maximum Frequency: 89.268MHz)
-   Minimum input arrival time before clock: 0.625ns
+   Minimum input arrival time before clock: 3.888ns
    Maximum output required time after clock: 0.514ns
    Maximum combinational path delay: No path found
 
@@ -3029,13 +3029,13 @@ WARNING:Xst:1415 - No path found for this constraint.
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 10.43 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 10.19 secs
  
 --> 
 
 
-Total memory usage is 686396 kilobytes
+Total memory usage is 686472 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 2186 (   0 filtered)

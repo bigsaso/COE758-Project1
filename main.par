@@ -1,7 +1,7 @@
 Release 13.4 par O.87xd (lin64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-waldorf.ee.ryerson.ca::  Wed Oct 25 11:45:22 2023
+waldorf.ee.ryerson.ca::  Wed Oct 25 11:56:14 2023
 
 par -w -intstyle ise -ol high -t 1 main_map.ncd main.ncd main.pcf 
 
@@ -49,7 +49,7 @@ Design Summary Report:
    Number of BSCANs                          1 out of 1     100%
    Number of BUFGMUXs                        2 out of 24      8%
    Number of RAMB16s                         5 out of 20     25%
-   Number of Slices                        423 out of 4656    9%
+   Number of Slices                        420 out of 4656    9%
       Number of SLICEMs                     84 out of 2328    3%
 
 
@@ -83,43 +83,44 @@ WARNING:Par:288 - The signal sys_vio/U0/I_VIO/UPDATE<4> has no load.  PAR will n
 WARNING:Par:288 - The signal sys_vio/U0/I_VIO/UPDATE<3> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal sys_vio/U0/I_VIO/UPDATE<2> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal sys_vio/U0/I_VIO/UPDATE<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sys_vio/U0/I_VIO/UPDATE<0> has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
 Total REAL time at the beginning of Placer: 1 secs 
 Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:3cd04dad) REAL time: 2 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:3cd048a3) REAL time: 2 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:3cd04dad) REAL time: 2 secs 
+Phase 2.7  Design Feasibility Check (Checksum:3cd048a3) REAL time: 2 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:69ef3f30) REAL time: 2 secs 
+Phase 3.31  Local Placement Optimization (Checksum:69ef3a26) REAL time: 2 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:301add8) REAL time: 3 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:301a8ce) REAL time: 3 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:301add8) REAL time: 3 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:301a8ce) REAL time: 3 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:301add8) REAL time: 3 secs 
+Phase 6.36  Local Placement Optimization (Checksum:301a8ce) REAL time: 3 secs 
 
 Phase 7.8  Global Placement
-..................................................................
-.................
-Phase 7.8  Global Placement (Checksum:c02cb3b0) REAL time: 3 secs 
+..........................................................................................................................................................................................
+...................
+Phase 7.8  Global Placement (Checksum:69c41ca0) REAL time: 3 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:c02cb3b0) REAL time: 3 secs 
+Phase 8.5  Local Placement Optimization (Checksum:69c41ca0) REAL time: 3 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:655e97fe) REAL time: 3 secs 
+Phase 9.18  Placement Optimization (Checksum:610117a2) REAL time: 3 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:655e97fe) REAL time: 3 secs 
+Phase 10.5  Local Placement Optimization (Checksum:610117a2) REAL time: 3 secs 
 
 Total REAL time to Placer completion: 3 secs 
 Total CPU  time to Placer completion: 3 secs 
@@ -130,13 +131,13 @@ Writing design to file main.ncd
 Starting Router
 
 
-Phase  1  : 2902 unrouted;      REAL time: 6 secs 
+Phase  1  : 2886 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 1952 unrouted;      REAL time: 6 secs 
+Phase  2  : 1932 unrouted;      REAL time: 6 secs 
 
-Phase  3  : 446 unrouted;      REAL time: 6 secs 
+Phase  3  : 439 unrouted;      REAL time: 6 secs 
 
-Phase  4  : 446 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  4  : 439 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
 
 Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
 
@@ -147,14 +148,12 @@ Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL 
 Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
 Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+WARNING:Route:455 - CLK Net:control0<0> may have excessive skew because 
+      0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:control0<13> may have excessive skew because 
       1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:sys_cache_controller/CACHE_ADD_or0000 may have excessive skew because 
-      2 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:cpu_address<6> may have excessive skew because 
-      0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:sys_cache_controller/vbits_7_or0000 may have excessive skew because 
-      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+      4 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 
 Total REAL time to Router completion: 7 secs 
 Total CPU time to Router completion: 6 secs 
@@ -175,38 +174,38 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|         control0<0> | BUFGMUX_X1Y10| No   |  114 |  0.072     |  0.176      |
+|         control0<0> | BUFGMUX_X1Y10| No   |  114 |  0.071     |  0.177      |
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X1Y11| No   |  226 |  0.045     |  0.148      |
+|           clk_BUFGP | BUFGMUX_X1Y11| No   |  225 |  0.052     |  0.154      |
 +---------------------+--------------+------+------+------------+-------------+
-|        control0<13> |         Local|      |    5 |  0.000     |  0.763      |
+|        control0<13> |         Local|      |    5 |  0.000     |  0.651      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_icon/U0/iUPDATE_ |              |      |      |            |             |
-|                 OUT |         Local|      |    1 |  0.000     |  1.631      |
+|                 OUT |         Local|      |    1 |  0.000     |  1.620      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_cache_controller |              |      |      |            |             |
-|   /SDRAM_ADD_or0000 |         Local|      |    3 |  0.125     |  1.812      |
+|   /SDRAM_ADD_or0000 |         Local|      |    3 |  0.167     |  1.854      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_cache_controller |              |      |      |            |             |
-|   /CACHE_WEN_or0000 |         Local|      |    1 |  0.000     |  0.307      |
+|   /CACHE_WEN_or0000 |         Local|      |    1 |  0.000     |  0.717      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_cache_controller |              |      |      |            |             |
-|   /CACHE_ADD_or0000 |         Local|      |    2 |  0.200     |  0.953      |
+|   /CACHE_ADD_or0000 |         Local|      |    2 |  0.155     |  1.835      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_cache_controller |              |      |      |            |             |
-|         /RDY_or0000 |         Local|      |    1 |  0.000     |  0.301      |
+|         /RDY_or0000 |         Local|      |    1 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|      cpu_address<6> |         Local|      |    5 |  0.514     |  1.295      |
++---------------------+--------------+------+------+------------+-------------+
+|sys_cpu/updPat_or000 |              |      |      |            |             |
+|                   0 |         Local|      |    2 |  0.001     |  0.303      |
++---------------------+--------------+------+------+------------+-------------+
+|sys_cache_controller |              |      |      |            |             |
+|     /vbits_7_or0000 |         Local|      |    2 |  0.168     |  1.854      |
 +---------------------+--------------+------+------+------------+-------------+
 |sys_cache_controller |              |      |      |            |             |
 |/CACHE_DOUT_MUX_or00 |              |      |      |            |             |
-|                  00 |         Local|      |    1 |  0.000     |  0.979      |
-+---------------------+--------------+------+------+------------+-------------+
-|      cpu_address<6> |         Local|      |    5 |  0.161     |  1.855      |
-+---------------------+--------------+------+------+------------+-------------+
-|sys_cpu/updPat_or000 |              |      |      |            |             |
-|                   0 |         Local|      |    2 |  0.136     |  1.816      |
-+---------------------+--------------+------+------+------------+-------------+
-|sys_cache_controller |              |      |      |            |             |
-|     /vbits_7_or0000 |         Local|      |    2 |  0.300     |  0.566      |
+|                  00 |         Local|      |    1 |  0.000     |  0.743      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -228,26 +227,26 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    11.588ns|     3.412ns|       0|           0
+  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    11.666ns|     3.334ns|       0|           0
    TO TIMEGRP "J_CLK" 15 ns                 |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    13.386ns|     1.614ns|       0|           0
+  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    12.918ns|     2.082ns|       0|           0
    TO TIMEGRP "U_CLK" 15 ns                 |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 ns H | MINLOWPULSE |    27.224ns|     2.776ns|       0|           0
   IGH 50%                                   |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_D2_TO_T2_path" TIG               | SETUP       |         N/A|     5.982ns|     N/A|           0
+  PATH "TS_D2_TO_T2_path" TIG               | SETUP       |         N/A|     5.218ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
   PATH "TS_J2_TO_D2_path" TIG               | N/A         |         N/A|         N/A|     N/A|         N/A
 ----------------------------------------------------------------------------------------------------------
   PATH "TS_J3_TO_D2_path" TIG               | N/A         |         N/A|         N/A|     N/A|         N/A
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_J4_TO_D2_path" TIG               | MAXDELAY    |         N/A|     4.903ns|     N/A|           0
+  PATH "TS_J4_TO_D2_path" TIG               | MAXDELAY    |         N/A|     5.336ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_J_TO_D_path" TIG                 | SETUP       |         N/A|     5.426ns|     N/A|           0
+  PATH "TS_J_TO_D_path" TIG                 | SETUP       |         N/A|     5.630ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_D_TO_J_path" TIG                 | SETUP       |         N/A|    11.649ns|     N/A|           0
+  PATH "TS_D_TO_J_path" TIG                 | SETUP       |         N/A|    13.139ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -263,9 +262,9 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 18 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+WARNING:Par:283 - There are 19 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 7 secs 
+Total REAL time to PAR completion: 8 secs 
 Total CPU time to PAR completion: 7 secs 
 
 Peak Memory Usage:  688 MB

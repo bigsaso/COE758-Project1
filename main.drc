@@ -1,7 +1,7 @@
 Release 13.4 Drc O.87xd (lin64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Wed Oct 25 11:45:40 2023
+Wed Oct 25 11:56:43 2023
 
 drc -z main.ncd main.pcf
 
@@ -24,10 +24,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    sys_cache_controller/RDY_or0000 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   sys_cache_controller/CACHE_DOUT_MUX_or0000 is sourced by a combinatorial pin.
-   This is not good design practice. Use the CE pin to control the loading of
-   data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net cpu_address<6> is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
@@ -38,6 +34,10 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    sys_cache_controller/vbits_7_or0000 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/CACHE_DOUT_MUX_or0000 is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal
    <sys_vio/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The signal does not
    drive any load pins in the design.
@@ -74,6 +74,8 @@ WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<3>> is
 WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<2>> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<1>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<0>> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:812 - Dangling pin <DOA1> on
    block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
@@ -243,5 +245,5 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
 WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
    block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
    d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
-DRC detected 0 errors and 83 warnings.  Please see the previously displayed
+DRC detected 0 errors and 84 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

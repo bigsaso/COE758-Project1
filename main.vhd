@@ -48,6 +48,7 @@ architecture Behavioral of main is
 		);
 	END COMPONENT;
 	-- CPU signals
+	signal trig: STD_LOGIC;
 	signal cpu_reset: STD_LOGIC;
 	signal cpu_address: std_logic_vector(15 downto 0);
 	signal cpu_wr_rd: STD_LOGIC;
@@ -144,10 +145,11 @@ architecture Behavioral of main is
 	signal vio_out: STD_LOGIC_VECTOR(17 DOWNTO 0);
 
 begin
+	trig <= rdy AND control_vio(0);
 	sys_cpu: CPU_gen PORT MAP(
 		clk => clk,
 		rst => cpu_reset,
-		trig => rdy,
+		trig => trig,--rdy
 		Address => cpu_address,
 		wr_rd => cpu_wr_rd,
 		cs => cpu_cs,
@@ -200,7 +202,7 @@ begin
        ASYNC_OUT => vio_out);
 	process(clk,cache_din_mux,cache_dout_mux)
 	begin
-		if(clk'Event AND clk='1' AND vio_out(0)='1') then-- AND control_vio(0)='1'
+		if(clk'Event AND clk='1') then-- AND control_vio(0)='1'
 			if(cache_din_mux='0') then
 				sram_din <= cpu_dout;
 			else

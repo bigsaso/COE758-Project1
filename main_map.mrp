@@ -9,24 +9,24 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Oct 25 11:45:16 2023
+Mapped Date    : Wed Oct 25 11:56:10 2023
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   83
+Number of warnings:   85
 Logic Utilization:
-  Total Number Slice Registers:         524 out of   9,312    5%
-    Number used as Flip Flops:          504
+  Total Number Slice Registers:         523 out of   9,312    5%
+    Number used as Flip Flops:          503
     Number used as Latches:              20
-  Number of 4 input LUTs:               372 out of   9,312    3%
+  Number of 4 input LUTs:               368 out of   9,312    3%
 Logic Distribution:
-  Number of occupied Slices:            423 out of   4,656    9%
-    Number of Slices containing only related logic:     423 out of     423 100%
-    Number of Slices containing unrelated logic:          0 out of     423   0%
+  Number of occupied Slices:            420 out of   4,656    9%
+    Number of Slices containing only related logic:     420 out of     420 100%
+    Number of Slices containing unrelated logic:          0 out of     420   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         430 out of   9,312    4%
-    Number used as logic:               218
+  Total Number of 4 input LUTs:         426 out of   9,312    4%
+    Number used as logic:               214
     Number used as a route-thru:         58
     Number used as Shift registers:     154
 
@@ -39,10 +39,10 @@ Logic Distribution:
   Number of BSCANs:                       1 out of       1  100%
 
   Number of RPM macros:           12
-Average Fanout of Non-Clock Nets:                2.65
+Average Fanout of Non-Clock Nets:                2.63
 
 Peak Memory Usage:  703 MB
-Total REAL time to MAP completion:  3 secs 
+Total REAL time to MAP completion:  2 secs 
 Total CPU time to MAP completion:   2 secs 
 
 NOTES:
@@ -90,6 +90,13 @@ WARNING:Security:44 - Since no license file was found,
 WARNING:Security:42 - Your software subscription period has lapsed. Your current
 version of Xilinx tools will continue to function, but you no longer qualify for
 Xilinx software updates or new releases.
+WARNING:LIT:176 - Clock buffer is designated to drive clock loads. BUFGMUX
+   symbol
+   "physical_group_control0<0>/sys_icon/U0/U_ICON/I_YES_BSCAN.U_BS/I_USE_SOFTBSC
+   AN_EQ0.I_USE_XST_TCK_WORKAROUND_EQ1.U_ICON_BSCAN_BUFG/U_BUFG" (output
+   signal=control0<0>) has a mix of clock and non-clock loads. The non-clock
+   loads are:
+   Pin I1 of trig1
 WARNING:PhysDesignRules:372 - Gated clock. Clock net control0<13> is sourced by
    a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
@@ -109,10 +116,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    sys_cache_controller/RDY_or0000 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   sys_cache_controller/CACHE_DOUT_MUX_or0000 is sourced by a combinatorial pin.
-   This is not good design practice. Use the CE pin to control the loading of
-   data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net cpu_address<6> is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
@@ -123,6 +126,10 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    sys_cache_controller/vbits_7_or0000 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/CACHE_DOUT_MUX_or0000 is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal
    <sys_vio/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The signal does not
    drive any load pins in the design.
@@ -159,6 +166,8 @@ WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<3>> is
 WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<2>> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<1>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<0>> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:812 - Dangling pin <DOA1> on
    block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
@@ -336,7 +345,7 @@ INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
 '/CMC/licenses/xilinx.license'.
 INFO:Security:54 - 'xc3s500e' is a WebPack part.
 INFO:LIT:243 - Logical network sys_vio/ASYNC_OUT<17> has no load.
-INFO:LIT:395 - The above info message is repeated 16 more times for the
+INFO:LIT:395 - The above info message is repeated 17 more times for the
    following (max. 5 shown):
    sys_vio/ASYNC_OUT<16>,
    sys_vio/ASYNC_OUT<15>,
@@ -348,9 +357,9 @@ INFO:MapLib:562 - No environment variables are currently set.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  73 block(s) removed
+  74 block(s) removed
  115 block(s) optimized away
-  57 signal(s) removed
+  58 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -469,6 +478,7 @@ The signal "sys_vio/ASYNC_OUT<4>" is sourceless and has been removed.
 The signal "sys_vio/ASYNC_OUT<3>" is sourceless and has been removed.
 The signal "sys_vio/ASYNC_OUT<2>" is sourceless and has been removed.
 The signal "sys_vio/ASYNC_OUT<1>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<0>" is sourceless and has been removed.
 Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
 removed.
 Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
@@ -530,6 +540,8 @@ removed.
 Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_HCE" (ROM)
 removed.
 Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE" (ROM)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/USER_REG" (FF)
 removed.
 Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[10].ASYNC_OUT_CELL/USER_REG" (FF)
 removed.

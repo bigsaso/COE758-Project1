@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.87xd on Wed Oct 25 11:45:18 2023
+// Written by: Map O.87xd on Wed Oct 25 11:56:12 2023
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -57,19 +57,18 @@ PIN
         PINNAME CLKB;
 TIMEGRP D_CLK = BEL "sdram_din_0" BEL "sdram_din_1" BEL "sdram_din_2" BEL
         "sdram_din_3" BEL "sdram_din_4" BEL "sdram_din_5" BEL "sdram_din_6"
-        BEL "sdram_din_7" BEL "sram_din_0" BEL "sram_din_1" BEL "sram_din_2"
-        BEL "sram_din_3" BEL "sys_cpu/st1_FSM_FFd1" BEL "sys_cpu/st1_FSM_FFd2"
-        BEL "sys_cpu/st1_FSM_FFd3" BEL "sys_cpu/st1_FSM_FFd4" BEL
-        "sys_cpu/st1_FSM_FFd5" BEL "sys_cpu/st1_FSM_FFd6" BEL
-        "sys_cpu/patCtrl_2" BEL "sys_cpu/patCtrl_1" BEL "sys_cpu/patCtrl_0"
-        BEL "sys_cpu/rReg2" BEL "sys_cpu/rReg1" BEL
+        BEL "sdram_din_7" BEL "sys_cpu/st1_FSM_FFd1" BEL
+        "sys_cpu/st1_FSM_FFd2" BEL "sys_cpu/st1_FSM_FFd3" BEL
+        "sys_cpu/st1_FSM_FFd4" BEL "sys_cpu/st1_FSM_FFd5" BEL
+        "sys_cpu/st1_FSM_FFd6" BEL "sys_cpu/patCtrl_2" BEL "sys_cpu/patCtrl_1"
+        BEL "sys_cpu/patCtrl_0" BEL "sys_cpu/rReg2" BEL "sys_cpu/rReg1" BEL
         "sys_cache_controller/yfsm_FSM_FFd5" BEL
         "sys_cache_controller/yfsm_FSM_FFd4" BEL
         "sys_cache_controller/yfsm_FSM_FFd1" BEL
         "sys_cache_controller/sys_tag_compare/HIT_MISS" BEL
-        "sys_cache_controller/DEBUG_1" BEL
-        "sys_cache_controller/yfsm_FSM_FFd6" BEL
-        "sys_cache_controller/yfsm_FSM_FFd2" BEL
+        "sys_cache_controller/DEBUG_1" BEL "sram_din_0" BEL "sram_din_1" BEL
+        "sram_din_2" BEL "sram_din_3" BEL "sys_cache_controller/yfsm_FSM_FFd6"
+        BEL "sys_cache_controller/yfsm_FSM_FFd2" BEL
         "sys_cache_controller/yfsm_FSM_FFd3" BEL
         "sys_cache_controller/DEBUG_2" BEL "sys_cache_controller/DEBUG_0" PIN
         "local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A_pins<10>"
@@ -1107,7 +1106,6 @@ TIMEGRP D_CLK = BEL "sdram_din_0" BEL "sdram_din_1" BEL "sdram_din_2" BEL
         BEL "sys_vio/U0/I_VIO/GEN_UPDATE_OUT[35].UPDATE_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_UPDATE_OUT[35].UPDATE_CELL/GEN_NO_CLK.USER_REG"
         BEL "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/SHIFT_REG" BEL
-        "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/USER_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[1].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[2].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[3].ASYNC_OUT_CELL/SHIFT_REG" BEL
@@ -1125,7 +1123,7 @@ TIMEGRP D_CLK = BEL "sdram_din_0" BEL "sdram_din_1" BEL "sdram_din_2" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[15].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[16].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[17].ASYNC_OUT_CELL/SHIFT_REG";
-TIMEGRP J_CLK = BEL "sys_icon/U0/U_ICON/U_TDI_reg" BEL
+TIMEGRP J_CLK = BEL "sys_cpu/rReg1" BEL "sys_icon/U0/U_ICON/U_TDI_reg" BEL
         "sys_icon/U0/U_ICON/U_TDO_reg" BEL "sys_icon/U0/U_ICON/U_SYNC/U_SYNC"
         BEL "sys_icon/U0/U_ICON/U_SYNC/G_SYNC_WORD[0].I_NE0.U_FDR" BEL
         "sys_icon/U0/U_ICON/U_SYNC/G_SYNC_WORD[1].I_NE0.U_FDR" BEL
@@ -1504,7 +1502,6 @@ TIMEGRP J_CLK = BEL "sys_icon/U0/U_ICON/U_TDI_reg" BEL
         BEL "sys_vio/U0/I_VIO/GEN_UPDATE_OUT[35].UPDATE_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_UPDATE_OUT[35].UPDATE_CELL/GEN_NO_CLK.USER_REG"
         BEL "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/SHIFT_REG" BEL
-        "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/USER_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[1].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[2].ASYNC_OUT_CELL/SHIFT_REG" BEL
         "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[3].ASYNC_OUT_CELL/SHIFT_REG" BEL

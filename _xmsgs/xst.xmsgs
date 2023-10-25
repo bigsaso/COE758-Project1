@@ -5,40 +5,40 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">56</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_tag</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_tag</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_index</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">58</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_index</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">58</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_offset</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">59</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_offset</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">59</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">index_and_offset</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">60</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">index_and_offset</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">56</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_tag</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_tag</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_index</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">58</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_index</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">58</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_offset</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">59</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">cpu_offset</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2094" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">59</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">index_and_offset</arg>&gt;.
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">60</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">index_and_offset</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">sram</arg>&gt;.
+<msg type="warning" file="Xst" num="2211" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">173</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">sram</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">187</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">icon</arg>&gt;.
+<msg type="warning" file="Xst" num="2211" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">189</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">icon</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">191</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">ila</arg>&gt;.
+<msg type="warning" file="Xst" num="2211" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">193</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">ila</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">197</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">vio</arg>&gt;.
+<msg type="warning" file="Xst" num="2211" delta="new" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd</arg>&quot; line <arg fmt="%d" index="2">199</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">vio</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd</arg>&quot; line <arg fmt="%d" index="2">190</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -270,7 +270,7 @@
 <msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">vio_out&lt;17:1&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">vio_out</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">sdram_wr_rd</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0</arg>.
@@ -6688,19 +6688,19 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sys_cache_controller/SDRAM_ADD_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sys_cache_controller/SDRAM_ADD_9&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sys_cache_controller/SDRAM_ADD_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sys_cache_controller/SDRAM_ADD_10&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_4&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_6&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_5&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_6&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sys_cache_controller/SDRAM_ADD_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sys_cache_controller/SDRAM_ADD_10&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">sram_din_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;sram_din_4&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
