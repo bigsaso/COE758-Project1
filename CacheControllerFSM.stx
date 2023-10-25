@@ -5,14 +5,14 @@ Parameter TMPDIR set to /home/student2/slogozzo/COE758/Project1/COE758-Project1/
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to /home/student2/slogozzo/COE758/Project1/COE758-Project1/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
@@ -23,12 +23,11 @@ WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Onl
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" in Library work.
 Architecture behavioral of Entity tagcomparedirectmapping is up to date.
 Compiling vhdl file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" in Library work.
-Entity <cachecontrollerfsm> compiled.
-Entity <cachecontrollerfsm> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity cachecontrollerfsm is up to date.
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 

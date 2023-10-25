@@ -1,5 +1,5 @@
 The following files were generated for 'icon' in directory
-/home/student2/slogozzo/COE758/Project1/ipcore_dir/
+/home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.
@@ -36,6 +36,7 @@ Generate ISE metadata:
 Generate ISE subproject:
    Create an ISE subproject for use when including this core in ISE designs
 
+   * _xmsgs/pn_parser.xmsgs
    * icon.gise
    * icon.xise
 

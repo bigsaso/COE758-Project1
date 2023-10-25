@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/student2/slogozzo/COE758/Project1/COE758-Project1/impact.xsl
+OUTFILE=/home/student2/slogozzo/COE758/Project1/COE758-Project1/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/student2/slogozzo/COE758/Project1/COE758-Project1
+LICENSE=iMPACT
+USER_INFO=iMPACT

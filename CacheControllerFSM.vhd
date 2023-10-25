@@ -39,8 +39,8 @@ entity CacheControllerFSM is
 		   SDRAM_ADD : out STD_LOGIC_VECTOR(15 DOWNTO 0);
 		   CACHE_ADD : out STD_LOGIC_VECTOR(7 DOWNTO 0);
            CACHE_WEN : out  STD_LOGIC;
-           CACHE_DIN_WEN : out  STD_LOGIC;
-           CACHE_DOUT_WEN : out  STD_LOGIC;
+           CACHE_DIN_MUX : out  STD_LOGIC;
+           CACHE_DOUT_MUX : out  STD_LOGIC;
            WEN_SDRAM : out  STD_LOGIC;
            MEMSTRB : out  STD_LOGIC;
            RDY : out  STD_LOGIC;
@@ -85,8 +85,21 @@ architecture Behavioral of CacheControllerFSM is
 	--signal sram_add: STD_LOGIC_VECTOR(7 DOWNTO 0);
 --	signal sram_din, sram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
 	--signal sram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
+--	-- VIO component
+--	component vio
+--	PORT (
+--		CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+--		ASYNC_OUT : OUT STD_LOGIC_VECTOR(17 DOWNTO 0));
+--	end component;
+--	-- VIO signals
+--	signal control_vio: STD_LOGIC_VECTOR(35 DOWNTO 0);
+--	signal vio_out: STD_LOGIC_VECTOR(17 DOWNTO 0);
 	
 begin
+--	sys_vio : vio
+--	  port map (
+--       CONTROL => control_vio,
+--       ASYNC_OUT => vio_out);
 	-- Continuous assignment of CPU signals
 	cpu_tag <= CPU_ADD(15 DOWNTO 8);
 	cpu_index <= CPU_ADD(7 DOWNTO 5);
@@ -179,15 +192,15 @@ begin
 		case yfsm is
 			-- Generating outputs for s0
 			when s0 =>
-				RDY <= '1';
+				RDY <= '1';--control_vio(0) AND 
 			-- Generating outputs for s1
 			when s1 =>
-				RDY <= '0';
+				RDY <= '0';--control_vio(0) AND 
 			-- Generating outputs for s2
 			when s2 =>
 				CACHE_ADD <= index_and_offset;
 				CACHE_WEN <= '1';
-				CACHE_DIN_WEN <= '0';
+				CACHE_DIN_MUX <= '0';
 				dbits(to_integer(unsigned(cpu_index))) <= '1'; --dirty bit
 				vbits(to_integer(unsigned(cpu_index))) <= '1'; --valid bit
 				-- RDY <= '1'; -- This should happen when going back to s0
@@ -195,26 +208,27 @@ begin
 			when s3 =>
 				CACHE_ADD <= index_and_offset;
 				CACHE_WEN <= '0';
-				CACHE_DOUT_WEN <= '1';
+				CACHE_DOUT_MUX <= '1';
 				-- RDY <= '1'; -- This should happen when going back to s0
 			-- Generating outputs for s4
 			when s4 =>
 				SDRAM_ADD <= (cpu_add AND "1111111111100000");
 				WEN_SDRAM <= '0';
-				CACHE_DIN_WEN <= '1';
+				CACHE_DIN_MUX <= '1';
 				CACHE_WEN <= '1';
 				vbits(to_integer(unsigned(cpu_index))) <= '1'; --valid bit
 			-- Generating outputs for s5
 			when s5 =>
 				SDRAM_ADD <= (cpu_add AND "1111111111100000");
 				WEN_SDRAM <= '1';
-				CACHE_DOUT_WEN <= '0';
+				CACHE_DOUT_MUX <= '0';
 				MEMSTRB <= '1';
 		end case;
 	end process;
 	
 	DEBUG(3) <= dbits(to_integer(unsigned(cpu_index)));
 	DEBUG(4) <= vbits(to_integer(unsigned(cpu_index)));
+	DEBUG(5) <= hit_miss_signal;
 
 end Behavioral;
 

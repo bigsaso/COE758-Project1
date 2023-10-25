@@ -67,8 +67,8 @@ architecture Behavioral of main is
 		SDRAM_ADD : OUT std_logic_vector(15 downto 0);
 		CACHE_ADD : OUT std_logic_vector(7 downto 0);
 		CACHE_WEN : OUT std_logic;
-		CACHE_DIN_WEN : OUT std_logic;
-		CACHE_DOUT_WEN : OUT std_logic;
+		CACHE_DIN_MUX : OUT std_logic;
+		CACHE_DOUT_MUX : OUT std_logic;
 		WEN_SDRAM : OUT std_logic;
 		MEMSTRB : OUT std_logic;
 		RDY : OUT std_logic;
@@ -80,8 +80,8 @@ architecture Behavioral of main is
 	signal cache_address: std_logic_vector(7 downto 0);
 	signal cache_wen: std_logic;
 	signal sdram_wen: std_logic;
-	signal cache_din_wen: std_logic;
-	signal cache_dout_wen: std_logic;
+	signal cache_din_mux: std_logic;
+	signal cache_dout_mux: std_logic;
 	signal memstrb: std_logic;
 	signal rdy: std_logic;
 	signal debug : std_logic_vector(31 downto 0);
@@ -118,7 +118,8 @@ architecture Behavioral of main is
 	-- ICON component
 	component icon
 	PORT (
-		CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
+		CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+		CONTROL1 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
 	end component;
 	-- ILA component
 	component ila
@@ -139,6 +140,7 @@ architecture Behavioral of main is
 		ASYNC_OUT : OUT STD_LOGIC_VECTOR(17 DOWNTO 0));
 	end component;
 	-- VIO signals
+	signal control_vio: STD_LOGIC_VECTOR(35 DOWNTO 0);
 	signal vio_out: STD_LOGIC_VECTOR(17 DOWNTO 0);
 
 begin
@@ -159,8 +161,8 @@ begin
 		SDRAM_ADD => sdram_address,
 		CACHE_ADD => cache_address,
 		CACHE_WEN => cache_wen,
-		CACHE_DIN_WEN => cache_din_wen,
-		CACHE_DOUT_WEN => cache_dout_wen,
+		CACHE_DIN_MUX => cache_din_mux,
+		CACHE_DOUT_MUX => cache_dout_mux,
 		WEN_SDRAM => sdram_wen,
 		MEMSTRB => memstrb,
 		RDY => rdy,
@@ -184,7 +186,8 @@ begin
 	);
 	sys_icon : icon
 	  port map (
-		 CONTROL0 => control0);
+		 CONTROL0 => control0,
+		 CONTROL1 => control_vio);
 	sys_ila : ila
 	  port map (
 		 CONTROL => control0,
@@ -193,17 +196,17 @@ begin
 		 TRIG0 => ila_trig0);
 	sys_vio : vio
 	  port map (
-       CONTROL => control0,
+       CONTROL => control_vio,
        ASYNC_OUT => vio_out);
-	process(clk,cache_din_wen,cache_dout_wen)
+	process(clk,cache_din_mux,cache_dout_mux)
 	begin
-		if(clk'Event AND clk='1') then
-			if(cache_din_wen='0') then
+		if(clk'Event AND clk='1' AND vio_out(0)='1') then-- AND control_vio(0)='1'
+			if(cache_din_mux='0') then
 				sram_din <= cpu_dout;
 			else
 				sram_din <= sdram_dout;
 			end if;
-			if(cache_dout_wen='0') then
+			if(cache_dout_mux='0') then
 				sdram_din <= sram_dout;
 			--else it should go to cpu_din, but our CPU does not have DIN.
 			end if;
@@ -223,6 +226,9 @@ begin
 	ila_data(76 DOWNTO 69) <= sdram_dout;
 	ila_data(84 DOWNTO 77) <= cpu_dout;
 	ila_data(87 DOWNTO 85) <= debug(2 DOWNTO 0); -- current state
+	ila_data(88) <= debug(3); --D-Bit
+	ila_data(89) <= debug(4); --V-Bit
+	ila_data(90) <= debug(5); --Hit/Miss
 
 end Behavioral;
 

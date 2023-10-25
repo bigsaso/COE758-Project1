@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: TMU
+-- Engineer: Salvatore Logozzo and Alexander Zwegers
 -- 
 -- Create Date:    13:03:53 10/02/2023 
 -- Design Name: 

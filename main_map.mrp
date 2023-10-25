@@ -1,0 +1,664 @@
+Release 13.4 Map O.87xd (lin64)
+Xilinx Mapping Report File for Design 'main'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off
+-c 100 -o main_map.ncd main.ngd main.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -5
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Wed Oct 25 11:45:16 2023
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   83
+Logic Utilization:
+  Total Number Slice Registers:         524 out of   9,312    5%
+    Number used as Flip Flops:          504
+    Number used as Latches:              20
+  Number of 4 input LUTs:               372 out of   9,312    3%
+Logic Distribution:
+  Number of occupied Slices:            423 out of   4,656    9%
+    Number of Slices containing only related logic:     423 out of     423 100%
+    Number of Slices containing unrelated logic:          0 out of     423   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         430 out of   9,312    4%
+    Number used as logic:               218
+    Number used as a route-thru:         58
+    Number used as Shift registers:     154
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                  1 out of     232    1%
+  Number of RAMB16s:                      5 out of      20   25%
+  Number of BUFGMUXs:                     2 out of      24    8%
+  Number of BSCANs:                       1 out of       1  100%
+
+  Number of RPM macros:           12
+Average Fanout of Non-Clock Nets:                2.65
+
+Peak Memory Usage:  703 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   2 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:43 - No license file was found in the standard Xilinx license
+directory.
+WARNING:Security:44 - Since no license file was found,
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net control0<13> is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/SDRAM_ADD_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/CACHE_WEN_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/CACHE_ADD_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/RDY_or0000 is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/CACHE_DOUT_MUX_or0000 is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net cpu_address<6> is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net sys_cpu/updPat_or0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sys_cache_controller/vbits_7_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal
+   <sys_vio/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<17>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<16>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<15>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<14>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<13>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<12>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<11>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<10>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<9>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<8>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<7>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<6>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<5>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<4>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<3>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<2>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sys_vio/U0/I_VIO/UPDATE<1>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA1> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA2> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA3> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA4> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA5> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA6> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA7> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA9> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA10> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA11> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA12> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA13> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA14> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA15> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA17> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA18> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA19> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA20> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA21> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA22> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA23> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA25> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA26> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA27> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA28> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA29> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA30> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA31> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB1> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB2> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB3> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB4> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB5> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB9> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB10> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB11> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB17> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB18> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB19> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB20> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB21> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB25> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB26> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB27> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB28> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB29> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<local_sram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/vali
+   d.cstr/ramloop[0].ram.r/s3_noinit.ram/spram.ram.B>:<RAMB16_RAMB16B>.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
+'/CMC/licenses/xilinx.license'.
+INFO:Security:54 - 'xc3s500e' is a WebPack part.
+INFO:LIT:243 - Logical network sys_vio/ASYNC_OUT<17> has no load.
+INFO:LIT:395 - The above info message is repeated 16 more times for the
+   following (max. 5 shown):
+   sys_vio/ASYNC_OUT<16>,
+   sys_vio/ASYNC_OUT<15>,
+   sys_vio/ASYNC_OUT<14>,
+   sys_vio/ASYNC_OUT<13>,
+   sys_vio/ASYNC_OUT<12>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  73 block(s) removed
+ 115 block(s) optimized away
+  57 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[10].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[2].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[3].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[4].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[5].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[8].U_LUT" (ROM)
+removed.
+Loadless block "sys_icon/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[9].U_LUT" (ROM)
+removed.
+Loadless block "sys_ila/U0/I_YES_D.U_ILA/U_STAT/U_DSR" (ROM) removed.
+Loadless block "sys_ila/U0/I_YES_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
+(ROM) removed.
+Loadless block "sys_vio/U0/I_VIO/reset_f_edge/I_H2L.U_DOUT" (SFF) removed.
+The signal "control0<27>" is sourceless and has been removed.
+The signal "control0<28>" is sourceless and has been removed.
+The signal "control0<29>" is sourceless and has been removed.
+The signal "control_vio<10>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>152" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>152" is sourceless and has
+been removed.
+   Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>179" (ROM) removed.
+    The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>179" is sourceless and has
+been removed.
+The signal "control_vio<11>" is sourceless and has been removed.
+The signal "control_vio<12>" is sourceless and has been removed.
+The signal "control_vio<13>" is sourceless and has been removed.
+The signal "control_vio<14>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>128" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>128" is sourceless and has
+been removed.
+The signal "control_vio<15>" is sourceless and has been removed.
+The signal "control_vio<16>" is sourceless and has been removed.
+The signal "control_vio<17>" is sourceless and has been removed.
+The signal "control_vio<18>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>115" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>115" is sourceless and has
+been removed.
+The signal "control_vio<19>" is sourceless and has been removed.
+The signal "control_vio<20>" is sourceless and has been removed.
+The signal "control_vio<21>" is sourceless and has been removed.
+The signal "control_vio<22>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>77" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>77" is sourceless and has been
+removed.
+   Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>91_SW0" (ROM) removed.
+    The signal "sys_vio/N36" is sourceless and has been removed.
+The signal "control_vio<23>" is sourceless and has been removed.
+The signal "control_vio<24>" is sourceless and has been removed.
+The signal "control_vio<25>" is sourceless and has been removed.
+The signal "control_vio<26>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>64" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>64" is sourceless and has been
+removed.
+The signal "control_vio<27>" is sourceless and has been removed.
+The signal "control_vio<28>" is sourceless and has been removed.
+The signal "control_vio<29>" is sourceless and has been removed.
+The signal "control_vio<30>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>37" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>37" is sourceless and has been
+removed.
+The signal "control_vio<31>" is sourceless and has been removed.
+The signal "control_vio<32>" is sourceless and has been removed.
+The signal "control_vio<33>" is sourceless and has been removed.
+The signal "control_vio<34>" is sourceless and has been removed.
+The signal "control_vio<35>" is sourceless and has been removed.
+The signal "control_vio<8>" is sourceless and has been removed.
+ Sourceless block "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>165" (ROM) removed.
+  The signal "sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>165" is sourceless and has
+been removed.
+The signal "control_vio<9>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<17>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<16>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<15>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<14>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<13>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<12>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<11>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<10>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<9>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<8>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<7>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<6>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<5>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<4>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<3>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<2>" is sourceless and has been removed.
+The signal "sys_vio/ASYNC_OUT<1>" is sourceless and has been removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[0].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[10].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[10].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[11].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[11].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[12].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[12].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[13].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[13].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[14].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[14].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[15].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[15].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[1].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[2].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[3].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[4].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[4].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[5].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[5].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[8].U_LCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_HCE" (ROM)
+removed.
+Unused block "sys_icon/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE" (ROM)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[10].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[11].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[12].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[13].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[14].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[15].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[16].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[17].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[1].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[2].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[3].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[4].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[5].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[6].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[7].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[8].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block "sys_vio/U0/I_VIO/GEN_ASYNC_OUT[9].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+VCC 		XST_VCC
+GND 		local_sram/XST_GND
+VCC 		local_sram/XST_VCC
+GND 		sys_icon/XST_GND
+VCC 		sys_icon/XST_VCC
+LUT4 		sys_ila/U0/I_YES_D.U_ILA/U_STAT/F_SSTAT[6].I_STAT.U_STAT
+   optimized to 0
+LUT4
+		sys_ila/U0/U_XST_CONTROLBUS_WORKAROUND/CONTROL_XST_WORKAROUND_O_cmp_eq0000_wg_
+lut<6>
+   optimized to 0
+GND 		sys_ila/XST_GND
+VCC 		sys_ila/XST_VCC
+FDE 		sys_vio/U0/I_VIO/U_DATA_OUT
+   optimized to 0
+LUT4 		sys_vio/U0/I_VIO/U_STATUS/F_STAT[4].I_STAT.U_STAT
+   optimized to 0
+LUT4 		sys_vio/U0/I_VIO/U_STATUS/F_STAT[7].I_STAT.U_STAT
+   optimized to 0
+LUT4 		sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>12
+   optimized to 1
+LUT4 		sys_vio/U0/I_VIO/U_STATUS/iSTAT_CNT<7>91
+   optimized to 1
+GND 		sys_vio/XST_GND
+VCC 		sys_vio/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CDONE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CMPRESET_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS0_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS1_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCRST_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WHCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WLCMPCE_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_SCNT_CMP_I_SRL16.U_GA
+ND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_HCMP_I_SRL16.U_G
+AND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_LCMP_I_SRL16.U_G
+AND_SRL16_MSET
+sys_ila/U0_I_YES_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_SRL
+16.U_GANDX_SRL16_MSET
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

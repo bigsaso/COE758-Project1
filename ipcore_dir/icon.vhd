@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 13.4
 --  \   \         Application: XILINX CORE Generator
 --  /   /         Filename   : icon.vhd
--- /___/   /\     Timestamp  : Mon Oct 02 12:26:45 EDT 2023
+-- /___/   /\     Timestamp  : Wed Oct 25 11:23:41 EDT 2023
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -20,7 +20,8 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 ENTITY icon IS
   port (
-    CONTROL0: inout std_logic_vector(35 downto 0));
+    CONTROL0: inout std_logic_vector(35 downto 0);
+    CONTROL1: inout std_logic_vector(35 downto 0));
 END icon;
 
 ARCHITECTURE icon_a OF icon IS

@@ -1,4 +1,4 @@
-V3 64
+V3 63
 FL /home/student2/slogozzo/COE758/Project1/CacheController.vhd 2023/10/12.16:13:28 O.87xd
 FL /home/student2/slogozzo/COE758/Project1/CacheControllerFSM.vhd 2023/10/11.11:44:08 O.87xd
 FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheController.vhd 2023/10/19.19:31:37 O.87xd
@@ -9,81 +9,81 @@ EN work/CacheController 1697758659 \
 AR work/CacheController/Behavioral 1697758660 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheController.vhd \
       EN work/CacheController 1697758659 CP TagCompareDirectMapping
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd 2023/10/19.21:05:26 O.87xd
-EN work/CacheControllerFSM 1697763957 \
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd 2023/10/25.11:03:05 O.87xd
+EN work/CacheControllerFSM 1698248681 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd \
       PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 \
       PB ieee/STD_LOGIC_UNSIGNED 1325952875
-AR work/CacheControllerFSM/Behavioral 1697763958 \
+AR work/CacheControllerFSM/Behavioral 1698248682 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd \
-      EN work/CacheControllerFSM 1697763957 CP TagCompareDirectMapping
+      EN work/CacheControllerFSM 1698248681 CP TagCompareDirectMapping
 FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd 2023/10/19.19:31:37 O.87xd
-EN work/CPU_gen 1697763955 \
+EN work/CPU_gen 1698248679 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd \
       PB ieee/std_logic_1164 1325952872 PB ieee/std_logic_arith 1325952873 \
       PB ieee/STD_LOGIC_UNSIGNED 1325952875
-AR work/CPU_gen/Behavioral 1697763956 \
+AR work/CPU_gen/Behavioral 1698248680 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/CPU_gen.vhd \
-      EN work/CPU_gen 1697763955
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd 2023/10/19.19:31:39 O.87xd
-EN work/icon 1697763963 \
+      EN work/CPU_gen 1698248679
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd 2023/10/25.11:23:40 O.87xd
+EN work/icon 1698248687 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd \
       PB ieee/std_logic_1164 1325952872
-AR work/icon/icon_a 1697763964 \
+AR work/icon/icon_a 1698248688 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/icon.vhd \
-      EN work/icon 1697763963
+      EN work/icon 1698248687
 FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/ila.vhd 2023/10/19.19:36:37 O.87xd
-EN work/ila 1697763965 \
+EN work/ila 1698248689 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/ila.vhd \
       PB ieee/std_logic_1164 1325952872
-AR work/ila/ila_a 1697763966 \
+AR work/ila/ila_a 1698248690 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/ila.vhd \
-      EN work/ila 1697763965
+      EN work/ila 1698248689
 FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd 2023/10/19.19:31:39 O.87xd
-EN work/sdram 1697763951 \
+EN work/sdram 1698242752 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd \
       PB ieee/std_logic_1164 1325952872
-AR work/sdram/sdram_a 1697763952 \
+AR work/sdram/sdram_a 1698242753 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sdram.vhd \
-      EN work/sdram 1697763951
+      EN work/sdram 1698242752
 FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd 2023/10/19.19:31:39 O.87xd
-EN work/sram 1697763959 \
+EN work/sram 1698248683 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd \
       PB ieee/std_logic_1164 1325952872
-AR work/sram/sram_a 1697763960 \
+AR work/sram/sram_a 1698248684 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/sram.vhd \
-      EN work/sram 1697763959
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/vio.vhd 2023/10/19.19:31:41 O.87xd
-EN work/vio 1697763967 \
+      EN work/sram 1698248683
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/vio.vhd 2023/10/25.11:16:20 O.87xd
+EN work/vio 1698248691 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/vio.vhd \
       PB ieee/std_logic_1164 1325952872
-AR work/vio/vio_a 1697763968 \
+AR work/vio/vio_a 1698248692 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/ipcore_dir/vio.vhd \
-      EN work/vio 1697763967
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd 2023/10/19.21:05:43 O.87xd
-EN work/main 1697763969 \
+      EN work/vio 1698248691
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd 2023/10/25.11:35:18 O.87xd
+EN work/main 1698248693 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd \
       PB ieee/std_logic_1164 1325952872 PB ieee/STD_LOGIC_UNSIGNED 1325952875 \
       PB ieee/NUMERIC_STD 1325952877
-AR work/main/Behavioral 1697763970 \
+AR work/main/Behavioral 1698248694 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/main.vhd \
-      EN work/main 1697763969 CP CPU_gen CP CacheControllerFSM CP sram \
+      EN work/main 1698248693 CP CPU_gen CP CacheControllerFSM CP sram \
       CP SDRAMController CP icon CP ila CP vio
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd 2023/10/19.19:31:38 O.87xd
-EN work/SDRAMController 1697763961 \
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd 2023/10/25.10:07:59 O.87xd
+EN work/SDRAMController 1698248685 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd \
       PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877
-AR work/SDRAMController/Behavioral 1697763962 \
+AR work/SDRAMController/Behavioral 1698248686 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/SDRAMController.vhd \
-      EN work/SDRAMController 1697763961 CP sdram
-FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd 2023/10/19.19:56:33 O.87xd
-EN work/TagCompareDirectMapping 1697763953 \
+      EN work/SDRAMController 1698248685
+FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd 2023/10/25.10:44:40 O.87xd
+EN work/TagCompareDirectMapping 1698248677 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd \
       PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 \
       PB ieee/STD_LOGIC_UNSIGNED 1325952875
-AR work/TagCompareDirectMapping/Behavioral 1697763954 \
+AR work/TagCompareDirectMapping/Behavioral 1698248678 \
       FL /home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd \
-      EN work/TagCompareDirectMapping 1697763953
+      EN work/TagCompareDirectMapping 1698248677
 FL /home/student2/slogozzo/COE758/Project1/CPU_gen.vhd 2023/09/29.10:52:43 O.87xd
 FL /home/student2/slogozzo/COE758/Project1/ipcore_dir/icon.vhd 2023/10/02.12:26:43 O.87xd
 FL /home/student2/slogozzo/COE758/Project1/ipcore_dir/ila.vhd 2023/10/11.11:09:17 O.87xd

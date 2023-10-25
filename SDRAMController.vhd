@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: TMU
+-- Engineer: Salvatore Logozzo and Alexander Zwegers
 -- 
 -- Create Date:    11:18:33 10/04/2023 
 -- Design Name: 
@@ -45,29 +45,29 @@ architecture Behavioral of SDRAMController is
 	signal ram_signal: rammemory;
 	-- Counter signal - need to read 32 words one at a time
 	signal counter : integer := 0;
-	-- SDRAM component and signals
-	COMPONENT sdram
-	  PORT (
-		 clka : IN STD_LOGIC;
-		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-		 addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-	  );
-	END COMPONENT;
-	signal sdram_add: STD_LOGIC_VECTOR(15 DOWNTO 0);
-	signal sdram_din, sdram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal sdram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
+--	-- SDRAM component and signals
+--	COMPONENT sdram
+--	  PORT (
+--		 clka : IN STD_LOGIC;
+--		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+--		 addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+--		 dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+--		 douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+--	  );
+--	END COMPONENT;
+--	signal sdram_add: STD_LOGIC_VECTOR(15 DOWNTO 0);
+--	signal sdram_din, sdram_dout: STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	signal sdram_wen: STD_LOGIC_VECTOR(0 DOWNTO 0);
 
 begin
-	sdram_memory : sdram
-	  PORT MAP (
-		 clka => clk,
-		 wea => sdram_wen,
-		 addra => sdram_add,
-		 dina => sdram_din,
-		 douta => sdram_dout
-	  );
+--	sdram_memory : sdram
+--	  PORT MAP (
+--		 clka => clk,
+--		 wea => sdram_wen,
+--		 addra => sdram_add,
+--		 dina => sdram_din,
+--		 douta => sdram_dout
+--	  );
 	process(clk)
 	begin
 		if(clk'Event AND clk='1') then

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 13.4
-# Date: Mon Oct  2 16:25:41 2023
+# Date: Wed Oct 25 15:22:55 2023
 #
 ##############################################################
 #
@@ -42,7 +42,7 @@ SELECT ICON_(ChipScope_Pro_-_Integrated_Controller) family Xilinx,_Inc. 1.05.a
 CSET component_name=icon
 CSET enable_jtag_bufg=true
 CSET example_design=false
-CSET number_control_ports=1
+CSET number_control_ports=2
 CSET use_ext_bscan=false
 CSET use_softbscan=false
 CSET use_unused_bscan=false
@@ -52,4 +52,4 @@ CSET user_scan_chain=USER1
 MISC pkg_timestamp=2012-01-07T09:19:29Z
 # END Extra information
 GENERATE
-# CRC: 74b31830
+# CRC: 454ae072

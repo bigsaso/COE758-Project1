@@ -48,8 +48,8 @@ ARCHITECTURE behavior OF cache_controller_unit_test IS
          SDRAM_ADD : OUT  std_logic_vector(15 downto 0);
          CACHE_ADD : OUT  std_logic_vector(7 downto 0);
          CACHE_WEN : OUT  std_logic;
-         CACHE_DIN_WEN : OUT  std_logic;
-         CACHE_DOUT_WEN : OUT  std_logic;
+         CACHE_DIN_MUX : OUT  std_logic;
+         CACHE_DOUT_MUX : OUT  std_logic;
          WEN_SDRAM : OUT  std_logic;
          MEMSTRB : OUT  std_logic;
          RDY : OUT  std_logic;
@@ -68,8 +68,8 @@ ARCHITECTURE behavior OF cache_controller_unit_test IS
    signal SDRAM_ADD : std_logic_vector(15 downto 0);
    signal CACHE_ADD : std_logic_vector(7 downto 0);
    signal CACHE_WEN : std_logic;
-   signal CACHE_DIN_WEN : std_logic;
-   signal CACHE_DOUT_WEN : std_logic;
+   signal CACHE_DIN_MUX : std_logic;
+   signal CACHE_DOUT_MUX : std_logic;
    signal WEN_SDRAM : std_logic;
    signal MEMSTRB : std_logic;
    signal RDY : std_logic;
@@ -89,8 +89,8 @@ BEGIN
           SDRAM_ADD => SDRAM_ADD,
           CACHE_ADD => CACHE_ADD,
           CACHE_WEN => CACHE_WEN,
-          CACHE_DIN_WEN => CACHE_DIN_WEN,
-          CACHE_DOUT_WEN => CACHE_DOUT_WEN,
+          CACHE_DIN_MUX => CACHE_DIN_MUX,
+          CACHE_DOUT_MUX => CACHE_DOUT_MUX,
           WEN_SDRAM => WEN_SDRAM,
           MEMSTRB => MEMSTRB,
           RDY => RDY,
