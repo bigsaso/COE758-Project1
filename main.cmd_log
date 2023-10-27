@@ -81,3 +81,6 @@ map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o main_ma
 par -w -intstyle ise -ol high -t 1 main_map.ncd main.ncd main.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf -ucf project1.ucf 
 bitgen -intstyle ise -f main.ut main.ncd 
+xst -intstyle ise -ifn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.xst" -ofn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.syr" 
+xst -intstyle ise -ifn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.xst" -ofn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.syr" 
+xst -intstyle ise -ifn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.xst" -ofn "/home/student2/slogozzo/COE758/Project1/COE758-Project1/main.syr" 

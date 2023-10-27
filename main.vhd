@@ -31,7 +31,24 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity main is
-	Port ( clk : in  STD_LOGIC);
+	Port ( 
+		clk : in  STD_LOGIC;
+		CPU_ADDRESS_DEBUG : out STD_LOGIC_VECTOR(15 downto 0);
+		WR_RD_DEBUG : out STD_LOGIC;
+		RDY_DEBUG : out STD_LOGIC;
+		CS_DEBUG : out STD_LOGIC;
+		CACHE_ADDRESS_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		SRAM_DIN_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		SRAM_DOUT_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		SDRAM_ADDRESS_DEBUG : out STD_LOGIC_VECTOR(15 downto 0);
+		SDRAM_DIN_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		SDRAM_DOUT_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		CPU_DOUT_DEBUG : out STD_LOGIC_VECTOR(7 downto 0);
+		STATE_DEBUG : out STD_LOGIC_VECTOR(2 downto 0);
+		HIT_MISS_DEBUG : out STD_LOGIC;
+		D_BIT_DEBUG : out STD_LOGIC;
+		V_BIT_DEBUG : out STD_LOGIC
+	);
 end main;
 
 architecture Behavioral of main is
@@ -214,6 +231,7 @@ begin
 			end if;
 		end if;
 	end process;
+	
 	ila_data(15 DOWNTO 0) <= cpu_address;
 	ila_data(16) <= cpu_wr_rd;
 	ila_data(17) <= rdy;
@@ -231,6 +249,22 @@ begin
 	ila_data(88) <= debug(3); --D-Bit
 	ila_data(89) <= debug(4); --V-Bit
 	ila_data(90) <= debug(5); --Hit/Miss
+	
+--	CPU_ADDRESS_DEBUG <= cpu_address;
+--	WR_RD_DEBUG <= cpu_wr_rd;
+--	RDY_DEBUG <= rdy;
+--	CS_DEBUG <= cpu_cs;
+--	CACHE_ADDRESS_DEBUG <= cache_address;
+--	SRAM_DIN_DEBUG <= sram_din;
+--	SRAM_DOUT_DEBUG <= sram_dout;
+--	SDRAM_ADDRESS_DEBUG <= sdram_address;
+--	SDRAM_DIN_DEBUG <= sdram_din;
+--	SDRAM_DOUT_DEBUG <= sdram_dout;
+--	CPU_DOUT_DEBUG <= cpu_dout;
+--	STATE_DEBUG <= debug(2 downto 0);
+--	HIT_MISS_DEBUG <= debug(3);
+--	D_BIT_DEBUG <= debug(4);
+--	V_BIT_DEBUG <= debug(5);
 
 end Behavioral;
 

@@ -48,6 +48,9 @@ entity CacheControllerFSM is
 end CacheControllerFSM;
 
 architecture Behavioral of CacheControllerFSM is
+	-- Array of 8 blocks of Cache Memory
+	type cachememory is array (7 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
+	signal memtag: cachememory := ((others=> (others=>'0')));
 	-- Array of 8 blocks of dirty and valid bits
 	type dirty_bits is array (7 downto 0) of STD_LOGIC;
 	signal dbits: dirty_bits := (others => '0');
@@ -58,19 +61,19 @@ architecture Behavioral of CacheControllerFSM is
 	signal cpu_index : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	signal cpu_offset : STD_LOGIC_VECTOR(4 DOWNTO 0);
 	signal index_and_offset : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	-- Tag compare component
-	COMPONENT TagCompareDirectMapping
-	PORT(
-		CPU_ADD : IN std_logic_vector(15 downto 0);
-		clk : IN std_logic;          
-		HIT_MISS : OUT std_logic
-		);
-	END COMPONENT;
+--	-- Tag compare component
+--	COMPONENT TagCompareDirectMapping
+--	PORT(
+--		CPU_ADD : IN std_logic_vector(15 downto 0);
+--		clk : IN std_logic;          
+--		HIT_MISS : OUT std_logic
+--		);
+--	END COMPONENT;
 	-- Tag compare signals
 	signal hit_miss_signal: STD_LOGIC;
 	-- FSM state signal
 	type state_type is (s0,s1,s2,s3,s4,s5);
-	signal yfsm : state_type;
+	signal yfsm : state_type := s0;--start at state 0
 --	-- SRAM component
 --	COMPONENT sram
 --	  PORT (
@@ -105,11 +108,22 @@ begin
 	cpu_index <= CPU_ADD(7 DOWNTO 5);
 	cpu_offset <= CPU_ADD(4 DOWNTO 0);
 	index_and_offset <= CPU_ADD(7 DOWNTO 0);
-	sys_tag_compare: TagCompareDirectMapping PORT MAP(
-		CPU_ADD => CPU_ADD,
-		clk => clk,
-		HIT_MISS => hit_miss_signal
-	);
+	process(clk)
+	begin
+		if(clk'Event AND clk='1') then
+			if((memtag(to_integer(unsigned(cpu_index))) = cpu_tag) AND (vbits(to_integer(unsigned(cpu_index))) = '1')) then
+			  hit_miss_signal <= '1';
+			else
+				-- Should a miss add this tag to our array for next time?
+				hit_miss_signal <= '0';
+			end if;
+		end if;
+	end process;
+--	sys_tag_compare: TagCompareDirectMapping PORT MAP(
+--		CPU_ADD => CPU_ADD,
+--		clk => clk,
+--		HIT_MISS => hit_miss_signal
+--	);
 --	local_sram : sram
 --	  PORT MAP (
 --		 clka => clk,
@@ -223,6 +237,7 @@ begin
 				WEN_SDRAM <= '1';
 				CACHE_DOUT_MUX <= '0';
 				MEMSTRB <= '1';
+				dbits(to_integer(unsigned(cpu_index))) <= '0'; --dirty bit
 		end case;
 	end process;
 	

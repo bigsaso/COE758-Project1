@@ -1,3 +1,2 @@
-vhdl work "TagCompareDirectMapping.vhd"
 vhdl work "CacheControllerFSM.vhd"
 vhdl work "cache_controller_unit_test.vhd"

@@ -3,25 +3,23 @@ ISim O.87xd (signature 0x8ddf5b5d)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/TagCompareDirectMapping.vhd" into library work
 Parsing VHDL file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/CacheControllerFSM.vhd" into library work
 Parsing VHDL file "/home/student2/slogozzo/COE758/Project1/COE758-Project1/cache_controller_unit_test.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 123372 KB
-Fuse CPU Usage: 880 ms
+Fuse Memory Usage: 123240 KB
+Fuse CPU Usage: 900 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity TagCompareDirectMapping [tagcomparedirectmapping_default]
 Compiling architecture behavioral of entity CacheControllerFSM [cachecontrollerfsm_default]
 Compiling architecture behavior of entity cache_controller_unit_test
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 10 VHDL Units
+Compiled 8 VHDL Units
 Built simulation executable /home/student2/slogozzo/COE758/Project1/COE758-Project1/cache_controller_unit_test_isim_beh.exe
 Fuse Memory Usage: 1223504 KB
-Fuse CPU Usage: 1040 ms
-GCC CPU Usage: 360 ms
+Fuse CPU Usage: 1020 ms
+GCC CPU Usage: 230 ms
